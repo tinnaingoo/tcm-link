@@ -28,6 +28,12 @@ body {
   padding: 15px;
 }
 
+.header-box {
+  background-color: #000;
+  width: 100%;
+  padding: 15px;
+}
+
 .footer {
   background-color: #000;
   color: #ffffff;
