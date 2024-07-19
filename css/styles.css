@@ -44,9 +44,6 @@ body {
             border-color: #007BFF;
         }
 
-.search-box .fa-search {
-            color: #aaa;
-        }
 
 .container {
             margin: 50px auto;
@@ -63,6 +60,7 @@ body {
             text-decoration: none;
             font-size: 18px;
             border-radius: 25px;
+            font-family: inherit;
         }
 
 .subscribe-buttons {
