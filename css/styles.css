@@ -8,6 +8,7 @@ body {
 .header-box {
     width: 100%;
     padding-top: 5px;
+    background-color: #000;
 }
 
 .web-title {
