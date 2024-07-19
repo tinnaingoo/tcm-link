@@ -5,6 +5,11 @@ body {
             text-align: center;
         }
 
+.header-box {
+    background: gray;
+    width: 100%;
+}
+
 .search-box {
 
         }
