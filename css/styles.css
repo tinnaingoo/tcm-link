@@ -12,33 +12,24 @@ body {
             font-size: 16px;
         }
 
-        .search-box input {
+.search-box input {
             width: 100%;
-            padding: 10px 20px 10px 40px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            transition: all 0.3s ease;
         }
 
-        .search-box input:focus {
+.search-box input:focus {
             border-color: #007BFF;
         }
 
-        .search-box .fa-search {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
+.search-box .fa-search {
             color: #aaa;
         }
 
-        .container {
+.container {
             margin: 50px auto;
             width: 80%;
         }
 
-        .button {
+.button {
             display: block;
             width: 60%;
             padding: 15px;
@@ -49,10 +40,12 @@ body {
             font-size: 18px;
             border-radius: 25px;
         }
-        .subscribe-buttons {
+
+.subscribe-buttons {
             margin-top: 50px;
         }
-        .subscribe-button {
+
+.subscribe-button {
             display: inline-block;
             width: 150px;
             padding: 10px;
