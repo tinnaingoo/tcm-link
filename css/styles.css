@@ -6,14 +6,14 @@ body {
         }
 
 .search-box {
+
+        }
+
+.search-box input {
             width: 80%;
             padding: 10px;
             margin-bottom: 20px;
             font-size: 16px;
-        }
-
-.search-box input {
-            width: 100%;
         }
 
 .search-box input:focus {
