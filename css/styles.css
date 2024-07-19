@@ -11,7 +11,7 @@ body {
 
 .web-title {
     color: yellow;
-    font-size: larger;
+    font-size: 29.16px;
     padding-top: 20px;
     padding-bottom: 10px;
     font-family: ui-monospace;
@@ -19,7 +19,7 @@ body {
 }
 
 .web-description {
-    font-size: small;
+    font-size: 18px;
     color: white;
     font-family: inherit;
     padding: 5px;
