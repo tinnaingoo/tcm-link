@@ -5,6 +5,17 @@ body {
             text-align: center;
         }
 
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
 .aside {
   background-color: #33b5e5;
   padding: 15px;
