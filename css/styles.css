@@ -9,6 +9,14 @@ body {
     width: 100%;
 }
 
+.web-title {
+    color: Yellow;
+}
+
+.web-title {
+    color: white;
+}
+
 .sticky {
   position: fixed;
   top: 0;
