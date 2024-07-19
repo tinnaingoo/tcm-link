@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC-Myaing - Download Link Collection</title>
+    <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            width: 80%;
+        }
+        .search-bar {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .button {
+            display: block;
+            width: 60%;
+            padding: 15px;
+            margin: 10px auto;
+            background-color: #000;
+            color: #ff0;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+        }
+        .subscribe-buttons {
+            margin-top: 50px;
+        }
+        .subscribe-button {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TC-Myaing</h1>
+        <h2>Download Link Collection</h2>
+        <input type="text" id="searchBar" class="search-bar" placeholder="search here">
+        <a href="page2.html" class="button">Adobe Illustrator</a>
+        <a href="page2.html" class="button">Adobe Pagemaker</a>
+        <a href="page2.html" class="button">Adobe After Effects</a>
+        <a href="page2.html" class="button">Adobe Premiere Pro</a>
+        <a href="page2.html" class="button">Microsoft Office 2010</a>
+        <a href="page2.html" class="button">Microsoft Office 2013</a>
+        <a href="page2.html" class="button">Microsoft Office 2016</a>
+        <div class="subscribe-buttons">
+            <a href="#" class="subscribe-button">YouTube Channel</a>
+            <a href="#" class="subscribe-button">Facebook Page</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('searchBar').addEventListener('input', function() {
+            var filter = this.value.toLowerCase();
+            var buttons = document.querySelectorAll('.button');
+            buttons.forEach(function(button) {
+                if (button.textContent.toLowerCase().includes(filter)) {
+                    button.style.display = '';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
