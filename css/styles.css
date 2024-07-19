@@ -10,11 +10,20 @@ body {
 }
 
 .web-title {
-    color: Yellow;
+    color: yellow;
+    font-size: larger;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: ui-monospace;
+    text-align: center;
 }
 
-.web-title {
+.web-description {
+    font-size: small;
     color: white;
+    font-family: inherit;
+    padding: 5px;
+    text-align: center;
 }
 
 .sticky {
