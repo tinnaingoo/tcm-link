@@ -7,7 +7,8 @@ body {
 
 .header-box {
     width: 100%;
-    padding-top: 5px;
+    padding: 10px;
+    mergin: 0px;
     background-color: #000;
 }
 
