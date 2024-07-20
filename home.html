@@ -3,21 +3,25 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/styles.css">
-
+<link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
 </head>
 <body>
 
 <div class="header">
-  <h1>Chania</h1>
+  <div class="web-title">TC-Myaing</div>
+<div class="web-description">Download Link Collection</div>
 </div>
 
 <div class="row">
   <div class="col-3 menu">
+    
+    <input type="text" id="searchBar" placeholder="Search...">
+    
     <ul>
-      <li>The Flight</li>
-      <li>The City</li>
-      <li>The Island</li>
-      <li>The Food</li>
+      <li id="button">The Flight</li>
+      <li id="button">The City</li>
+      <li id="button">The Island</li>
+      <li id="button">The Food</li>
     </ul>
   </div>
 
@@ -41,6 +45,20 @@
 <div class="footer">
   <p>Resize the browser window to see how the content respond to the resizing.</p>
 </div>
-
+  
+<script>
+        document.getElementById('searchBar').addEventListener('input', function() {
+            var filter = this.value.toLowerCase();
+            var buttons = document.querySelectorAll('.button');
+            buttons.forEach(function(button) {
+                if (button.textContent.toLowerCase().includes(filter)) {
+                    button.style.display = '';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        });
+    </script>
+  
 </body>
 </html>
