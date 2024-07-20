@@ -9,6 +9,7 @@ body {
   content: "";
   clear: both;
   display: table;
+  text-align: center;
 }
 
 [class*="col-"] {
