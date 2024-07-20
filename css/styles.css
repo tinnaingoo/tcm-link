@@ -38,11 +38,11 @@ body {
 .subscribe-btn {
   background-color: white; 
   color: black; 
-  border: 2px solid #04AA6D;
+  border: 2px solid #212121;
 }
 
 .subscribe-btn:hover {
-  background-color: #04AA6D;
+  background-color: #212121;
   color: white;
 }
 
