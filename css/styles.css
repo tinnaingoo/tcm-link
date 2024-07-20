@@ -34,6 +34,18 @@ body {
     text-align: center;
     padding-bottom: 2px;
 }
+
+.subscribe-btn {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+}
+
+.subscribe-btn:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
 .header {
   background-color: #000;
   color: #ffffff;
