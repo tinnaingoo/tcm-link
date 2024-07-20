@@ -1,0 +1,8 @@
+# Exported from Render on 2024-07-20T14:48:22Z
+services:
+- type: web
+  name: TCM Download Link Collection
+  runtime: static
+  repo: https://github.com/tinnaingoo/netlify-project
+  staticPublishPath: .
+version: "1"
