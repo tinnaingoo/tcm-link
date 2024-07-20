@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'UmoeHandwriting';
-    src: /*url('fonts/custom-font.woff2') format('woff2'),
-         url('fonts/custom-font.woff') format('woff'),*/
+    src: /*url('fonts/custom-font.woff2') format('woff2'),/*
+         url('fonts/UmoeHandwriting.woff') format('woff'),
          url('fonts/UmoeHandwriting.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
