@@ -1,14 +1,10 @@
 @font-face {
-    font-family: 'Unicode';
+    font-family: 'UmoeHandwriting';
     src: /*url('fonts/custom-font.woff2') format('woff2'),
          url('fonts/custom-font.woff') format('woff'),*/
-         url('fonts/Umoe Handwriting.ttf') format('truetype');
+         url('fonts/UmoeHandwriting.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
-
-body {
-    font-family: 'Unicode', sans-serif;
 }
 
 body {
@@ -137,7 +133,7 @@ input#searchBar {
 .web-description {
     font-size: 18px;
     color: white;
-    font-family: inherit;
+    font-family: 'UmoeHandwriting', sans-serif;
     padding: 5px;
     text-align: center;
 }
