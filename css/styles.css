@@ -73,7 +73,12 @@ body {
         }
         
 .subscribe-btn {
-    
+    border: black;
+    background: red;
+    padding: 8px;
+    color: white;
+    font-family: monospace;
+    margin: 5px;
 }
 
 .subscribe-btn:hover {
