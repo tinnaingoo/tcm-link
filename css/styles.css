@@ -1,66 +1,8 @@
 @font-face {
-    font-family: 'UmoeHandwriting';
-    src: /*url('fonts/custom-font.woff2') format('woff2'),*/
-         url('fonts/UmoeHandwriting.woff') format('woff'),
-         url('fonts/UmoeHandwriting.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Mon3';
+  font-style: NORMAL;
+  src: url(mon3.woff) format('woff');
 }
-
-.noto-sans-myanmar-thin {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-extralight {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-light {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-regular {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-medium {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-semibold {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-bold {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-extrabold {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.noto-sans-myanmar-black {
-  font-family: "Noto Sans Myanmar", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
 
 body {
             background-color: #333;
@@ -188,7 +130,7 @@ input#searchBar {
 .web-description {
     font-size: 18px;
     color: white;
-    font-family: 'UmoeHandwriting', sans-serif;
+    font-family: 'Mon3', sans-serif;
     padding: 5px;
     text-align: center;
 }
