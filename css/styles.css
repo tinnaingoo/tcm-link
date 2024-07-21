@@ -55,6 +55,10 @@ body {
     text-align: center;
     padding-bottom: 2px;
 }
+.normal-text{
+  font-size: 14px;
+  font-family: 'Mon3', sans-serif;
+}
 
 .subscribe-btn {
     color: white;
@@ -62,7 +66,7 @@ body {
     font-size: 14px;
     padding: 5px;
     border-radius: 10px;
-    font-family: serif;
+    
     margin: 10px auto;
     font-family: 'Mon3', sans-serif;
 }
@@ -78,7 +82,6 @@ body {
     font-size: 14px;
     padding: 5px;
     border-radius: 10px;
-    font-family: serif;
     margin: 10px auto;
     font-family: 'Mon3', sans-serif;
 }
