@@ -16,10 +16,10 @@
    <div class="col-s-11 col-12">
     <input type="text" id="searchBar" placeholder="Search...">
    </div>
+   
 <div class="row">
    <div class="col-s-11 col-9">
      <div class="container-box">
-
      <a href="post/whizzotyping&dictionary.html" class="button">Whizzo Typing & Dictionary</a>
      
         <a href="post/ratiborus_kms_tools_2021.html" class="button">Ratiborus KMS Tools 2021</a>
@@ -40,14 +40,19 @@
     <div class="col-s-11 col-3">
         
        <div class="subscribe-section">
-    <h2>Subscribe to Our YouTube Channel</h2>
-    <div id="youtube-subscribe-button"></div>
-    </div>
+           <h2>Subscribe to Our YouTube Channel</h2>
+           <div class="g-ytsubscribe"
+           data-channelid="UC0-aFaSo--ccM1R5McIUSiw" 
+           data-layout="default" 
+           data-theme="dark" 
+           data-count="default">
+           </div>
+       </div>
+      </div>
       
       
   
      </div>
-  
     </div>
 </div>
 
@@ -71,22 +76,6 @@
     </script>
     
     <script src="https://apis.google.com/js/platform.js"></script>
-<script>
-  function renderSubscribeButton() {
-    gapi.ytsubscribe.render(
-      document.getElementById('youtube-subscribe-button'),
-      {
-        channelId: 'UC0-aFaSo--ccM1R5McIUSiw', // Replace with your YouTube channel ID
-        layout: 'default',
-        theme: 'dark',
-        count: 'default'
-      }
-    );
-  }
-
-  // Load the subscribe button when the API script has loaded
-  gapi.load('auth2', renderSubscribeButton);
-</script>
   
 </body>
 </html>
