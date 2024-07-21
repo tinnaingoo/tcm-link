@@ -73,35 +73,11 @@ body {
         }
         
 .subscribe-btn {
-    color: white;
-    background: #FF0000;
-    font-size: 14px;
-    padding: 5px;
-    border-radius: 10px;
-    width: 50%;
-    margin: 10px auto;
-    font-family: 'Mon3', sans-serif;
+    
 }
 
 .subscribe-btn:hover {
-  background-color: white;
-  color: black;
-}
-
-.fb-btn {
-    color: white;
-    background: #1877F2;
-    width: 50%;
-    font-size: 14px;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 10px auto;
-    font-family: 'Mon3', sans-serif;
-}
-
-.fb-btn:hover {
-  background-color: white;
-  color: black;
+  
 }
 
 .header {
