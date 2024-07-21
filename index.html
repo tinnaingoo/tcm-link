@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/menu.css">
 
 <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
 </head>
@@ -12,6 +13,23 @@
   <div class="web-title">TC-Myaing</div>
   <div class="web-description">Download Link များစုစည်းမှု</div>
 </div>
+
+<nav class="menu">
+	<ul class="active">
+		<li class="current-item"><a href="#">Home</a></li>
+		<li><a href="#">My Work</a></li>
+		<li><a href="#">About Me</a></li>
+		<li><a href="#">Get in Touch</a></li>
+		<li><a href="#">Blog</a></li>
+	</ul>
+
+	<a class="toggle-nav" href="#">&#9776;</a>
+
+	<form class="search-form">
+		<input type="text">
+		<button>Search</button>
+	</form>
+</nav>
 
 <div class="row">
    <div class="col-s-11 col-12">
@@ -36,11 +54,18 @@
         <a href="page2.html" class="button">Microsoft Office 2013</a>
         <a href="page2.html" class="button">Microsoft Office 2016</a>
      </div>
-     <div id="noResults" class="no-results" style="display: none;">သင်ရှာဖွေသော အချက်အလတ်မရှိသေးပါ</div>
+     <div id="noResults" class="no-results" style="display: none;">No results found.</div>
     </div>
   
     <div class="col-s-11 col-3">
         <div class="subscribe-section">
+           <h2>Subscribe to Our YouTube Channel</h2>
+           <div class="container">
+             <a  href="https://www.youtube.com/@tcmyaing"> <button class="subscribe-btn"> Subscribe </button></a>
+           </div>
+       </div>
+       <hr style="height: 40px" color="black" />
+       <div class="subscribe-section">
            <h2>Subscribe to Our YouTube Channel</h2>
            <div class="container">
              <a  href="https://www.youtube.com/@tcmyaing"> <button class="subscribe-btn"> Subscribe </button></a>
@@ -75,7 +100,18 @@
             noResults.style.display = 'none';
         }
     });
+    
+    
+    jQuery(document).ready(function() {
+	jQuery('.toggle-nav').click(function(e) {
+		jQuery(this).toggleClass('active');
+		jQuery('.menu ul').toggleClass('active');
+
+		e.preventDefault();
+	});
+});
 </script>
+
   
 </body>
 </html>
