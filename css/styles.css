@@ -5,7 +5,8 @@
 }
 
 body {
-            background-color: #333;
+  background-color: #333;
+  font-family: 'Mon3', sans-serif;
         }
 * {
   box-sizing: border-box;
