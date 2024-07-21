@@ -162,7 +162,7 @@ input#searchBar {
             text-decoration: none;
             font-size: 18px;
             border-radius: 25px;
-            font-family: Mon3;
+            font-family: 'Mon3', sans-serif;
             text-align: center;
         }
 
