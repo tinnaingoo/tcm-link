@@ -73,8 +73,7 @@ body {
         }
         
 .subscribe-btn {
-    border: black;
-    background: red;
+    background: #ff0000;
     padding: 8px;
     color: white;
     font-family: monospace;
@@ -82,7 +81,9 @@ body {
 }
 
 .subscribe-btn:hover {
-  
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
 .header {
