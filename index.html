@@ -15,20 +15,18 @@
 </div>
 
 <nav class="menu">
-	<ul class="active">
-		<li class="current-item"><a href="#">Home</a></li>
-		<li><a href="#">My Work</a></li>
-		<li><a href="#">About Me</a></li>
-		<li><a href="#">Get in Touch</a></li>
-		<li><a href="#">Blog</a></li>
-	</ul>
-
-	<a class="toggle-nav" href="#">&#9776;</a>
-
-	<form class="search-form">
-		<input type="text">
-		<button>Search</button>
-	</form>
+    <ul class="active">
+        <li class="current-item"><a href="#">Home</a></li>
+        <li><a href="#">My Work</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Get in Touch</a></li>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <a class="toggle-nav" href="#">&#9776;</a>
+    <form class="search-form">
+        <input type="text">
+        <button>Search</button>
+    </form>
 </nav>
 
 <div class="row">
@@ -93,23 +91,12 @@
                 button.style.display = 'none';
             }
         });
-
-        if (!hasResults) {
-            noResults.style.display = 'block';
-        } else {
-            noResults.style.display = 'none';
-        }
+document.querySelector('.toggle-nav').addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        document.querySelector('.menu ul').classList.toggle('active');
     });
     
-    
-    jQuery(document).ready(function() {
-	jQuery('.toggle-nav').click(function(e) {
-		jQuery(this).toggleClass('active');
-		jQuery('.menu ul').toggleClass('active');
-
-		e.preventDefault();
-	});
-});
 </script>
 
   
