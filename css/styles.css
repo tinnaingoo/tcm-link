@@ -151,7 +151,11 @@ input#searchBar {
   padding: 15px;
 }
 
-
+.no-results {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: red;
+        }
 
 /* For mobile phones: */
 [class*="col-"] {
