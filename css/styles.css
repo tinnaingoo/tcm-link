@@ -42,10 +42,6 @@ body {
     padding-bottom: 2px;
 }
 
-.normal-text {
-  font-size: 12px;
-}
-
 .subscribe-btn {
     color: white;
     background: #FF0000;
@@ -56,6 +52,20 @@ body {
 }
 
 .subscribe-btn:hover {
+  background-color: #FF0000;
+  color: white;
+}
+
+.fb-btn {
+    color: white;
+    background: #FF0000;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: serif;
+}
+
+.fb-btn:hover {
   background-color: #FF0000;
   color: white;
 }
@@ -169,19 +179,4 @@ input#searchBar {
             border-radius: 25px;
             font-family: 'Mon3', sans-serif;
             text-align: center;
-        }
-
-.subscribe-buttons {
-            margin-top: 50px;
-        }
-
-.subscribe-button {
-            display: inline-block;
-            width: 150px;
-            padding: 10px;
-            margin: 10px;
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-        }
+  }
