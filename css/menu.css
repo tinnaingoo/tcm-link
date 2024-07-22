@@ -5,6 +5,12 @@ nav.menu {
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            position: fixed; 
+            width: 100%;
+            top: 0; /* Align to top */
+            left: 0;
+            right: 0;
+            
         }
         nav.menu ul {
             list-style-type: none;
@@ -28,7 +34,7 @@ nav.menu {
         .search-container {
             display: flex;
             align-items: center;
-            width: 100%;
+            width: 30%;
             justify-content: center;
             padding: 10px 0;
         }
