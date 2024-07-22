@@ -74,6 +74,13 @@ nav.menu {
     padding-right: 5px;
 }
 
+input#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    color: #000;
+}
+
 img.search-icon {
     width: 30px;
     height: 30px;
