@@ -41,26 +41,6 @@ body {
 }
 
 
-
-.search-box {
-          padding: 10px;
-            margin-bottom: 20px;
-            font-size: 18px;
-          font-family: 'Mon3', sans-serif;
-        }
-
-.search-box input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 18px;
-            font-family: 'Mon3', sans-serif;
-        }
-
-.search-box input:focus {
-            border-color: #007BFF;
-        }
-
 .aside {
   background-color: #33b5e5;
   padding: 15px;
@@ -86,13 +66,17 @@ body {
 
 .container {
     width: 100%;
-    background: white;
+    background: #444;
     color: #000;
     font-size: 18px;
     padding-top: 2px;
     text-align: center;
     padding-bottom: 2px;
 }
+
+.container-box {
+   margin-top: 80px;}
+   
 .normal-text{
   font-size: 14px;
   font-family: 'Mon3', sans-serif;
@@ -100,13 +84,15 @@ body {
 
  .subscribe-section {
             text-align: center;
-            background: #fff;
+            background: #444;
             padding: 20px;
             border-radius: 10px;
+	    margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .subscribe-section h2 {
             margin-bottom: 20px;
+	    color: white;
         }
         
 .subscribe-btn {
@@ -152,9 +138,11 @@ input#searchBar {
 }
 
 .no-results {
-            margin-top: 20px;
-            font-size: 1.2em;
+            text-align: center;
+            font-family: monospace;
+            font-size: 18px;
             color: red;
+            margin-top: 80px;
         }
 
 /* For mobile phones: */
@@ -192,6 +180,3 @@ input#searchBar {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
-
-
-
