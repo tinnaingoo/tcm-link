@@ -45,7 +45,15 @@ nav.menu {
             border-radius: 4px;
             width: 70%;
             max-width: 400px;
+	    display: none;
         }
+
+        .search-container a#title {
+        color: white;
+        text-decoration: none;
+        margin-right: 10px;
+	}
+
         .search-container button {
     padding: 6px 12px;
     border: none;
@@ -57,6 +65,8 @@ nav.menu {
         .search-container button:hover {
             
         }
+
+
 .switch {
     padding-left: 5px;
     padding-right: 5px;
