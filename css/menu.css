@@ -49,11 +49,12 @@ nav.menu {
         }
 
         .search-container a#title {
-        color: white;
-        text-decoration: none;
-        margin-right: 10px;
-	width: 70%;
-	}
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    width: 70%;
+    font-family: Cursive;
+}
 
         .search-container button {
     padding: 6px 12px;
