@@ -72,7 +72,7 @@ img.search-icon {
         @media (max-width: 768px) {
             .toggle-nav {
                 display: block;
-                width: 20%;
+                width: 10%;
             }
             nav.menu ul {
                 display: none;
