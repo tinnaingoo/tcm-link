@@ -48,12 +48,13 @@ nav.menu {
 	    display: none;
         }
 
-        .search-container a#title {
+.search-container a#title {
     color: white;
     text-decoration: none;
-    margin-right: 10px;
+    margin: 5px;
     width: 80%;
     font-family: Cursive;
+    padding: 10px;
 }
 
         .search-container button {
@@ -106,6 +107,7 @@ img.search-icon {
             }
             nav.menu ul.active {
                 display: flex;
+		background: #444;
             }
             .search-container {
                 width: 90%;
