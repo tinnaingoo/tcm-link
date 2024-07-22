@@ -84,7 +84,7 @@ img.search-icon {
                 display: flex;
             }
             .search-container {
-                width: 80%;
+                width: 90%;
                 order: -1; /* Ensure search box stays at the top */
             }
 	}
