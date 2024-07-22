@@ -1,5 +1,5 @@
 nav.menu {
-            background-color: #444;
+            background-color: #000;
             padding: 10px;
             display: flex;
             justify-content: space-between;
@@ -60,7 +60,7 @@ nav.menu {
 img.search-icon {
     width: 30px;
     height: 30px;
-    padding: 5px;
+    padding: 2px;
 }
         .toggle-nav {
             display: none;
