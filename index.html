@@ -6,20 +6,19 @@
 <link rel="stylesheet" href="css/menu.css">
 
 <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<div class="header">
+<!---<div class="header">
   <div class="web-title">TC-Myaing</div>
   <div class="web-description">Download Link များစုစည်းမှု</div>
-</div>
+</div> --->
 
 <nav class="menu">
     <div class="toggle-nav">&#9776;</div>
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="Search...">
-        <button onclick="searchFunction()">Search</button>
-    </div>
+    
     <ul class="menu-list">
         <li><a href="#">Home</a></li>
         <li><a href="#">My Work</a></li>
@@ -27,6 +26,14 @@
         <li><a href="#">Get in Touch</a></li>
         <li><a href="#">Blog</a></li>
     </ul>
+
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <button onclick="searchFunction()">
+            <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
+        </button>
+    </div>
+
 </nav>
 
 <div class="row">
@@ -56,7 +63,7 @@
              <a  href="https://www.youtube.com/@tcmyaing"> <button class="subscribe-btn"> Subscribe </button></a>
            </div>
        </div>
-       <hr style="height: 40px" color="black" />
+
        <div class="subscribe-section">
            <h2>Subscribe to Our YouTube Channel</h2>
            <div class="container">
@@ -101,10 +108,7 @@
         document.querySelector('.menu-list').classList.toggle('active');
     });
 
-    function searchFunction() {
-        var filter = document.getElementById('searchBar').value.toLowerCase();
-        alert('Search function not implemented yet, but you searched for: ' + filter);
-    }
+    
 </script>
   
 </body>
