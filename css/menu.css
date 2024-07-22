@@ -55,11 +55,13 @@ nav.menu {
             display: none;
             font-size: 24px;
             cursor: pointer;
+            text-align: center;
             color: white;
         }
         @media (max-width: 768px) {
             .toggle-nav {
                 display: block;
+                width: 20%;
             }
             nav.menu ul {
                 display: none;
@@ -71,6 +73,7 @@ nav.menu {
                 display: flex;
             }
             .search-container {
+                width: 80%;
                 order: -1; /* Ensure search box stays at the top */
             }
 	}
