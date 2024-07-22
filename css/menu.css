@@ -2,9 +2,9 @@ nav.menu {
             background-color: #444;
             padding: 10px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         nav.menu ul {
             list-style-type: none;
@@ -28,12 +28,17 @@ nav.menu {
         .search-container {
             display: flex;
             align-items: center;
+            width: 100%;
+            justify-content: center;
+            padding: 10px 0;
         }
         .search-container input[type="text"] {
             padding: 6px;
             margin-right: 6px;
             border: none;
             border-radius: 4px;
+            width: 70%;
+            max-width: 400px;
         }
         .search-container button {
             padding: 6px 12px;
@@ -60,8 +65,12 @@ nav.menu {
                 display: none;
                 flex-direction: column;
                 width: 100%;
+                text-align: center;
             }
             nav.menu ul.active {
                 display: flex;
+            }
+            .search-container {
+                order: -1; /* Ensure search box stays at the top */
             }
 	}
