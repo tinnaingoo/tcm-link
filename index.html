@@ -30,12 +30,6 @@
 </nav>
 
 <div class="row">
-   <div class="col-s-11 col-12">
-    <input type="text" id="searchBar" placeholder="Search...">
-   </div>
-</div>
-
-<div class="row">
    <div class="col-s-11 col-9">
      <div class="container-box" id="content">
         <a href="post/whizzotyping&dictionary.html" class="button">Whizzo Typing & Dictionary</a>
@@ -91,6 +85,13 @@
                 button.style.display = 'none';
             }
         });
+
+        if (!hasResults) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+    });
 
     
 </script>
