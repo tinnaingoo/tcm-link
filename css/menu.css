@@ -107,8 +107,7 @@ img.search-icon {
             }
             nav.menu ul.active {
                 display: flex;
-		background: #444;
-            }
+		}
             .search-container {
                 width: 90%;
                 order: -1; /* Ensure search box stays at the top */
