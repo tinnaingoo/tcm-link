@@ -115,13 +115,14 @@
         var searchIcon = document.querySelector('.search-icon');
 
         if (searchBar.style.display === 'none') {
-            searchBar.style.display = 'block';
-            title.style.display = 'none';
-            searchIcon.src = 'img/close-white.png';
-        } else {
             searchBar.style.display = 'none';
             title.style.display = 'block';
             searchIcon.src = 'img/search-white.png';
+            
+        } else {
+            searchBar.style.display = 'block';
+            title.style.display = 'none';
+            searchIcon.src = 'img/close-white.png';
         }
     });
 </script>
