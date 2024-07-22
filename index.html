@@ -15,18 +15,18 @@
 </div>
 
 <nav class="menu">
-    <ul class="active">
-        <li class="current-item"><a href="#">Home</a></li>
+    <div class="toggle-nav">&#9776;</div>
+    <ul class="menu-list">
+        <li><a href="#">Home</a></li>
         <li><a href="#">My Work</a></li>
         <li><a href="#">About Me</a></li>
         <li><a href="#">Get in Touch</a></li>
         <li><a href="#">Blog</a></li>
     </ul>
-    <a class="toggle-nav" href="#">&#9776;</a>
-    <form class="search-form">
-        <input type="text">
-        <button>Search</button>
-    </form>
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <button onclick="searchFunction()">Search</button>
+    </div>
 </nav>
 
 <div class="row">
@@ -91,14 +91,20 @@
                 button.style.display = 'none';
             }
         });
-document.querySelector('.toggle-nav').addEventListener('click', function(e) {
-        e.preventDefault();
-        this.classList.toggle('active');
-        document.querySelector('.menu ul').classList.toggle('active');
-    });
+
     
 </script>
 
+<script>
+    document.querySelector('.toggle-nav').addEventListener('click', function() {
+        document.querySelector('.menu-list').classList.toggle('active');
+    });
+
+    function searchFunction() {
+        var filter = document.getElementById('searchBar').value.toLowerCase();
+        alert('Search function not implemented yet, but you searched for: ' + filter);
+    }
+</script>
   
 </body>
 </html>
