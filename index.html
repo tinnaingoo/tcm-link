@@ -121,8 +121,16 @@
         } else {
             searchBar.style.display = 'none';
             title.style.display = 'block';
-            searchBar.value = '';  
             searchIcon.src = 'img/search-white.png';
+            searchBar.value = '';
+            // Reset the filter
+            var buttons = document.querySelectorAll('.button');
+            var noResults = document.getElementById('noResults');
+            buttons.forEach(function(button) {
+                button.style.display = '';
+            });
+            noResults.style.display = 'none';
+            
         }
     });
 </script>
