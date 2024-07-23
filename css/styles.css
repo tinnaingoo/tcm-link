@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Mon3';
   font-style: NORMAL;
-  src: url(mon3.woff) format('woff');
+  src: url(fonts/mon3.woff) format('woff');
 }
 
 body {
