@@ -8,21 +8,7 @@ body {
   background-color: #333;
   font-family: 'Mon3', sans-serif;
         }
-* {
-  box-sizing: border-box;
-}
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-  text-align: center;
-}
-
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-}
 
 .web-title {
     color: yellow;
@@ -133,6 +119,22 @@ body {
             color: red;
             margin-top: 80px;
         }
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  text-align: center;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
 
 /* For mobile phones: */
 [class*="col-"] {
