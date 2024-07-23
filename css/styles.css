@@ -60,6 +60,7 @@ body {
     background: #444;
     flex-direction: column;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 a.p-title {
