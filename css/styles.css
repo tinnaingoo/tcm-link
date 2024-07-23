@@ -70,6 +70,10 @@ a.p-description {
     color: white;
     font-size: 15px;
 }
+a.p-next {
+    color: white;
+    font-size: 15px;
+}
 
 .container-box {
    margin-top: 80px;}
