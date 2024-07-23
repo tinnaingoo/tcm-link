@@ -60,6 +60,13 @@ body {
     background: #000;
     flex-direction: column;
 }
+
+a.p-title {
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+}
+
 .container-box {
    margin-top: 80px;}
    
