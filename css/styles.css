@@ -67,6 +67,10 @@ a.p-title {
     padding: 5px;
     font-size: 18px;
 }
+a.p-description {
+    color: white;
+    font-size: 15px;
+}
 
 .container-box {
    margin-top: 80px;}
