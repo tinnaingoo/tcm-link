@@ -26,8 +26,8 @@
         <div class="container-box">
             <div class="post-container">
                 <div class="post-content">
-                    <h1 id="post-title">Post Title</h1>
                     <img id="post-image" src="" alt="Post Image" style="width:100%;height:auto;border-radius:8px;">
+                    <h1 id="post-title">Post Title</h1>
                     <p id="post-content">Post content goes here...</p>
                 </div>
             </div>
@@ -56,23 +56,27 @@
 </div>
 
 <script>
-// Fetch and load post content based on URL parameter
+// Check if URL parameters exist, if not redirect to home page
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const postUrl = urlParams.get('post');
     
-    fetch('../posts.json')
-    .then(response => response.json())
-    .then(data => {
-        const post = data.find(p => p.purl === postUrl);
-        if (post) {
-            document.getElementById('page-title').textContent = post.ptitle;
-            document.getElementById('post-title').textContent = post.ptitle;
-            document.getElementById('post-content').textContent = post.content;
-            document.getElementById('post-image').src = post.imgurl;
-        }
-    })
-    .catch(error => console.error('Error loading the post content:', error));
+    if (!postUrl) {
+        window.location.href = '../index.html'; // Redirect to home page if no post parameter
+    } else {
+        fetch('../posts.json')
+        .then(response => response.json())
+        .then(data => {
+            const post = data.find(p => p.purl === postUrl);
+            if (post) {
+                document.getElementById('page-title').textContent = post.ptitle;
+                document.getElementById('post-title').textContent = post.ptitle;
+                document.getElementById('post-content').textContent = post.content;
+                document.getElementById('post-image').src = post.imgurl;
+            }
+        })
+        .catch(error => console.error('Error loading the post content:', error));
+    }
 });
 </script>
 
