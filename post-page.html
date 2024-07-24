@@ -26,6 +26,7 @@
         <div class="container-box">
             <div class="post-container">
                 <div class="post-content">
+                    <img id="post-image" src="" alt="Post Image" style="width:100%;height:auto;border-radius:8px;">
                     <h1 id="post-title">Post Title</h1>
                     <p id="post-content">Post content goes here...</p>
                 </div>
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('page-title').textContent = post.ptitle;
             document.getElementById('post-title').textContent = post.ptitle;
             document.getElementById('post-content').textContent = post.content;
+            document.getElementById('post-image').src = post.imgurl;
         }
     })
     .catch(error => console.error('Error loading the post content:', error));
