@@ -29,6 +29,7 @@
                     <h1 id="post-title">Post Title</h1>
                     <img id="post-image" src="" alt="Post Image">
                     <p id="post-content">Post content goes here...</p>
+                    <button id="download-btn" class="download-btn">Download</button>
                 </div>
             </div>
         </div>
@@ -73,6 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('post-title').textContent = post.ptitle;
                 document.getElementById('post-content').textContent = post.content;
                 document.getElementById('post-image').src = post.imgurl;
+                document.getElementById('download-btn').addEventListener('click', function() {
+                    window.open(post.dlink, '_blank');
+                });
             }
         })
         .catch(error => console.error('Error loading the post content:', error));
