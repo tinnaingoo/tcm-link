@@ -20,7 +20,7 @@
         "purl": "post/office_2010.html",
         "content": "Office 2010 is a powerful suite of tools for..."
     },
-    "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
+   { "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
         "ptitle": "Whizzo Typing & Dictionary",
         "prescription": "Whizzo Typing & Dictionary",
         "purl": "post/whizzotyping&dictionary.html",
