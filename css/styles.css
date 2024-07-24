@@ -161,6 +161,13 @@ body {
             margin-top: 80px;
         }
 
+
+/*Post Page*/
+img#post-image {
+    width: 100%;
+    padding: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
