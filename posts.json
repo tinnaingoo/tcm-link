@@ -1,20 +1,23 @@
 [
     {
-        "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
+        "imgurl": "img/thumbnail1.jpg",
         "ptitle": "Whizzo Typing & Dictionary",
         "prescription": "Whizzo Typing & Dictionary",
-        "purl": "post/whizzotyping&dictionary.html"
+        "purl": "post/whizzotyping&dictionary.html",
+        "content": "Whizzo Typing & Dictionary is a comprehensive tool for..."
     },
     {
-        "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
+        "imgurl": "img/thumbnail2.jpg",
         "ptitle": "Ratiborus KMS Tools 2021",
         "prescription": "Ratiborus KMS Tools 2021",
-        "purl": "post/ratiborus_kms_tools_2021.html"
+        "purl": "post/ratiborus_kms_tools_2021.html",
+        "content": "Ratiborus KMS Tools 2021 is an activation suite for..."
     },
     {
-        "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
+        "imgurl": "img/thumbnail3.jpg",
         "ptitle": "Office 2010",
         "prescription": "Office 2010",
-        "purl": "post/office_2010.html"
+        "purl": "post/office_2010.html",
+        "content": "Office 2010 is a powerful suite of tools for..."
     }
 ]
