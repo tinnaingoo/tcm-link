@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/menu.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="img/fav.jpg" href="../img/fav.jpg"/>
+<title id="page-title">Post Title</title>
+</head>
+<body>
+
+<nav class="menu">
+    <div class="toggle-nav">&#9776;</div>
+    <ul class="menu-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">My Work</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Get in Touch</a></li>
+        <li><a href="#">Blog</a></li>
+    </ul>
+</nav>
+
+<div class="row">
+    <div class="col-s-11 col-9">
+        <div class="container-box">
+            <div class="post-container">
+                <div class="post-content">
+                    <h1 id="post-title">Post Title</h1>
+                    <p id="post-content">Post content goes here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-s-11 col-3">
+        <div class="aside">
+            <div class="subscribe-section">
+                <h2>Subscribe to Our YouTube Channel</h2>
+                <div class="container">
+                    <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn">Subscribe</button></a>
+                </div>
+            </div>
+            <div class="subscribe-section">
+                <h2>Subscribe to Our YouTube Channel</h2>
+                <div class="container">
+                    <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn">Subscribe</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 TC-Myaing</p>
+</div>
+
+<script>
+// Fetch and load post content based on URL parameter
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postUrl = urlParams.get('post');
+    
+    fetch('../posts.json')
+    .then(response => response.json())
+    .then(data => {
+        const post = data.find(p => p.purl === postUrl);
+        if (post) {
+            document.getElementById('page-title').textContent = post.ptitle;
+            document.getElementById('post-title').textContent = post.ptitle;
+            document.getElementById('post-content').textContent = post.content;
+        }
+    })
+    .catch(error => console.error('Error loading the post content:', error));
+});
+</script>
+
+</body>
+</html>
