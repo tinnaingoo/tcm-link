@@ -1,6 +1,11 @@
- // Load the JSON file and generate the post containers
+document.addEventListener("DOMContentLoaded", function() {
     fetch('posts.json')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
     .then(data => {
         var containerBox = document.getElementById('content');
         
@@ -13,7 +18,7 @@
                 <div class="post-content">
                     <div class="p-title"><a href="${post.purl}">${post.ptitle}</a></div>
                     <div class="p-description"><a href="${post.purl}">${post.prescription}</a></div>
-                    <div class="p-next"><a href="${post.purl}">Read More</a></div>
+                    <div class="p-next"><a href="post-page.html?post=${post.purl}">Read More</a></div>
                 </div>
             `;
             
@@ -72,3 +77,4 @@
             noResults.style.display = 'none';
         }
     });
+});
