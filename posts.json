@@ -14,10 +14,16 @@
         "content": "Ratiborus KMS Tools 2021 is an activation suite for..."
     },
     {
-        "imgurl": "img/thumbnail3.jpg",
+        "imgurl": "img/Adobe Pagemarker Icon.jpg",
         "ptitle": "Office 2010",
         "prescription": "Office 2010",
         "purl": "post/office_2010.html",
         "content": "Office 2010 is a powerful suite of tools for..."
+    },
+    "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
+        "ptitle": "Whizzo Typing & Dictionary",
+        "prescription": "Whizzo Typing & Dictionary",
+        "purl": "post/whizzotyping&dictionary.html",
+        "content": "Whizzo Typing & Dictionary is a comprehensive tool for..."
     }
 ]
