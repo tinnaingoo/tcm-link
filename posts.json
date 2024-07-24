@@ -1,0 +1,20 @@
+[
+    {
+        "imgurl": "img/thumbnail1.jpg",
+        "ptitle": "Whizzo Typing & Dictionary",
+        "prescription": "Whizzo Typing & Dictionary",
+        "purl": "post/whizzotyping&dictionary.html"
+    },
+    {
+        "imgurl": "img/thumbnail2.jpg",
+        "ptitle": "Ratiborus KMS Tools 2021",
+        "prescription": "Ratiborus KMS Tools 2021",
+        "purl": "post/ratiborus_kms_tools_2021.html"
+    },
+    {
+        "imgurl": "img/thumbnail3.jpg",
+        "ptitle": "Office 2010",
+        "prescription": "Office 2010",
+        "purl": "post/office_2010.html"
+    }
+]
