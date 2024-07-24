@@ -38,26 +38,8 @@
 <div class="row">
    <div class="col-s-11 col-9">
      <div class="container-box" id="content">
-         
-        <div class="post-container">
-            <div class="thumbnail"><img src="img/thumbnail1.jpg" alt="Thumbnail" style="width:100%;height:100%;border-radius:8px;"></div>
-            <div class="post-content">
-                <div class="p-title"><a href="#">Whizzo Typing & Dictionary</a></div>
-                <div class="p-description"><a href="post/whizzotyping&amp;dictionary.html">Whizzo Typing &amp; Dictionary</a></div>
-                <div class="p-next"><a href="post/whizzotyping&amp;dictionary.html">Read More</a></div>
-            </div>
-        </div>
-        
-        <div class="post-container">
-            <div class="thumbnail"><img src="img/thumbnail2.jpg" alt="Thumbnail" style="width:100%;height:100%;border-radius:8px;"></div>
-            <div class="post-content">
-                <div class="p-title"><a href="#">Ratiborus KMS Tools 2021</a></div>
-                <div class="p-description"><a href="post/ratiborus_kms_tools_2021.html">Ratiborus KMS Tools 2021</a></div>
-                <div class="p-next"><a href="post/ratiborus_kms_tools_2021.html">Read More</a></div>
-            </div>
-       </div>
-
-        </div>
+        <!-- Post containers will be inserted here dynamically -->
+     </div>
      <div id="noResults" class="no-results" style="display: none;">No results found.</div>
     </div>
   
@@ -66,14 +48,14 @@
         <div class="subscribe-section">
            <h2>Subscribe to Our YouTube Channel</h2>
            <div class="container">
-             <a  href="https://www.youtube.com/@tcmyaing"> <button class="subscribe-btn"> Subscribe </button></a>
+             <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn"> Subscribe </button></a>
            </div>
        </div>
 
        <div class="subscribe-section">
            <h2>Subscribe to Our YouTube Channel</h2>
            <div class="container">
-             <a  href="https://www.youtube.com/@tcmyaing"> <button class="subscribe-btn"> Subscribe </button></a>
+             <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn"> Subscribe </button></a>
            </div>
        </div>
        </div>
@@ -86,6 +68,30 @@
 <script src="js/myscripts.js"></script>
   
 <script>
+    // Load the JSON file and generate the post containers
+    fetch('posts.json')
+    .then(response => response.json())
+    .then(data => {
+        var containerBox = document.getElementById('content');
+        
+        data.forEach(post => {
+            var postContainer = document.createElement('div');
+            postContainer.className = 'post-container';
+            
+            postContainer.innerHTML = `
+                <div class="thumbnail"><img src="${post.imgurl}" alt="Thumbnail" style="width:100%;height:100%;border-radius:8px;"></div>
+                <div class="post-content">
+                    <div class="p-title"><a href="${post.purl}">${post.ptitle}</a></div>
+                    <div class="p-description"><a href="${post.purl}">${post.prescription}</a></div>
+                    <div class="p-next"><a href="${post.purl}">Read More</a></div>
+                </div>
+            `;
+            
+            containerBox.appendChild(postContainer);
+        });
+    })
+    .catch(error => console.error('Error loading the posts:', error));
+
     document.getElementById('searchBar').addEventListener('input', function() {
         var filter = this.value.toLowerCase();
         var postContainers = document.querySelectorAll('.post-container');
@@ -109,10 +115,6 @@
         }
     });
 
-    
-</script>
-
-<script>
     document.querySelector('.toggle-nav').addEventListener('click', function() {
         document.querySelector('.menu-list').classList.toggle('active');
     });
@@ -138,7 +140,6 @@
                 container.style.display = '';
             });
             noResults.style.display = 'none';
-            
         }
     });
 </script>
