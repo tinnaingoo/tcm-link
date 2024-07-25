@@ -28,7 +28,7 @@
                 <div class="post-content">
                     <h1 id="post-title">Post Title</h1>
                     <img id="post-image" src="" alt="Post Image">
-                    <p id="post-content">Post content goes here...</p>
+                    <div id="post-content">Post content goes here...</div>
                     <button id="download-btn" class="download-btn">Download</button>
                 </div>
             </div>
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (post) {
                 document.getElementById('page-title').textContent = post.ptitle;
                 document.getElementById('post-title').textContent = post.ptitle;
-                document.getElementById('post-content').textContent = post.content;
+                document.getElementById('post-content').innerHTML = post.content; // Use innerHTML instead of innerText
                 document.getElementById('post-image').src = post.imgurl;
                 document.getElementById('download-btn').addEventListener('click', function() {
                     window.open(post.dlink, '_blank');
