@@ -3,8 +3,6 @@
 <head>
   <title>Add Data</title>
   <link rel="stylesheet" href="css/add-styles.css">
-  <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
-
 </head>
 <body>
   <h1 class="header">Add Data</h1>
@@ -49,6 +47,7 @@
           if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error')) {
             const errorMessage = document.createElement('span');
             errorMessage.classList.add('error');
+            errorMessage.style.color = 'red';
             errorMessage.textContent = `${field.name} is required`;
             input.parentNode.insertBefore(errorMessage, input.nextSibling);
           }
@@ -74,7 +73,7 @@
         dlink: document.getElementById('dlink').value
       };
 
-      // Export Key Code
+      // Export Key Code with special characters escaped
       const postString = JSON.stringify(post, null, 4);
       console.log(postString);
 
