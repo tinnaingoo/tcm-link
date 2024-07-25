@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1 class="header">Manage Posts</h1>
+  <h1 class="header">Add Data</h1>
   <form id="post-form" class="post-Form">
     <label>Title:</label><br>
     <input type="text" id="ptitle"><br>
@@ -24,9 +24,7 @@
     <input type="text" id="dlink"><br>
     <button type="submit">Export Key Code</button>
   </form>
-  <h2>Existing Posts</h2>
-  <div id="posts"></div>
-
+  
   <script>
     document.getElementById('post-form').addEventListener('submit', function(e) {
       e.preventDefault();
