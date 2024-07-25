@@ -37,6 +37,11 @@ button {
     padding: 5px;
 }
 
+.error {
+      color: red;
+      font-size: 0.9em;
+    }
+
 * {
   box-sizing: border-box;
 }
