@@ -38,13 +38,14 @@
 }
     ,
     {
-        "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
-        "ptitle": "Adobe Pagemaker 7.0",
-        "prescription": "Whizzo Typing & Dictionary",
-        "purl": "whizzo_typing_dictionary.html",
-        "content": "Whizzo Typing & Dictionary is a comprehensive tool for...",
-        "dlink": "https://www.mediafire.com/file/1hawz6r7fdl7ayv/AdobePageMaker_7.0.rar/file"
-    },
+    "ptitle": "Test 2",
+    "date": "2024-07-27",
+    "imgurl": "img/test.png",
+    "prescription": "woij 2",
+    "purl": "test2.html",
+    "content": "<ul style=\"list-style-type:square;\">\n    <li>First item</li>\n    <li>Second item</li>\n    <li>Third item</li>\n</ul>\n\n<p><b>This text is bold</b>, but this text is not.</p>\n\n<a href=\"url\">link text</a>\n\n<img src=\"img_girl.jpg\" alt=\"Girl in a jacket\" width=\"500\" height=\"600\">\n\n<form action=\"/action_page.php\">\n  <label for=\"fname\">First name:</label>\n  <input type=\"text\" id=\"fname\" name=\"fname\"><br><br>\n  <label for=\"lname\">Last name:</label>\n  <input type=\"text\" id=\"lname\" name=\"lname\"><br><br>\n  <input type=\"submit\" value=\"Submit\">\n</form>",
+    "dlink": "https://www.mediafire.com/file/gzfmm5gscit1bee/Adobe_Photoshop_CS3.rar/file"
+},
     {
         "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
         "ptitle": "Adobe Pagemaker 7.0",
