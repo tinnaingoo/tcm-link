@@ -3,6 +3,12 @@
 <head>
   <title>Add Data</title>
   <link rel="stylesheet" href="css/add-styles.css">
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
   <h1 class="header">Add Data</h1>
@@ -10,7 +16,7 @@
     <label>Title:</label><br>
     <input type="text" id="ptitle"><br>
     <label>Date:</label><br>
-    <input type="date" id="date"><br> <!-- Date Picker added here -->
+    <input type="date" id="date"><br>
     <label>Prescription:</label><br>
     <input type="text" id="prescription"><br>
     <label>Post URL:</label><br>
@@ -47,7 +53,6 @@
           if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error')) {
             const errorMessage = document.createElement('span');
             errorMessage.classList.add('error');
-            errorMessage.style.color = 'red';
             errorMessage.textContent = `${field.name} is required`;
             input.parentNode.insertBefore(errorMessage, input.nextSibling);
           }
