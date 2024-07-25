@@ -32,6 +32,11 @@ input#dlink {
     margin: 10px;
 }
 
+button {
+    margin: 20px;
+    padding: 5px;
+}
+
 * {
   box-sizing: border-box;
 }
