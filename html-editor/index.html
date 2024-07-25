@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Editor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="editor-container">
+        <h1>HTML Editor</h1>
+        <div class="toolbar">
+            <button onclick="execCmd('bold')"><b>B</b></button>
+            <button onclick="execCmd('italic')"><i>I</i></button>
+            <button onclick="execCmd('underline')"><u>U</u></button>
+            <button onclick="execCmd('insertOrderedList')">OL</button>
+            <button onclick="execCmd('insertUnorderedList')">UL</button>
+            <button onclick="execCmd('justifyLeft')">JL</button>
+            <button onclick="execCmd('justifyCenter')">JC</button>
+            <button onclick="execCmd('justifyRight')">JR</button>
+            <button onclick="execCmd('justifyFull')">JF</button>
+            <button onclick="execCmd('insertHorizontalRule')">HR</button>
+            <button onclick="execCmd('createLink', prompt('Enter a URL:', 'http://'))">Link</button>
+            <button onclick="execCmd('unlink')">Unlink</button>
+            <button onclick="execCmd('insertImage', prompt('Enter image URL:', 'http://'))">Image</button>
+        </div>
+        <div id="editor" contenteditable="true">
+            <p>Title</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        <p id="char-count">Characters: 0</p>
+        <button onclick="viewSource()">View Source</button>
+        <textarea id="source" readonly></textarea>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
