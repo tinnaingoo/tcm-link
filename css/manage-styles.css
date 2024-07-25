@@ -1,0 +1,29 @@
+.post-Form {
+    background: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+input#imgurl {
+    margin: 10px;
+}
+
+input#ptitle {
+    margin: 10px;
+}
+
+input#prescription {
+    margin: 10px;
+}
+
+input#purl {
+    margin: 10px;
+}
+
+textarea#content {
+    margin: 10px;
+}
+
+input#dlink {
+    margin: 10px;
+}

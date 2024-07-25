@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Posts</title>
+  <link rel="stylesheet" href="css/manage-styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>Manage Posts</h1>
+  <form id="post-form" class="post-Form">
+    <label>Title:</label><br>
+    <input type="text" id="ptitle"><br>
+    <label>Date:</label><br>
+    <input type="date" id="date"><br> <!-- Date Picker added here -->
+    <label>Image URL:</label><br>
+    <input type="text" id="imgurl"><br>
+    <label>Prescription:</label><br>
+    <input type="text" id="prescription"><br>
+    <label>Post URL:</label><br>
+    <input type="text" id="purl"><br>
+    <label>Content:</label><br>
+    <textarea id="content"></textarea><br>
+    <label>Download Link:</label><br>
+    <input type="text" id="dlink"><br>
+    <button type="submit">Export Key Code</button>
+  </form>
+  <h2>Existing Posts</h2>
+  <div id="posts"></div>
+
+  <script>
+    document.getElementById('post-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fields = [
+        { id: 'ptitle', name: 'Title' },
+        { id: 'date', name: 'Date' },
+        { id: 'imgurl', name: 'Image URL' },
+        { id: 'prescription', name: 'Prescription' },
+        { id: 'purl', name: 'Post URL' },
+        { id: 'content', name: 'Content' },
+        { id: 'dlink', name: 'Download Link' }
+      ];
+
+      let isValid = true;
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.border = '2px solid red'; // Highlight the field with red border
+          if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error')) {
+            const errorMessage = document.createElement('span');
+            errorMessage.classList.add('error');
+            errorMessage.style.color = 'red';
+            errorMessage.textContent = `${field.name} is required`;
+            input.parentNode.insertBefore(errorMessage, input.nextSibling);
+          }
+        } else {
+          input.style.border = ''; // Remove the red border if input is valid
+          if (input.nextElementSibling && input.nextElementSibling.classList.contains('error')) {
+            input.nextElementSibling.remove(); // Remove the error message if input is valid
+          }
+        }
+      });
+
+      if (!isValid) {
+        return;
+      }
+
+      const post = {
+        ptitle: document.getElementById('ptitle').value,
+        date: document.getElementById('date').value,
+        imgurl: document.getElementById('imgurl').value,
+        prescription: document.getElementById('prescription').value,
+        purl: document.getElementById('purl').value,
+        content: document.getElementById('content').value,
+        dlink: document.getElementById('dlink').value
+      };
+
+      // Export Key Code
+      const postString = JSON.stringify(post, null, 4);
+      console.log(postString);
+
+      // Copy to clipboard
+      navigator.clipboard.writeText(postString).then(function() {
+        alert('Post data copied to clipboard!');
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    });
+  </script>
+</body>
+</html>
