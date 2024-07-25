@@ -19,11 +19,12 @@
 }
     ,
     {
-        "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
-        "ptitle": "Adobe Pagemaker 7.0",
+        "ptitle": "Adobe Photoshop CS3",
+        "date": "2024-07-25",
+        "imgurl": "img/adobe_photoshop_cs3_icon.png",
         "prescription": "Whizzo Typing & Dictionary",
         "purl": "whizzo_typing_dictionary.html",
-        "content": "Whizzo Typing & Dictionary is a comprehensive tool for...",
+        "content": "<h2>Adobe Photoshop CS3</h2><p><strong>Adobe Photoshop</strong> is a raster graphics editor developed and published by Adobe Inc. for Windows and macOS.</p>",
         "dlink": "https://www.mediafire.com/file/1hawz6r7fdl7ayv/AdobePageMaker_7.0.rar/file"
     },
     {
