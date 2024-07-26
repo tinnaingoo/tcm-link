@@ -5,14 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Editor</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            text-align: center;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .aside {margin-top: 80px;}
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+            .aside {margin-top: 80px;}
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             background-color: #f0f0f0;
         }
 
@@ -21,7 +71,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 800px;
         }
 
         .toolbar {
@@ -77,39 +126,43 @@
     </style>
 </head>
 <body>
-    <div class="editor-container">
-        <h1>HTML Editor</h1>
-        <div class="toolbar">
-            <button id="bold-btn" onclick="execCmd('bold')"><b>B</b></button>
-            <button id="italic-btn" onclick="execCmd('italic')"><i>I</i></button>
-            <button id="underline-btn" onclick="execCmd('underline')"><u>U</u></button>
-            <button id="ordered-list-btn" onclick="execCmd('insertOrderedList')">OL</button>
-            <button id="unordered-list-btn" onclick="execCmd('insertUnorderedList')">UL</button>
-            <button id="justify-left-btn" onclick="execCmd('justifyLeft')">JL</button>
-            <button id="justify-center-btn" onclick="execCmd('justifyCenter')">JC</button>
-            <button id="justify-right-btn" onclick="execCmd('justifyRight')">JR</button>
-            <button id="justify-full-btn" onclick="execCmd('justifyFull')">JF</button>
-            <button id="horizontal-rule-btn" onclick="execCmd('insertHorizontalRule')">HR</button>
-            <button id="link-btn" onclick="execCmd('createLink', prompt('Enter a URL:', 'http://'))">Link</button>
-            <button id="unlink-btn" onclick="execCmd('unlink')">Unlink</button>
-            <button id="image-btn" onclick="execCmd('insertImage', prompt('Enter image URL:', 'http://'))">Image</button>
-            <select id="font-size-select" onchange="execCmd('fontSize', this.value)">
-                <option value="1">Small</option>
-                <option value="3" selected>Normal</option>
-                <option value="5">Large</option>
-                <option value="7">Huge</option>
-            </select>
-            <input id="custom-font-size" type="number" placeholder="Size (px)" min="1" onchange="setCustomFontSize(this.value)">
-            <input id="color-input" type="color" onchange="execCmd('foreColor', this.value)" title="Text Color">
-            <button id="show-source-btn" onclick="toggleSource()">Show Source Code</button>
-            <button id="copy-button" onclick="copySource()">Copy Source Code</button>
+    <div class="row">
+        <div class="col-12 col-s-12">
+            <div class="editor-container">
+                <h1>HTML Editor</h1>
+                <div class="toolbar">
+                    <button id="bold-btn" onclick="execCmd('bold')"><b>B</b></button>
+                    <button id="italic-btn" onclick="execCmd('italic')"><i>I</i></button>
+                    <button id="underline-btn" onclick="execCmd('underline')"><u>U</u></button>
+                    <button id="ordered-list-btn" onclick="execCmd('insertOrderedList')">OL</button>
+                    <button id="unordered-list-btn" onclick="execCmd('insertUnorderedList')">UL</button>
+                    <button id="justify-left-btn" onclick="execCmd('justifyLeft')">JL</button>
+                    <button id="justify-center-btn" onclick="execCmd('justifyCenter')">JC</button>
+                    <button id="justify-right-btn" onclick="execCmd('justifyRight')">JR</button>
+                    <button id="justify-full-btn" onclick="execCmd('justifyFull')">JF</button>
+                    <button id="horizontal-rule-btn" onclick="execCmd('insertHorizontalRule')">HR</button>
+                    <button id="link-btn" onclick="execCmd('createLink', prompt('Enter a URL:', 'http://'))">Link</button>
+                    <button id="unlink-btn" onclick="execCmd('unlink')">Unlink</button>
+                    <button id="image-btn" onclick="execCmd('insertImage', prompt('Enter image URL:', 'http://'))">Image</button>
+                    <select id="font-size-select" onchange="execCmd('fontSize', this.value)">
+                        <option value="1">Small</option>
+                        <option value="3" selected>Normal</option>
+                        <option value="5">Large</option>
+                        <option value="7">Huge</option>
+                    </select>
+                    <input id="custom-font-size" type="number" placeholder="Size (px)" min="1" onchange="setCustomFontSize(this.value)">
+                    <input id="color-input" type="color" onchange="execCmd('foreColor', this.value)" title="Text Color">
+                    <button id="show-source-btn" onclick="toggleSource()">Show Source Code</button>
+                    <button id="copy-button" onclick="copySource()">Copy Source Code</button>
+                </div>
+                <div id="editor" contenteditable="true">
+                    <p>Title</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                </div>
+                <pre id="source"></pre>
+                <p id="char-count">Characters: 0</p>
+            </div>
         </div>
-        <div id="editor" contenteditable="true">
-            <p>Title</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        </div>
-        <pre id="source"></pre>
-        <p id="char-count">Characters: 0</p>
     </div>
     <script>
         document.getElementById('editor').addEventListener('input', () => {
@@ -168,41 +221,40 @@
         }
 
         function toggleSource() {
-            var editor = document.getElementById('editor');
             var source = document.getElementById('source');
+            var editor = document.getElementById('editor');
             var showSourceBtn = document.getElementById('show-source-btn');
             if (source.style.display === 'none') {
                 source.style.display = 'block';
+                editor.style.display = 'none';
                 showSourceBtn.textContent = 'Hide Source Code';
-                source.textContent = formatHTML(editor.innerHTML);
+                updateSource();
             } else {
                 source.style.display = 'none';
+                editor.style.display = 'block';
                 showSourceBtn.textContent = 'Show Source Code';
             }
         }
 
-        function formatHTML(html) {
-            var tab = '\t';
-            var result = '';
-            var indent = '';
+        function copySource() {
+            var source = document.getElementById('source').textContent;
+            navigator.clipboard.writeText(source).then(() => {
+                alert('Source code copied to clipboard');
+            });
+        }
 
-            html.split(/>\s*</).forEach(function(element) {
+        function formatHTML(html) {
+            const tab = '\t';
+            let result = '';
+            let indent = '';
+
+            html.split(/>\s*</).forEach(element => {
                 if (element.match(/^\/\w/)) indent = indent.substring(tab.length);
                 result += indent + '<' + element + '>\n';
-                if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith('input') && !element.startsWith('img')) indent += tab;
+                if (element.match(/^<?\w[^>]*[^\/]$/)) indent += tab;
             });
 
             return result.substring(1, result.length - 2);
-        }
-
-        function copySource() {
-            var editor = document.getElementById('editor');
-            var source = document.getElementById('source');
-            navigator.clipboard.writeText(source.style.display === 'none' ? formatHTML(editor.innerHTML) : source.textContent).then(function() {
-                alert('Source code copied to clipboard!');
-            }).catch(function(err) {
-                alert('Failed to copy source code: ', err);
-            });
         }
     </script>
 </body>
