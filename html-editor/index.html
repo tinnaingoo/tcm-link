@@ -13,21 +13,28 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         .editor-container {
-            width: 80%;
-            max-width: 800px;
+            width: 90%;
+            max-width: 1200px;
             background: #fff;
             border: 1px solid #ddd;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
         .toolbar {
             margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
         }
         .toolbar button, .toolbar select, .toolbar input {
             margin-right: 5px;
+            margin-bottom: 5px;
         }
         #editor {
             width: 100%;
@@ -55,9 +62,15 @@
         .container {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         .container > div {
             width: 48%;
+        }
+        @media (max-width: 768px) {
+            .container > div {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -121,8 +134,8 @@
             var commands = [
                 { command: 'bold', buttonId: 'bold-btn' },
                 { command: 'italic', buttonId: 'italic-btn' },
-                { command: 'underline', buttonId: 'underline-btn' }
-            ];
+                { command: 'underline', buttonId: 'underline-btn' },
+                ];
             commands.forEach(cmd => {
                 document.getElementById(cmd.buttonId).classList.toggle('active', document.queryCommandState(cmd.command));
             });
