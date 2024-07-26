@@ -126,19 +126,7 @@
 
         function execCmd(command, value = null) {
             document.execCommand(command, false, value);
-            updateToolbar();
-            updateSource();
-        }
-
-        function updateToolbar() {
-            var commands = [
-                { command: 'bold', buttonId: 'bold-btn' },
-                { command: 'italic', buttonId: 'italic-btn' },
-                { command: 'underline', buttonId: 'underline-btn' },
-                ];
-            commands.forEach(cmd => {
-                document.getElementById(cmd.buttonId).classList.toggle('active', document.queryCommandState(cmd.command));
-            });
+            updateSourceFromEditor();
         }
 
         function copySource() {
@@ -148,12 +136,17 @@
             });
         }
 
-        function updateSource() {
+        function updateSourceFromEditor() {
             cmEditor.setValue(formatHTML(editor.innerHTML));
         }
 
-        editor.addEventListener('input', updateSource);
-        editor.addEventListener('click', updateToolbar);
+        function updateEditorFromSource() {
+            editor.innerHTML = cmEditor.getValue();
+        }
+
+        editor.addEventListener('input', updateSourceFromEditor);
+        editor.addEventListener('click', updateSourceFromEditor);
+        cmEditor.on('change', updateEditorFromSource);
 
         function formatHTML(html) {
             const tab = '  ';
