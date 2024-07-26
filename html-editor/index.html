@@ -48,6 +48,10 @@
             background-color: #ddd;
         }
 
+        .toolbar button.active {
+            background-color: #bbb;
+        }
+
         #editor {
             border: 1px solid #ccc;
             padding: 10px;
@@ -76,27 +80,27 @@
     <div class="editor-container">
         <h1>HTML Editor</h1>
         <div class="toolbar">
-            <button onclick="execCmd('bold')"><b>B</b></button>
-            <button onclick="execCmd('italic')"><i>I</i></button>
-            <button onclick="execCmd('underline')"><u>U</u></button>
-            <button onclick="execCmd('insertOrderedList')">OL</button>
-            <button onclick="execCmd('insertUnorderedList')">UL</button>
-            <button onclick="execCmd('justifyLeft')">JL</button>
-            <button onclick="execCmd('justifyCenter')">JC</button>
-            <button onclick="execCmd('justifyRight')">JR</button>
-            <button onclick="execCmd('justifyFull')">JF</button>
-            <button onclick="execCmd('insertHorizontalRule')">HR</button>
-            <button onclick="execCmd('createLink', prompt('Enter a URL:', 'http://'))">Link</button>
-            <button onclick="execCmd('unlink')">Unlink</button>
-            <button onclick="execCmd('insertImage', prompt('Enter image URL:', 'http://'))">Image</button>
-            <select onchange="execCmd('fontSize', this.value)">
+            <button id="bold-btn" onclick="execCmd('bold')"><b>B</b></button>
+            <button id="italic-btn" onclick="execCmd('italic')"><i>I</i></button>
+            <button id="underline-btn" onclick="execCmd('underline')"><u>U</u></button>
+            <button id="ordered-list-btn" onclick="execCmd('insertOrderedList')">OL</button>
+            <button id="unordered-list-btn" onclick="execCmd('insertUnorderedList')">UL</button>
+            <button id="justify-left-btn" onclick="execCmd('justifyLeft')">JL</button>
+            <button id="justify-center-btn" onclick="execCmd('justifyCenter')">JC</button>
+            <button id="justify-right-btn" onclick="execCmd('justifyRight')">JR</button>
+            <button id="justify-full-btn" onclick="execCmd('justifyFull')">JF</button>
+            <button id="horizontal-rule-btn" onclick="execCmd('insertHorizontalRule')">HR</button>
+            <button id="link-btn" onclick="execCmd('createLink', prompt('Enter a URL:', 'http://'))">Link</button>
+            <button id="unlink-btn" onclick="execCmd('unlink')">Unlink</button>
+            <button id="image-btn" onclick="execCmd('insertImage', prompt('Enter image URL:', 'http://'))">Image</button>
+            <select id="font-size-select" onchange="execCmd('fontSize', this.value)">
                 <option value="1">Small</option>
                 <option value="3" selected>Normal</option>
                 <option value="5">Large</option>
                 <option value="7">Huge</option>
             </select>
-            <input type="color" onchange="execCmd('foreColor', this.value)" title="Text Color">
-            <button onclick="showSource()">Show Source</button>
+            <input id="color-input" type="color" onchange="execCmd('foreColor', this.value)" title="Text Color">
+            <button id="show-source-btn" onclick="showSource()">Show Source</button>
             <button id="copy-button" onclick="copySource()" style="display:none;">Copy Source</button>
         </div>
         <div id="editor" contenteditable="true">
@@ -107,15 +111,46 @@
         <p id="char-count">Characters: 0</p>
     </div>
     <script>
-        document.getElementById('editor').addEventListener('input', updateCharCount);
+        document.getElementById('editor').addEventListener('input', () => {
+            updateCharCount();
+            updateSource();
+        });
+        document.getElementById('editor').addEventListener('mouseup', updateToolbar);
+        document.getElementById('editor').addEventListener('keyup', updateToolbar);
 
         function execCmd(command, value = null) {
             document.execCommand(command, false, value);
+            updateToolbar();
         }
 
         function updateCharCount() {
             var text = document.getElementById('editor').innerText;
             document.getElementById('char-count').innerText = 'Characters: ' + text.length;
+        }
+
+        function updateSource() {
+            var editor = document.getElementById('editor');
+            var source = document.getElementById('source');
+            if (source.style.display !== 'none') {
+                source.textContent = formatHTML(editor.innerHTML);
+            }
+        }
+
+        function updateToolbar() {
+            var commands = [
+                { command: 'bold', buttonId: 'bold-btn' },
+                { command: 'italic', buttonId: 'italic-btn' },
+                { command: 'underline', buttonId: 'underline-btn' },
+                { command: 'insertOrderedList', buttonId: 'ordered-list-btn' },
+                { command: 'insertUnorderedList', buttonId: 'unordered-list-btn' },
+                { command: 'justifyLeft', buttonId: 'justify-left-btn' },
+                { command: 'justifyCenter', buttonId: 'justify-center-btn' },
+                { command: 'justifyRight', buttonId: 'justify-right-btn' },
+                { command: 'justifyFull', buttonId: 'justify-full-btn' }
+            ];
+            commands.forEach(cmd => {
+                document.getElementById(cmd.buttonId).classList.toggle('active', document.queryCommandState(cmd.command));
+            });
         }
 
         function showSource() {
