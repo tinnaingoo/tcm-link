@@ -64,6 +64,7 @@
             font-family: monospace;
             white-space: pre-wrap;
             background-color: #f9f9f9;
+            display: none;
         }
 
         #char-count {
@@ -96,12 +97,13 @@
             </select>
             <input type="color" onchange="execCmd('foreColor', this.value)" title="Text Color">
             <button onclick="showSource()">Show Source</button>
+            <button id="copy-button" onclick="copySource()" style="display:none;">Copy Source</button>
         </div>
         <div id="editor" contenteditable="true">
             <p>Title</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>
-        <pre id="source" style="display:none;"></pre>
+        <pre id="source"></pre>
         <p id="char-count">Characters: 0</p>
     </div>
     <script>
@@ -119,11 +121,14 @@
         function showSource() {
             var editor = document.getElementById('editor');
             var source = document.getElementById('source');
+            var copyButton = document.getElementById('copy-button');
             if (source.style.display === 'none') {
                 source.style.display = 'block';
+                copyButton.style.display = 'inline';
                 source.textContent = formatHTML(editor.innerHTML);
             } else {
                 source.style.display = 'none';
+                copyButton.style.display = 'none';
             }
         }
 
@@ -139,6 +144,15 @@
             });
 
             return result.substring(1, result.length - 2);
+        }
+
+        function copySource() {
+            var source = document.getElementById('source');
+            navigator.clipboard.writeText(source.textContent).then(function() {
+                alert('Source code copied to clipboard!');
+            }).catch(function(err) {
+                alert('Failed to copy source code: ', err);
+            });
         }
     </script>
 </body>
