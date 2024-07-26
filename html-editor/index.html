@@ -99,9 +99,10 @@
                 <option value="5">Large</option>
                 <option value="7">Huge</option>
             </select>
+            <input id="custom-font-size" type="number" placeholder="Size (px)" min="1" onchange="setCustomFontSize(this.value)">
             <input id="color-input" type="color" onchange="execCmd('foreColor', this.value)" title="Text Color">
-            <button id="show-source-btn" onclick="showSource()">Show Source</button>
-            <button id="copy-button" onclick="copySource()" style="display:none;">Copy Source</button>
+            <button id="show-source-btn" onclick="toggleSource()">Show Source Code</button>
+            <button id="copy-button" onclick="copySource()">Copy Source Code</button>
         </div>
         <div id="editor" contenteditable="true">
             <p>Title</p>
@@ -121,6 +122,19 @@
         function execCmd(command, value = null) {
             document.execCommand(command, false, value);
             updateToolbar();
+        }
+
+        function setCustomFontSize(size) {
+            if (size) {
+                execCmd('fontSize', 7); // Temporary set the font size to the maximum allowed value.
+                document.querySelector('#editor').focus();
+                document.execCommand('fontSize', false, '7');
+                const spans = document.querySelectorAll('#editor font[size="7"]');
+                spans.forEach(span => {
+                    span.removeAttribute('size');
+                    span.style.fontSize = size + 'px';
+                });
+            }
         }
 
         function updateCharCount() {
@@ -153,17 +167,17 @@
             });
         }
 
-        function showSource() {
+        function toggleSource() {
             var editor = document.getElementById('editor');
             var source = document.getElementById('source');
-            var copyButton = document.getElementById('copy-button');
+            var showSourceBtn = document.getElementById('show-source-btn');
             if (source.style.display === 'none') {
                 source.style.display = 'block';
-                copyButton.style.display = 'inline';
+                showSourceBtn.textContent = 'Hide Source Code';
                 source.textContent = formatHTML(editor.innerHTML);
             } else {
                 source.style.display = 'none';
-                copyButton.style.display = 'none';
+                showSourceBtn.textContent = 'Show Source Code';
             }
         }
 
@@ -182,8 +196,9 @@
         }
 
         function copySource() {
+            var editor = document.getElementById('editor');
             var source = document.getElementById('source');
-            navigator.clipboard.writeText(source.textContent).then(function() {
+            navigator.clipboard.writeText(source.style.display === 'none' ? formatHTML(editor.innerHTML) : source.textContent).then(function() {
                 alert('Source code copied to clipboard!');
             }).catch(function(err) {
                 alert('Failed to copy source code: ', err);
