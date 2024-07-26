@@ -83,6 +83,11 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error('Error loading the post content:', error));
     }
 });
+
+
+    document.querySelector('.toggle-nav').addEventListener('click', function() {
+        document.querySelector('.menu-list').classList.toggle('active');
+    });
 </script>
 
 </body>
