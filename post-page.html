@@ -11,7 +11,12 @@
 <body>
 
 <nav class="menu">
-    <div class="toggle-nav">&#9776;</div>
+    <div class="toggle-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
     <ul class="menu-list">
         <li><a href="../index.html">Home</a></li>
         <li><a href="#">My Work</a></li>
@@ -30,53 +35,60 @@
             <div class="post-container">
                 <div class="post-content">
                     <h1 id="post-title">Post Title</h1>
+                    
+                    
                     <img id="post-image" src="" alt="Post Image">
                     <div id="post-content">Post content goes here...</div>
+                    
                     <button id="download-btn" class="download-btn">Download</button>
+                    
                 </div>
+            </div>
+        
+        
+        
+        
+        </div>
+        
+    </div>
+    
+    <div class="col-s-11 col-3">
+        <div class="aside">
+            
+            
+            <div class="slide-box">
+               
+        <h2 class="title">Additional information</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <label>License</label>
+                <div class="info-value">trial</div>
+            </div>
+            <div class="info-item">
+                <label>Operating System</label>
+                <div class="info-value"><i class="fa fa-windows"></i> Windows</div>
+            </div>
+            <div class="info-item">
+                <label>Developer</label>
+                <div class="info-value">Adobe</div>
+            </div>
+            <div class="info-item">
+                <label>Last revision</label>
+                <div class="info-value">This month</div>
+            </div>
+            <div class="info-item">
+                <label>Updated</label>
+                <div class="info-value">Over a year ago</div>
+            </div>
+            <div class="info-item">
+                <label>Size</label>
+                <div class="info-value">64.1 MB</div>
             </div>
         </div>
     </div>
-    <div class="col-s-11 col-3">
-        <div class="aside">
-            <section class="sidebox ">
-                <h6 class="title">Additional information</h6>
-                <span class="mvicon-arrowdown show-extradata" onclick="(function(e){ if(e)e.classList.toggle('is-active')})(this);">
-    Information    </span>
-    <div class="extradata">
-  		<div class="ldata">
-  			<label>License</label>
-  			<div class="infodata"><span class="data license test">trial</span></div>
-  		</div>     
-  		<div class="ldata">
-  			<label>Operating System</label>
-  			<div class="infodata so mvicon-windows">Windows</div>
-  		</div>
-  		<div class="ldata">
-  			<label>Developer</label>
-  			<div class="infodata ico_autor">Adobe</div>
-  		</div>             
-  		<div class="ldata">
-  			<label>Last revision</label>
-  			<div class="infodata ico_fecha_rev">This month</div>        
-  		</div>      
-  		<div class="ldata">
-  			<label>Updated</label>
-  			<div class="infodata ico_fecha">Over a year ago</div>
-  		</div>      
-  		<div class="ldata">
-  			<label>Size</label>
-  			<div class="infodata size">64.1 MB</div>
-  		</div>      
-  		<div class="ldata language">
-  			<label>Software languages</label>
-  			<div class="infodata">            
-          <span class="language en"></span>
-                    
-        </div>
-  		</div>
-    </div>
-  </section>
+            </div>
+            
+            
             <div class="subscribe-section">
                 <h2>Subscribe to Our YouTube Channel</h2>
                 <div class="container">
@@ -90,39 +102,11 @@
 <div class="footer">
     <p>Copyright © 2024 TC-Myaing</p>
 </div>
-<script src="js/menu.js"></script>
+<script src="js/post-page.js"></script>
     
 <script>
-// Check if URL parameters exist, if not redirect to home page
-document.addEventListener("DOMContentLoaded", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const postUrl = urlParams.get('post');
-    
-    if (!postUrl) {
-        window.location.href = '../index.html'; // Redirect to home page if no post parameter
-    } else {
-        fetch('../posts.json')
-        .then(response => response.json())
-        .then(data => {
-            const post = data.find(p => p.purl === postUrl);
-            if (post) {
-                document.getElementById('page-title').textContent = post.ptitle;
-                document.getElementById('post-title').textContent = post.ptitle;
-                document.getElementById('post-content').innerHTML = post.content; // Use innerHTML instead of innerText
-                document.getElementById('post-image').src = post.imgurl;
-                document.getElementById('download-btn').addEventListener('click', function() {
-                    window.open(post.dlink, '_blank');
-                });
-            }
-        })
-        .catch(error => console.error('Error loading the post content:', error));
-    }
-});
 
 
-    document.querySelector('.toggle-nav').addEventListener('click', function() {
-        document.querySelector('.menu-list').classList.toggle('active');
-    });
 </script>
 
 </body>
