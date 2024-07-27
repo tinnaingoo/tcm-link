@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Invoice Tool</h1>
+    
+    <form id="invoice-form">
+        <label for="title">အကြောင်းအရာ:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="date">နေ့စွဲ:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <table id="invoice-table">
+            <thead>
+                <tr>
+                    <th>စဉ်</th>
+                    <th>အကြောင်းအရာ</th>
+                    <th>အရေအတွက်</th>
+                    <th>နှုန်း</th>
+                    <th>ကျသင့်ငွေ</th>
+                    <th>မှတ်ချက်</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="invoice-row">
+                    <td class="index">1</td>
+                    <td><input type="text" name="item[]" required></td>
+                    <td><input type="number" name="quantity[]" class="quantity"></td>
+                    <td><input type="number" name="rate[]" class="rate"></td>
+                    <td><input type="number" name="amount[]" class="amount" readonly></td>
+                    <td><input type="text" name="remarks[]"></td>
+                    <td><button type="button" class="delete-row">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" id="add-row">Add Row</button>
+        <br><br>
+        <button type="button" id="calculate-total">Calculate Total</button><br><br>
+        <label for="total">Total: </label>
+        <span id="total">0</span><br><br>
+        <button type="button" id="export-pdf">Export to PDF</button>
+        <button type="button" id="export-png">Export to PNG</button>
+        <button type="button" id="export-excel">Export to Excel</button>
+    </form>
+
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</body>
+</html>
