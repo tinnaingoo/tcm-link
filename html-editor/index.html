@@ -121,7 +121,8 @@
             lineNumbers: true,
             mode: 'xml',
             tabSize: 2,
-            lineWrapping: true
+            lineWrapping: true,
+            viewportMargin: Infinity
         });
 
         function execCmd(command, value = null) {
@@ -161,6 +162,10 @@
 
             return result.substring(1, result.length - 2);
         }
+
+        window.onload = function() {
+            cmEditor.refresh();
+        };
     </script>
 </body>
 </html>
