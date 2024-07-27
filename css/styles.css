@@ -31,6 +31,7 @@ body {
  
 }
 
+
 .button {
             display: block;
             padding: 15px;
@@ -96,13 +97,12 @@ body {
         background-color: #888;
     }
 
-    .download-btn {
-      width: 100%;
-      margin: 5px;
+ .download-btn {
+      margin: 20px;
       padding: 5px;
       color: #000;
       background: white;
-      border-radius: 20px;
+      width: 80%;
   }
 
 .container-box {
@@ -112,6 +112,61 @@ body {
   font-size: 14px;
   font-family: 'Mon3', sans-serif;
 }
+
+
+
+.slide-box {
+            text-align: center;
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+	    margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+.title {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.info-value {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.flag-icon {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.fa-windows {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
 
  .subscribe-section {
             text-align: center;
