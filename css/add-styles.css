@@ -37,6 +37,11 @@ button {
     padding: 5px;
 }
 
+img#post-image {
+    width: 25%;
+    padding: 10px;
+}
+
 .error {
       color: red;
       font-size: 0.9em;
