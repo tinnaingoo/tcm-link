@@ -21,6 +21,10 @@
     <input type="text" id="imgurl"><br>
     <label>Download Link:</label><br>
     <input type="text" id="dlink"><br>
+    <label>Operating System:</label><br>
+    <input type="text" id="os"><br>
+    <label>File Size:</label><br>
+    <input type="text" id="fsize"><br>
     <button type="submit">Export Key Code</button>
   </form>
   
@@ -35,7 +39,9 @@
         { id: 'prescription', name: 'Prescription' },
         { id: 'purl', name: 'Post URL' },
         { id: 'content', name: 'Content' },
-        { id: 'dlink', name: 'Download Link' }
+        { id: 'dlink', name: 'Download Link' },
+        { id: 'os', name: 'Operating System' },
+        { id: 'fsize', name: 'File Size' }
       ];
 
       let isValid = true;
@@ -70,7 +76,9 @@
         prescription: document.getElementById('prescription').value,
         purl: document.getElementById('purl').value,
         content: document.getElementById('content').value,
-        dlink: document.getElementById('dlink').value
+        dlink: document.getElementById('dlink').value,
+        os: document.getElementById('os').value,
+        fsize: document.getElementById('fsize').value
       };
 
       // Export Key Code with special characters escaped
