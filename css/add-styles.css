@@ -32,6 +32,14 @@ input#dlink {
     margin: 10px;
 }
 
+input#os {
+    margin: 10px;
+}
+
+input#fsize {
+    margin: 10px;
+}
+
 button {
     margin: 20px;
     padding: 5px;
