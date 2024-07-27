@@ -27,9 +27,6 @@ body {
 }
 
 
-.aside {
- 
-}
 
 
 .button {
@@ -106,7 +103,7 @@ body {
   }
 
 .container-box {
-   margin-top: 80px;}
+   margin-top: 50px;}
    
 .normal-text{
   font-size: 14px;
@@ -173,12 +170,12 @@ body {
             background: #444;
             padding: 20px;
             border-radius: 10px;
-	    margin-bottom: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .subscribe-section h2 {
             margin-bottom: 20px;
-	    color: white;
+            color: white;
         }
         
 .subscribe-btn {
@@ -224,6 +221,11 @@ body {
             color: red;
             margin-top: 80px;
         }
+        
+.aside {
+ 
+}
+
 
 
 /*Post Page*/
