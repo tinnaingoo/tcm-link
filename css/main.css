@@ -32,12 +32,14 @@ body {
 img.thu-img {
 }
 .image-container {
-            width: 100px;
-            height: 100px;
-            }
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
 .image-container img {
-            object-fit: none;
-            }
+    object-fit: contain;
+    width: 100px;
+}
 
 .post-content {
         flex: 1;}
