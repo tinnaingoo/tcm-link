@@ -2,35 +2,10 @@
 @import url(//fonts.googleapis.com/earlyaccess/khyay.css); /*font-family: 'Khyay', sans-serif;*/
 @import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu"); /*font-family: "Pyidaungsu";*/
 
-body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,dl,dd,ol,ul,figure {
-    margin: 0;
-    padding: 0
-}
-
 body {
   background-color: #333;
   font-family:'Pyidaungsu', sans-serif;
         }
-
-
-.web-title {
-    color: yellow;
-    font-size: 29.16px;
-    padding: 5px;
-    font-family: 'Mon3', sans-serif;
-    text-align: center;
-}
-
-.web-description {
-    font-size: 18px;
-    color: white;
-    font-family: 'Mon3', sans-serif;
-    padding: 5px;
-    text-align: center;
-}
-
-
-
 
 .button {
             display: block;
