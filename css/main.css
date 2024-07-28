@@ -67,7 +67,7 @@ body {
     }
 
     .post-content {
-        flex: 1;
+        flex: 1;}
 
     .thumbnail {
         width: 100px;
@@ -77,8 +77,7 @@ body {
         border-radius: 8px;
     }
 
-    }
-    .p-title a {
+   .p-title a {
         color: #fff;
         font-size: 1.5em;
         text-decoration: none;
