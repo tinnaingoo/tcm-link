@@ -160,7 +160,7 @@ body {
 }
 
 
- .subscribe-section {
+.subscribe-section {
             text-align: center;
             background: #444;
             padding: 20px;
@@ -170,6 +170,7 @@ body {
         }
         .subscribe-section h2 {
             margin-bottom: 20px;
+	    font-family:'Mon3';
             color: white;
         }
         
