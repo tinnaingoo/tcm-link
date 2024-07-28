@@ -34,11 +34,8 @@ img.thu-img {
 .image-container {
             width: 100px;
             height: 100px;
-            overflow: hidden;
-            position: relative;
-        }
+            }
 .image-container img {
-            position: absolute;
             object-fit: none;
             }
 
