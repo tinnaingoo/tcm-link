@@ -1,4 +1,10 @@
 @font-face {
+font-family:'Mon3';
+src: url('https://cdn.rawgit.com/LeonarAung/MyanmarFont/6cf1262f/mon3.woff') format('woff'), url('https://cdn.rawgit.com/LeonarAung/MyanmarFont/6cf1262f/mon3.ttf') format('ttf');
+}
+
+
+@font-face {
 font-family:'Pyidaungsu';
 src:local('Pyidaungsu'), url('https://www.mmwebfonts.com/fonts/Pyidaungsu-2.1_Regular.woff') format('woff'), url('https://www.mmwebfonts.com/fonts/Pyidaungsu-2.1_Regular.ttf') format('ttf');
 }
