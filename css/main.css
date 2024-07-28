@@ -61,6 +61,19 @@ img.thu-img {
         background-color: #888;
 }
 
+.no-results {
+            text-align: center;
+            font-family: monospace;
+            font-size: 18px;
+            color: red;
+            margin-top: 80px;
+        }
+        
+.aside {
+         margin-top: 20px;
+ 
+}
+
 .button {
             display: block;
             padding: 15px;
@@ -98,14 +111,6 @@ img.thu-img {
   }
 
 
-   
-.normal-text{
-  font-size: 14px;
-  font-family: 'Mon3', sans-serif;
-}
-
-
-
 .slide-box {
             text-align: center;
             background: #444;
@@ -114,6 +119,39 @@ img.thu-img {
 	    margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+/*Subscribe Section*/
+.subscribe-section {
+            text-align: center;
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+.s-title{
+	font-size: 1.5em;
+	font-family: 'Myanmar Sans Pro', sans-serif;
+        color: white;
+}
+
+.subscribe-btn {
+    background: #ff0000;
+    width: 50%;
+    padding: 8px;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    margin: 5px;
+  }
+
+.subscribe-btn:hover {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
         
 .title {
     margin-top: 0;
@@ -124,12 +162,8 @@ img.thu-img {
     color: white;
 }
 
-.s-title{
-	font-size: 1.5em;
-	font-family: 'Myanmar Sans Pro', sans-serif;
-        color: white;
-}
 
+/*Additional Information*/
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -165,31 +199,6 @@ img.thu-img {
 }
 
 
-.subscribe-section {
-            text-align: center;
-            background: #444;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        
-.subscribe-btn {
-    background: #ff0000;
-    width: 50%;
-    padding: 8px;
-    color: white;
-    font-family: monospace;
-    font-size: 18px;
-    margin: 5px;
-  }
-
-.subscribe-btn:hover {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-}
 
 .header {
   background-color: #000;
@@ -211,18 +220,7 @@ img.thu-img {
   padding: 15px;
 }
 
-.no-results {
-            text-align: center;
-            font-family: monospace;
-            font-size: 18px;
-            color: red;
-            margin-top: 80px;
-        }
-        
-.aside {
-         margin-top: 20px;
- 
-}
+
 
 
 
