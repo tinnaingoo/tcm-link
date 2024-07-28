@@ -104,6 +104,8 @@ img.thu-img {
 
 .download-btn-box {
     width: 100%;
+    display: flex;
+    align-content: center;
 }
 
 .download-btn {
@@ -111,7 +113,7 @@ img.thu-img {
       padding: 5px;
       color: #000;
       background: white;
-      width: 80%;
+      width: 100%;
 }
 
 
