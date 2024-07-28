@@ -109,11 +109,17 @@ img.thu-img {
 }
 
 .download-btn {
-      margin: 20px;
-      padding: 5px;
-      color: #000;
-      background: white;
-      width: 100%;
+    outline: none;
+    border: none;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    padding: 16px 25px;
+    border-radius: 6px;
+    align-items: center;
+    white-space: nowrap;
+    background: #4A98F7;
+    transition: all 0.2s ease;
 }
 
 
