@@ -1,6 +1,6 @@
-@import url(//fonts.googleapis.com/earlyaccess/myanmarsanspro.css);
-@import url(//fonts.googleapis.com/earlyaccess/khyay.css);
-@import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu");
+@import url(//fonts.googleapis.com/earlyaccess/myanmarsanspro.css); /*font-family: 'Myanmar Sans Pro', sans-serif;*/
+@import url(//fonts.googleapis.com/earlyaccess/khyay.css); /*font-family: 'Khyay', sans-serif;*/
+@import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu"); /*font-family: "Pyidaungsu";*/
 
 body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,dl,dd,ol,ul,figure {
     margin: 0;
@@ -178,7 +178,7 @@ body {
         }
         .subscribe-section h2 {
             margin-bottom: 20px;
-	    font-family: 'Khyay', sans-serif;
+	    font-family: 'Myanmar Sans Pro', sans-serif;
             color: white;
         }
         
