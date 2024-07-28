@@ -101,6 +101,9 @@ img.thu-img {
 }
 
 
+h1#post-title {
+    border-bottom: 1px solid #ddd;
+}
 
 .download-btn-box {
     width: 100%;
