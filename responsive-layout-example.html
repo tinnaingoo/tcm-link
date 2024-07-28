@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Webpage Layout</title>
-    <link rel="stylesheet" href="css/responsive-layout.css">
+    <link rel="stylesheet" href="../css/responsive-layout.css">
 </head>
 <body>
     <header>
@@ -12,16 +12,59 @@
     </header>
 
     <div class="container">
+        <!-- Single Column (Full Width) -->
         <div class="row">
-            <div class="col-12 col-m-8 col-l-8">
-                <h2>Main Content</h2>
-                <p>This is the main content area. You can place your content here. It will be responsive and adapt to various screen sizes.</p>
-               
+            <div class="col-12 col-s-12 col-m-12 col-l-12 col-xl-12">
+                <h2>Full Width Column</h2>
+                <p>This column spans the full width of the container.</p>
             </div>
-            <div class="col-12 col-m-4 col-l-4">
-                <h2>Sidebar</h2>
-                <p>This is the sidebar area. It will be placed beside the main content on larger screens and below the main content on smaller screens.</p>
-    
+        </div>
+
+        <!-- Two Columns -->
+        <div class="row">
+            <div class="col-12 col-s-6 col-m-6 col-l-6 col-xl-6">
+                <h2>Column 1</h2>
+                <p>This is the first column.</p>
+            </div>
+            <div class="col-12 col-s-6 col-m-6 col-l-6 col-xl-6">
+                <h2>Column 2</h2>
+                <p>This is the second column.</p>
+            </div>
+        </div>
+
+        <!-- Three Columns -->
+        <div class="row">
+            <div class="col-12 col-s-4 col-m-4 col-l-4 col-xl-4">
+                <h2>Column 1</h2>
+                <p>This is the first column.</p>
+            </div>
+            <div class="col-12 col-s-4 col-m-4 col-l-4 col-xl-4">
+                <h2>Column 2</h2>
+                <p>This is the second column.</p>
+            </div>
+            <div class="col-12 col-s-4 col-m-4 col-l-4 col-xl-4">
+                <h2>Column 3</h2>
+                <p>This is the third column.</p>
+            </div>
+        </div>
+
+        <!-- Four Columns -->
+        <div class="row">
+            <div class="col-12 col-s-3 col-m-3 col-l-3 col-xl-3">
+                <h2>Column 1</h2>
+                <p>This is the first column.</p>
+            </div>
+            <div class="col-12 col-s-3 col-m-3 col-l-3 col-xl-3">
+                <h2>Column 2</h2>
+                <p>This is the second column.</p>
+            </div>
+            <div class="col-12 col-s-3 col-m-3 col-l-3 col-xl-3">
+                <h2>Column 3</h2>
+                <p>This is the third column.</p>
+            </div>
+            <div class="col-12 col-s-3 col-m-3 col-l-3 col-xl-3">
+                <h2>Column 4</h2>
+                <p>This is the fourth column.</p>
             </div>
         </div>
     </div>
