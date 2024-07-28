@@ -66,6 +66,9 @@ body {
         border-radius: 8px;
     }
 
+    .post-content {
+        flex: 1;
+
     .thumbnail {
         width: 100px;
         height: 100px;
@@ -73,8 +76,7 @@ body {
         margin-right: 15px;
         border-radius: 8px;
     }
-    .post-content {
-        flex: 1;
+
     }
     .p-title a {
         color: #fff;
@@ -108,9 +110,6 @@ body {
 
 .container-box {
     margin-top: 65px;
-    display: flex;
-    display: flex;
-    align-items: center;
 }
    
 .normal-text{
