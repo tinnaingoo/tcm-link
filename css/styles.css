@@ -1,7 +1,7 @@
 
 body {
   background-color: #333;
-  font-family:'Pyidaungsu';
+  font-family:'Pyidaungsu', sans-serif;
         }
 
 
@@ -170,7 +170,7 @@ body {
         }
         .subscribe-section h2 {
             margin-bottom: 20px;
-	    font-family: 'Khyay';
+	    font-family: 'Khyay', sans-serif;
             color: white;
         }
         
