@@ -120,6 +120,8 @@ img.thu-img {
     white-space: nowrap;
     background: #4A98F7;
     transition: all 0.2s ease;
+    width: 100%;
+    justify-content: center;
 }
 
 .download-btn:hover{
