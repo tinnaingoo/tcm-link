@@ -102,15 +102,19 @@ img.thu-img {
 
 
 
+.download-btn-box {
+    width: 100%;
+}
 
-
- .download-btn {
+.download-btn {
       margin: 20px;
       padding: 5px;
       color: #000;
       background: white;
       width: 80%;
-  }
+}
+
+
 
 
 .slide-box {
