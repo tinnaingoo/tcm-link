@@ -65,6 +65,7 @@ body {
         align-items: center;
         border-radius: 8px;
     }
+
     .thumbnail {
         width: 100px;
         height: 100px;
@@ -106,7 +107,11 @@ body {
   }
 
 .container-box {
-   margin-top: 65px;}
+    margin-top: 65px;
+    display: flex;
+    display: flex;
+    align-items: center;
+}
    
 .normal-text{
   font-size: 14px;
