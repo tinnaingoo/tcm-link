@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             postContainer.innerHTML = `
                 <div class="image-container">
-                        <img src="your-image-source.jpg" alt="Sample Image">
+                        <img src="${post.imgurl}" alt="Sample Image">
                 </div>
                 <div class="thumbnail"><img src="${post.imgurl}" alt="Thumbnail" style="width:100%;height:100%;border-radius:8px;"></div>
                 <div class="post-content">
