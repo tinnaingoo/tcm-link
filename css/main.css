@@ -31,6 +31,19 @@ body {
 
 img.thu-img {
 }
+.image-container {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+.image-container img {
+            position: absolute;
+            width: 200px; /* Original width */
+            height: 400px; /* Original height */
+            object-fit: none;
+            object-position: left top;
+        }
 
 .post-content {
         flex: 1;}
