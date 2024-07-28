@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="image-container">
                         <img src="${post.imgurl}" alt="Sample Image">
                 </div>
-                <div class="thumbnail"><img src="${post.imgurl}" alt="Thumbnail" style="width:100%;height:100%;border-radius:8px;"></div>
                 <div class="post-content">
                     <div class="p-title"><a>${post.ptitle}</a></div>
                     <div class="p-description"><a>${post.prescription}</a></div>
