@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
             postContainer.innerHTML = `
                 <div class="thumbnail"><img src="${post.imgurl}" alt="Thumbnail" style="width:100%;height:100%;border-radius:8px;"></div>
                 <div class="post-content">
-                    <div class="p-title"><a href="${post.purl}">${post.ptitle}</a></div>
-                    <div class="p-description"><a href="${post.purl}">${post.prescription}</a></div>
+                    <div class="p-title"><a>${post.ptitle}</a></div>
+                    <div class="p-description"><a>${post.prescription}</a></div>
                     <div class="p-next"><a href="post-page.html?post=${post.purl}">Read More</a></div>
                 </div>
             `;
