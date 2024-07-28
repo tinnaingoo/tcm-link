@@ -18,12 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="post-content">
                     <div class="p-title"><a>${post.ptitle}</a></div>
                     <div class="p-description"><a>${post.prescription}</a></div>
-                    <div class=“toggle_btn”>
-                          <span class=“toggle_text”>Show More</span> <span class=“arrow”>
-                            <i class=“fas fa-angle-down”></i>
-                            </span>
-                    </div>
-                    <div class="p-next"><a href="post.html?post=${post.purl}">Read More</a></div>
+                    <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
                 </div>
             `;
             
