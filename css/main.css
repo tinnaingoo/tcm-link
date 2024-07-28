@@ -122,6 +122,28 @@ img.thu-img {
     transition: all 0.2s ease;
 }
 
+.download-btn:hover{
+  background: #2382f6;
+}
+.download-btn.timer{
+  color: #000;
+  background: none;
+  transition: none;
+  font-size: 1.6rem;
+  pointer-events: none;
+}
+.download-btn.timer b{
+  color: #4A98F7;
+  padding: 0 8px;
+}
+.download-btn .icon{
+  font-size: 2rem;
+}
+.download-btn .text{
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
 
 
 
