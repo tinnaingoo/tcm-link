@@ -1,12 +1,7 @@
-@font-face {
-  font-family: 'Mon3';
-  font-style: NORMAL;
-  src: url(fonts/mon3.woff) format('woff');
-}
 
 body {
   background-color: #333;
-  font-family: 'Mon3', sans-serif;
+  font-family:'Pyidaungsu';
         }
 
 
