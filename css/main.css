@@ -309,7 +309,7 @@ img#post-image {
   
 /* For larger desktops: */
 @media only screen and (min-width: 992px) {
-  .aside {margin-top: 95px;}
+  .aside {margin-top: 65px;}
   }
  
 /* For extra large desktops: */
