@@ -91,10 +91,7 @@ img.thu-img {
 
 /*--------*/
         
-.aside {
-        
- 
-}
+
 
 .button {
             display: block;
@@ -289,14 +286,15 @@ img#post-image {
     width: 100%;
     padding: 10px;
 }
-
-/* For mobile phones: */
-[class*="col-"] {
- .aside {
+.aside {
         margin-top: 10px;
         margin-left: 5px;
         margin-right: 5px;
     }
+
+/* For mobile phones: */
+[class*="col-"] {
+ 
 }
 
 /* For tablets and larger: */
