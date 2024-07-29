@@ -3,6 +3,12 @@
         const urlParams = new URLSearchParams(window.location.search);
         const postURL = urlParams.get('post');
 
+        // Redirect to homepage if no post parameter is provided
+        if (!postURL) {
+            window.location.href = '../index.html';
+            return;
+        }
+
         if (postURL) {
             // Fetch the JSON data
             fetch('posts.json')
@@ -26,7 +32,6 @@
 
                         // Update the additional information
                         document.getElementById('lince').textContent = post.lince;
-                        document.getElementById('version').textContent = post.version;
                         document.getElementById('os').textContent = post.os;
                         document.getElementById('developer').textContent = post.dev;
                         document.getElementById('date').textContent = post.date;
