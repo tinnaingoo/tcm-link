@@ -12,6 +12,9 @@
                     const post = data.find(p => p.purl === postURL);
 
                     if (post) {
+                        // Update the page title
+                        document.getElementById('page-title').textContent = post.ptitle;
+                     
                         // Update the post title
                         document.getElementById('post-title').textContent = post.ptitle;
 
