@@ -32,13 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var title = document.getElementById('title');
     var searchIcon = document.querySelector('.search-icon');
 
-    if (toggleNav) {
-        toggleNav.addEventListener('click', function() {
-            menuList.classList.toggle('active');
-            toggleNav.classList.toggle('active');
-        });
-    }
-
     if (switchElement) {
         switchElement.addEventListener('click', function() {
             if (searchBar.style.display === 'none' || searchBar.style.display === '') {
