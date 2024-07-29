@@ -130,27 +130,8 @@ img.search-icon {
     color: white;
 }
 
-
-
-/* For mobile phones: */
-[class*="col-"] {
-     .aside {
-        margin-top: 65px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-@media only screen and (min-width: 480px) {
-    
-}
-
-/* For tablets and larger: */
-@media only screen and (min-width: 600px) {
-  }
-
-/* For desktops and larger: */
-@media only screen and (min-width: 768px) {
-     .toggle-nav {
+@media (max-width: 768px) {
+    .toggle-nav {
         display: block;
         width: 10%;
     }
@@ -170,14 +151,4 @@ img.search-icon {
         width: 90%;
         order: -1; /* Ensure search box stays at the top */
     }
-  }
-  
-/* For larger desktops: */
-@media only screen and (min-width: 992px) {
-  
-  }
- 
-/* For extra large desktops: */
-@media only screen and (min-width: 1200px) {
-  
-  }
+}
