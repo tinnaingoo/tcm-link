@@ -139,6 +139,8 @@ img.search-icon {
         margin-left: 5px;
         margin-right: 5px;
     }
+@media only screen and (min-width: 768px) {
+    
 }
 
 /* For tablets and larger: */
@@ -147,26 +149,6 @@ img.search-icon {
 
 /* For desktops and larger: */
 @media only screen and (min-width: 768px) {
-  .toggle-nav {
-        display: block;
-        width: 10%;
-    }
-    
-    nav.menu ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-    
-    nav.menu ul.active {
-        display: flex;
-    }
-    
-    .search-container {
-        width: 90%;
-        order: -1; /* Ensure search box stays at the top */
-    }
   }
   
 /* For larger desktops: */
