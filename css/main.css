@@ -292,7 +292,11 @@ img#post-image {
 
 /* For mobile phones: */
 [class*="col-"] {
- .aside {margin-top: 5px;}
+ .aside {
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 
 /* For tablets and larger: */
