@@ -26,6 +26,7 @@
 
                         // Update the additional information
                         document.getElementById('lince').textContent = post.lince;
+                        document.getElementById('version').textContent = post.version;
                         document.getElementById('os').textContent = post.os;
                         document.getElementById('developer').textContent = post.dev;
                         document.getElementById('date').textContent = post.date;
