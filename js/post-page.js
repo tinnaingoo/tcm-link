@@ -1,29 +1,34 @@
-    document.addEventListener("DOMContentLoaded", function() {
-        // Extract query parameter from URL
+ document.addEventListener("DOMContentLoaded", function() {
+        // Get the post URL parameter
         const urlParams = new URLSearchParams(window.location.search);
-        const postUrl = urlParams.get('post');
+        const postURL = urlParams.get('post');
 
-        if (postUrl) {
+        if (postURL) {
+            // Fetch the JSON data
             fetch('posts.json')
-            .then(response => response.json())
-            .then(data => {
-                const post = data.find(p => p.purl === postUrl);
-                if (post) {
-                    document.getElementById('page-title').textContent = post.ptitle;
-                    document.getElementById('post-title').textContent = post.ptitle;
-                    document.getElementById('post-image').src = post.imgurl;
-                    document.getElementById('post-content').textContent = post.content;
-                    document.getElementById('lince').textContent = post.lince;
-                    document.getElementById('os').textContent = post.os;
-                    document.getElementById('developer').textContent = post.dev;
-                    document.getElementById('date').textContent = post.date;
-                    document.getElementById('fsize').textContent = post.fsize;
-                } else {
-                    document.getElementById('post-title').textContent = 'Post not found';
-                }
-            })
-            .catch(error => console.error('Error loading the post:', error));
-        } else {
-            document.getElementById('post-title').textContent = 'No post specified';
+                .then(response => response.json())
+                .then(data => {
+                    // Find the post with the matching URL
+                    const post = data.find(p => p.purl === postURL);
+
+                    if (post) {
+                        // Update the post title
+                        document.getElementById('post-title').textContent = post.ptitle;
+
+                        // Update the post image
+                        document.getElementById('post-image').src = post.imgurl;
+
+                        // Update the post content using innerHTML to allow HTML tags
+                        document.getElementById('post-content').innerHTML = post.content;
+
+                        // Update the additional information
+                        document.getElementById('lince').textContent = post.lince;
+                        document.getElementById('os').textContent = post.os;
+                        document.getElementById('developer').textContent = post.dev;
+                        document.getElementById('date').textContent = post.date;
+                        document.getElementById('fsize').textContent = post.fsize;
+                    }
+                })
+                .catch(error => console.error('Error fetching the post data:', error));
         }
     });
