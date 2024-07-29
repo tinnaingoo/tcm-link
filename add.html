@@ -21,6 +21,8 @@
     <input type="text" id="imgurl"><br>
     <label>Download Link:</label><br>
     <input type="text" id="dlink"><br>
+    <label>License:</label><br>
+    <input type="text" id="license"><br>
     <label>Operating System:</label><br>
     <input type="text" id="os"><br>
     <label>File Size:</label><br>
@@ -40,6 +42,7 @@
         { id: 'purl', name: 'Post URL' },
         { id: 'content', name: 'Content' },
         { id: 'dlink', name: 'Download Link' },
+        { id: 'license', name: 'License' },
         { id: 'os', name: 'Operating System' },
         { id: 'fsize', name: 'File Size' }
       ];
@@ -77,6 +80,7 @@
         purl: document.getElementById('purl').value,
         content: document.getElementById('content').value,
         dlink: document.getElementById('dlink').value,
+        license: document.getElementById('license').value,
         os: document.getElementById('os').value,
         fsize: document.getElementById('fsize').value
       };
