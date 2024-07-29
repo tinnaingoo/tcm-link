@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.container {
+.container-main {
             width: 100%;
             margin: 0 auto;
         }
@@ -30,9 +30,11 @@
             width: 100%;
         }
 
+
+
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  padding: 0px;
 }
 
 /* For mobile phones: */
@@ -106,7 +108,6 @@
 
 /* For extra large desktops: */
 @media only screen and (min-width: 1200px) {
-  .aside {margin-top: 110px;}
   .col-xl-1 {width: 8.33%;}
   .col-xl-2 {width: 16.66%;}
   .col-xl-3 {width: 25%;}

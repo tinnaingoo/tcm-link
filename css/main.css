@@ -21,6 +21,14 @@ body {
     /*border-radius: 8px;*/
 }
 
+.container-pv{
+    background-color: #444;
+    padding: 15px;
+    margin: 10px 0;
+    color: #fff;
+    /*border-radius: 8px;*/
+}
+
 .thumbnail {
         width: 100px;
         height: 100px;
@@ -271,10 +279,9 @@ h1#post-title {
   text-align: center;
   font-size: 12px;
   padding: 15px;
+  width: 100%;
+  bottom: 0;
 }
-
-
-
 
 
 /*Post Page*/
@@ -282,3 +289,28 @@ img#post-image {
     width: 100%;
     padding: 10px;
 }
+
+/* For mobile phones: */
+[class*="col-"] {
+ .aside {margin-top: 5px;}
+}
+
+/* For tablets and larger: */
+@media only screen and (min-width: 600px) {
+  .aside {margin-top: 65px;}
+  }
+
+/* For desktops and larger: */
+@media only screen and (min-width: 768px) {
+  .aside {margin-top: 80px;}
+  }
+  
+/* For larger desktops: */
+@media only screen and (min-width: 992px) {
+  .aside {margin-top: 95px;}
+  }
+ 
+/* For extra large desktops: */
+@media only screen and (min-width: 1200px) {
+  .aside {margin-top: 110px;}
+  }
