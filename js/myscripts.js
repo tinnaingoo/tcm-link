@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             postContainer.className = 'post-container';
             
             postContainer.innerHTML = `
+                <div class="col-12 col-s-12 col-m-9 col-l-6 col-xl-6">
                 <div class="image-container">
                         <img src="${post.imgurl}" alt="Sample Image">
                 </div>
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="p-title"><a>${post.ptitle}</a></div>
                     <div class="p-description"><a>${post.prescription}</a></div>
                     <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
+                </div>
                 </div>
             `;
             
