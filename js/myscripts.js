@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let categoryHTML = '<ul>';
 
         for (const [category, count] of Object.entries(categoryCounts)) {
-            categoryHTML += `<li>${category} (${count})</li>`;
+            categoryHTML += `<li category-tag>${category} (${count})</li>`;
         }
         
         categoryHTML += '</ul>';
