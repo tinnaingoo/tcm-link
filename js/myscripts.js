@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
             postContainer.className = 'post-container';
             
             postContainer.innerHTML = `
-                
                 <div class="image-container">
-                        <img src="${post.imgurl}" alt="Sample Image">
+                    <img src="${post.imgurl}" alt="Sample Image">
                 </div>
                 <div class="post-content">
                     <div class="p-title"><a>${post.ptitle}</a></div>
@@ -28,7 +27,23 @@ document.addEventListener("DOMContentLoaded", function() {
             containerBox.appendChild(postContainer);
         });
 
-       })
+        // Count posts by category
+        const categoryCounts = data.reduce((acc, curr) => {
+            acc[curr.category] = (acc[curr.category] || 0) + 1;
+            return acc;
+        }, {});
+
+        // Generate HTML for categories
+        const categoryDiv = document.getElementById('category');
+        let categoryHTML = '<ul>';
+
+        for (const [category, count] of Object.entries(categoryCounts)) {
+            categoryHTML += `<li>${category} (${count})</li>`;
+        }
+        
+        categoryHTML += '</ul>';
+        categoryDiv.innerHTML = categoryHTML;
+    })
     .catch(error => console.error('Error loading the posts:', error));
 
     document.getElementById('searchBar').addEventListener('input', function() {
@@ -53,5 +68,4 @@ document.addEventListener("DOMContentLoaded", function() {
             noResults.style.display = 'none';
         }
     });
-
 });
