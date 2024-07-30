@@ -224,7 +224,10 @@ h1#post-title {
 }
 
 
-/*category tag*/
+/*category*/
+.category-box{
+}
+
 .category-tag{    
     display: inline-block;
     height: 24px;
