@@ -1,5 +1,4 @@
-/* General Styles */
-    body {
+  body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
       margin: 0;
@@ -10,20 +9,20 @@
       min-height: 100vh;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
     .container-main {
-      background-color: #fff;
+      background-color: #e6e6e6;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       width: 100%;
       max-width: 600px;
       margin: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
     }
 
     .post-form {
@@ -72,7 +71,6 @@
       color: red;
     }
 
-    /* Responsive Styles */
     @media (max-width: 600px) {
       .container-main {
         padding: 15px;
