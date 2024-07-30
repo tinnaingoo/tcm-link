@@ -1,3 +1,8 @@
+body {
+  background-color: #333;
+  font-family:'Pyidaungsu', sans-serif;
+}
+
 h1.header {
     text-align: center;
     margin-bottom: 20px;
