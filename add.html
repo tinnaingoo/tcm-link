@@ -26,7 +26,20 @@
     <label>License:</label><br>
     <input type="text" id="license"><br>
     <label>Operating System:</label><br>
-    <input type="text" id="os"><br>
+    <select id="os">
+      <option value="">Select Operating System</option>
+      <option value="Windows">Windows</option>
+      <option value="Android">Android</option>
+    </select><br>
+    <label>Category:</label><br>
+    <select id="category">
+      <option value="">Select Category</option>
+      <option value="Windows Software">Windows Software</option>
+      <option value="Android Application">Android Application</option>
+      <option value="Technology">Technology</option>
+      <option value="Fonts">Fonts</option>
+      <option value="Driver">Driver</option>
+    </select><br>
     <label>File Size:</label><br>
     <input type="text" id="fsize"><br>
     <button type="submit">Export Key Code</button>
@@ -47,6 +60,7 @@
         { id: 'dlink', name: 'Download Link' },
         { id: 'license', name: 'License' },
         { id: 'os', name: 'Operating System' },
+        { id: 'category', name: 'Category' },
         { id: 'fsize', name: 'File Size' }
       ];
 
@@ -85,6 +99,7 @@
         dlink: document.getElementById('dlink').value,
         license: document.getElementById('license').value,
         os: document.getElementById('os').value,
+        category: document.getElementById('category').value,
         fsize: document.getElementById('fsize').value
       };
 
