@@ -27,6 +27,25 @@ document.addEventListener("DOMContentLoaded", function() {
             
             containerBox.appendChild(postContainer);
         });
+
+        //===========
+        .then(data => {
+            // Count posts by category
+            const categoryCounts = data.reduce((acc, curr) => {
+                acc[curr.category] = (acc[curr.category] || 0) + 1;
+                return acc;
+            }, {});
+
+            // Generate HTML for categories
+            const categoryDiv = document.getElementById('category');
+            let categoryHTML = '<ul>';
+
+            for (const [category, count] of Object.entries(categoryCounts)) {
+                categoryHTML += `<li>${category} (${count})</li>`;
+            }
+            
+            categoryHTML += '</ul>';
+            categoryDiv.innerHTML = categoryHTML;
     })
     .catch(error => console.error('Error loading the posts:', error));
 
