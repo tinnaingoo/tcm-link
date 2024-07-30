@@ -8,3 +8,12 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
 }
+
+form input[type="text"], form input[type="password"], form input[type="email"], form input[type="date"], form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+}
