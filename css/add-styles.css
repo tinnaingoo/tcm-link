@@ -18,3 +18,7 @@ form input[type="text"], form input[type="password"], form input[type="email"], 
     margin-bottom: 10px;
     width: 100%;
 }
+textarea#content {
+    resize: vertical;
+    min-height: 100px;
+}
