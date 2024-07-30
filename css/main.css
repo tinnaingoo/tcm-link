@@ -225,7 +225,10 @@ h1#post-title {
 
 
 /*category*/
-.category-box{
+.category-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .category-tag{    
