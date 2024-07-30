@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Generate HTML for categories
         const categoryDiv = document.getElementById('category');
-        let categoryHTML = '<ul>';
+        let categoryHTML = '<ul class="category-box">';
 
         for (const [category, count] of Object.entries(categoryCounts)) {
             categoryHTML += `<li class="category-tag">${category} (${count})</li>`;
