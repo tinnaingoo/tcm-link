@@ -1,3 +1,10 @@
+h1.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
 form#post-form {
     display: flex;
     flex-direction: column;
