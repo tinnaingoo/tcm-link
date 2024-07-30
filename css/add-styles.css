@@ -1,6 +1,7 @@
 form#post-form {
     display: flex;
     flex-direction: column;
+    background-color: #e0e0e0;
 }
 
 label {
