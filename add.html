@@ -1,134 +1,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/menu.css">
-<link rel="stylesheet" href="../css/responsive-layout.css">
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Google Font Link for Icons only -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
-<link rel="icon" type="img/fav.jpg" href="../img/fav.jpg"/>
-<title id="page-title">Post Title</title>
+  <title>Add Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/add-styles.css">
+  <link rel="stylesheet" href="css/responsive-layout.css">
+  
 </head>
 <body>
-
-<nav class="menu">
-    <div class="toggle-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    
-    <ul class="menu-list">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#">My Work</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Get in Touch</a></li>
-        <li><a href="#">Blog</a></li>
-    </ul>
-    <div class="search-container">
-        <a id="title">TC-Myaing</a>
-    </div>
-</nav>
-
-<div class="container-main">
-
-<div class="row">
-      <!-- Main Column -->
-      <div class="col-12 col-s-12 col-m-9 col-l-9 col-xl-9">
-            <div class="container-box">
-                
-                <div class="container-pv">
-                    <div class="post-title">
-                    <h1 id="post-title">Post Title</h1>
-                    <img id="post-image" src="" alt="Post Image">
-                    <div id="post-content">Post content goes here...</div>
-                    
-                    <div class="download-btn-box">
-                        <button id="download-btn"  class="download-btn" data-timer="10">
-                              <span class="icon material-symbols-rounded">vertical_align_bottom</span>
-                            <span class="text">Download Files</span>
-                        </button>
-                    </div>
-                    
-                    </div>
-                </div>
-                
-            </div><!-- container box end-->
-            
-    </div><!-- main column end -->
-        
-      <!-- Slide -->
-    <div class="col-12 col-s-12 col-m-3 col-l-3 col-xl-3">
-        <div class="aside">
-            
-            <div class="slide-box">
-                <h2 class="title">Additional information</h2>
-                
-                <div class="info-grid">
-                    
-                    <div class="info-item">
-                        <label>License</label>
-                        <div class="info-value">trial</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <label>Operating System</label>
-                        <div class="info-value"><i class="fa fa-android"></i> Windows</div>
-                    </div>
-                    
-                    <div class="info-item">
-                            <label>Developer</label>
-                            <div class="info-value">Adobe</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <label>Last revision</label>
-                        <div class="info-value">This month</div>
-                    </div>
-                    
-                   <div class="info-item">
-                        <label>Updated</label>
-                        <div class="info-value">Over a year ago</div>
-                    </div>
-            
-                    <div class="info-item">
-                        <label>Size</label>
-                        <div class="info-value">64.1 MB</div>
-                    </div>
-            </div>
-                
-    </div>
-    <!--Slide Box End -->
-    
-            <div class="subscribe-section">
-                <p class="s-title">Subscribe to Our YouTube Channel</p>
-                <div class="container">
-                    <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn">Subscribe</button></a>
-                </div>
-            </div>
-            
+  <h1 class="header">Add Data</h1>
+  <div class="container-main">
+    <div class="row">
+      <div class="col-12 col-s-12 col-m-12 col-l-12 col-xl-12">
+        <button id="new-add-btn">New Add</button>
+        <br>
+        <button id="edit-btn">Edit</button>
+        <div id="edit-select-container" style="display: none;">
+          <label for="edit-select">Select Post to Edit:</label>
+          <select id="edit-select">
+            <!-- Options will be populated dynamically -->
+          </select>
         </div>
-        <!-- Aside End -->
-        
+        <form id="post-form" class="post-Form" style="display: none;">
+          <label>Title:</label>
+          <input type="text" id="ptitle"><br>
+          <label>Date:</label>
+          <input type="date" id="date"><br>
+          <label>Prescription:</label>
+          <input type="text" id="prescription"><br>
+          <label>Post URL:</label>
+          <input type="text" id="purl"><br>
+          <label>Content:</label>
+          <textarea id="content"></textarea><br>
+          <label>Image URL:</label>
+          <input type="text" id="imgurl"><br>
+          <label>Download Link:</label>
+          <input type="text" id="dlink"><br>
+          <label>License:</label>
+          <input type="text" id="license"><br>
+          <label>Operating System:</label><br>
+          <select id="os">
+            <option value="">Select Operating System</option>
+            <option value="windows">Windows</option>
+            <option value="android">Android</option>
+          </select><br>
+          <label>Category:</label>
+          <select id="category">
+            <option value="">Select Category</option>
+            <option value="Windows Software">Windows Software</option>
+            <option value="Android Application">Android Application</option>
+            <option value="Technology">Technology</option>
+            <option value="Fonts">Fonts</option>
+            <option value="Driver">Driver</option>
+          </select><br>
+          <label>File Size:</label>
+          <input type="text" id="fsize"><br>
+          <button type="submit">Export Key Code</button>
+        </form>
+      </div>
     </div>
-    
-</div>
-</div>
+  </div>
+  
+  <script>
+    const newAddBtn = document.getElementById('new-add-btn');
+    const editBtn = document.getElementById('edit-btn');
+    const postForm = document.getElementById('post-form');
+    const editSelectContainer = document.getElementById('edit-select-container');
+    const editSelect = document.getElementById('edit-select');
 
-    
-<div class="footer">
-    <p>Copyright © 2024 TC-Myaing</p>
-</div>
-<script src="js/post-page.js"></script>
-    
-<script>
+    newAddBtn.addEventListener('click', () => {
+      postForm.style.display = 'block';
+      editSelectContainer.style.display = 'none';
+    });
 
+    editBtn.addEventListener('click', () => {
+      postForm.style.display = 'block';
+      editSelectContainer.style.display = 'block';
+      loadPosts();
+    });
 
-</script>
+    // Load posts from post.json
+    function loadPosts() {
+      fetch('posts.json')
+        .then(response => response.json())
+        .then(data => {
+          editSelect.innerHTML = '<option value="">Select Post</option>';
+          data.forEach((post, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = post.ptitle;
+            editSelect.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Error loading posts:', error));
+    }
 
+    editSelect.addEventListener('change', () => {
+      const selectedIndex = editSelect.value;
+      if (selectedIndex !== '') {
+        fetch('posts.json')
+          .then(response => response.json())
+          .then(data => {
+            const selectedPost = data[selectedIndex];
+            document.getElementById('ptitle').value = selectedPost.ptitle;
+            document.getElementById('date').value = selectedPost.date;
+            document.getElementById('prescription').value = selectedPost.prescription;
+            document.getElementById('purl').value = selectedPost.purl;
+            document.getElementById('content').value = selectedPost.content;
+            document.getElementById('imgurl').value = selectedPost.imgurl;
+            document.getElementById('dlink').value = selectedPost.dlink;
+            document.getElementById('license').value = selectedPost.license;
+            document.getElementById('os').value = selectedPost.os;
+            document.getElementById('category').value = selectedPost.category;
+            document.getElementById('fsize').value = selectedPost.fsize;
+          })
+          .catch(error => console.error('Error loading post:', error));
+      }
+    });
+
+    document.getElementById('post-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fields = [
+        { id: 'ptitle', name: 'Title' },
+        { id: 'date', name: 'Date' },
+        { id: 'imgurl', name: 'Image URL' },
+        { id: 'prescription', name: 'Prescription' },
+        { id: 'purl', name: 'Post URL' },
+        { id: 'content', name: 'Content' },
+        { id: 'dlink', name: 'Download Link' },
+        { id: 'license', name: 'License' },
+        { id: 'os', name: 'Operating System' },
+        { id: 'category', name: 'Category' },
+        { id: 'fsize', name: 'File Size' }
+      ];
+
+      let isValid = true;
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.border = '2px solid red'; // Highlight the field with red border
+          if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error')) {
+            const errorMessage = document.createElement('span');
+            errorMessage.classList.add('error');
+            errorMessage.style.color = 'red';
+            errorMessage.textContent = `${field.name} is required`;
+            input.parentNode.insertBefore(errorMessage, input.nextSibling);
+          }
+        } else {
+          input.style.border = ''; // Remove the red border if input is valid
+          if (input.nextElementSibling && input.nextElementSibling.classList.contains('error')) {
+            input.nextElementSibling.remove(); // Remove the error message if input is valid
+          }
+        }
+      });
+
+      if (!isValid) {
+        return;
+      }
+
+      const post = {
+        ptitle: document.getElementById('ptitle').value,
+        date: document.getElementById('date').value,
+        imgurl: document.getElementById('imgurl').value,
+        prescription: document.getElementById('prescription').value,
+        purl: document.getElementById('purl').value,
+        content: document.getElementById('content').value,
+        dlink: document.getElementById('dlink').value,
+        license: document.getElementById('license').value,
+        os: document.getElementById('os').value,
+        category: document.getElementById('category').value,
+        fsize: document.getElementById('fsize').value
+      };
+
+      // Export Key Code with special characters escaped
+      const postString = JSON.stringify(post, null, 4);
+      console.log(postString);
+
+      // Copy to clipboard
+      navigator.clipboard.writeText(postString).then(function() {
+        alert('Post data copied to clipboard!');
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    });
+  </script>
 </body>
 </html>
