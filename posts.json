@@ -42,14 +42,18 @@
 }
 ,
    {
-    "ptitle": "Adobe PageMaker 7.0.1",
+    "ptitle": "Microsoft Office 2010 Free Download",
     "date": "2024-07-27",
-    "imgurl": "img/Adobe Pagemarker Icon.jpg",
-    "prescription": "PageMaker is a software to design the layout of pages that includes templates and images. ",
-    "purl": "adobe-pagemaker-7.0.1",
-    "content": "<div>\n  <b>PageMaker</b> is one of the <b>most popular applications worldwide to layout pages</b>, that allows you to create all kinds of documents starting from scratch or by means of the hundreds of templates and images that Adobe offers us, obtaining very professional results.</div>\n  <div>\n    <br>\n    </div>\n    <div>This application is used, in general, to give format to newspapers, magazines or any other kinds of publications, even though you can also use it to create customized designs for cards, invitations, envelopes, invoices, posters, flyers,... and for any design that you want to give expression to on paper.</div>\n    <div>\n      <br>\n      </div>\n      <div>One of the main features of the latest version of Adobe PageMaker is that its compatibility with PDF files has been improved, that the documents can now be viewed on almost any device, as well as its integration with other applications of the Adobe family, like Adobe Illustrator and Adobe Photoshop.</div>\n      <div>\n        <br>\n        </div>\n        <div>Once the layout is finished, you can print it without any worries, because Adobe PageMaker supports the main printing standards, guaranteeing a trustworthy result.</div>",
-    "dlink": "https://www.mediafire.com/file/1hawz6r7fdl7ayv/AdobePageMaker_7.0.rar/file",
+    "imgurl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5SWEQwXX9DrMxleX344TgqoSYXaEeYVPIw&s",
+    "prescription": "This is the final version of the Microsoft Office 2010 productivity suite, one of the most historically popular and useful tools in the entire personal computing industry.",
+    "purl": "microsoft-office-2010",
+    "content": "Microsoft Office 2010 Business and Home includes five of the most valuable productivity apps on the market, which are PowerPoint, Excel, Word, OneNote, and Outlook. There are additional Office apps that can be acquired through the Microsoft Office 2010 Professional Plus suite.",
+    "dlink": "https://drive.google.com/file/d/1UDIhG2rVveNoPCnHVjCpFpsZugqNOzG6/view?usp=sharing",
     "category": "Computer Software"
+    "license": "-",
+    "os": "windows",
+    "category": "Windows Software",
+    "fsize": "652.1 MB"
 },
     {
         "ptitle": "Adobe Photoshop CS3",
