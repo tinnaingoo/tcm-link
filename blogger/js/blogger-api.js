@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const apiKey = 'AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w';
-    const blogId = 'YOUR_BLOG_ID';
+    const blogId = '8069277289488798331';
     const maxPosts = 10; // Number of posts to fetch
 
     fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&maxResults=${maxPosts}`)
