@@ -1,0 +1,2 @@
+Blogger API
+https://www.googleapis.com/blogger/v3/blogs/8069277289488798331?key=AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w
