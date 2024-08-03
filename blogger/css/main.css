@@ -3,8 +3,11 @@
 @import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu"); /*font-family: "Pyidaungsu";*/
 
 .post {
-    padding: 20px;
+    padding: 10px;
     background: white;
+    margin-top: 2.5px;
+    margin-left: 5px;
+    margin-bottom: 2.5px;
 }
 
 body {
