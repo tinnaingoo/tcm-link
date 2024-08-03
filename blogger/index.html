@@ -58,9 +58,8 @@
 <div class="footer">
     <p>Copyright © 2024 TC-Myaing</p>
 </div>
-<script src="js/blogger-api.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const apiKey = 'AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w';
     const blogId = '8069277289488798331';
     const maxPosts = 10; // Number of posts to fetch
@@ -75,9 +74,13 @@
             posts.forEach(post => {
                 const postElement = document.createElement('div');
                 postElement.classList.add('post');
+                let postImage = '';
+                if (post.images && post.images.length > 0) {
+                    postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
+                }
                 postElement.innerHTML = `
                     <h2>${post.title}</h2>
-                    <img src="${post.images ? post.images[0].url : ''}" alt="Post Image">
+                    ${postImage}
                     <div>${post.content}</div>
                 `;
                 blogPostsContainer.appendChild(postElement);
