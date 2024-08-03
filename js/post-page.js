@@ -46,6 +46,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById('developer').textContent = post.dev;
                     document.getElementById('date').textContent = post.date;
                     document.getElementById('fsize').textContent = post.fsize;
+
+                    // Set the download button action
+                    document.getElementById('download-btn').addEventListener('click', function() {
+                        if (post.dlink) {
+                            window.open(post.dlink, '_blank');
+                        } else {
+                            alert('Download link is not available.');
+                        }
+                    });
                 }
             })
             .catch(error => console.error('Error fetching the post data:', error));
