@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         osElement.textContent = post.os; // Fallback to plain text if OS is unknown
                     }
 
+                    document.getElementById('download-btn').addEventListener('click', function(){
+                        window.open(post.dlink, '_blank');
+                    }
+                    
+
                     document.getElementById('developer').textContent = post.dev;
                     document.getElementById('date').textContent = post.date;
                     document.getElementById('fsize').textContent = post.fsize;
@@ -51,3 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error fetching the post data:', error));
     }
 });
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
