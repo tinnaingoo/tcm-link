@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 postElement.innerHTML = `
                     <h2><a href="../blogger/post.html?post=${post.id}">${post.title}</a></h2>
+                    <p><a>${post.published}</a><p>
                     ${postImage}
                     <div>${post.content.substring(0, 200)}...</div>
                     <a href="../blogger/post.html?post=${post.id}"><button>Read More</button></a>
@@ -93,3 +94,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+  
