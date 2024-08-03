@@ -44,6 +44,23 @@
     color: #555;
     margin-top: 10px;
 }
+
+.post-label {
+        display: inline-block;
+        background-color: #007BFF; /* Default background color */
+        color: #FFF;
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-size: 0.9em;
+    }
+    .label-color-0 { background-color: #007BFF; } /* Blue */
+    .label-color-1 { background-color: #28A745; } /* Green */
+    .label-color-2 { background-color: #FFC107; } /* Yellow */
+    .label-color-3 { background-color: #DC3545; } /* Red */
+    .label-color-4 { background-color: #17A2B8; } /* Teal */
+
 .post-meta {
     color: #777;
     font-size: 14px;
