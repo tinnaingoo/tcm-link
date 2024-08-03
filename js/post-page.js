@@ -44,13 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
 
                     document.getElementById('download-btn').addEventListener('click', function() {
-                    window.open(post.dlink, '_blank');
-                });
-            }
-        })
-        .catch(error => console.error('Error loading the post content:', error));
-    }
-});
+                                window.open(post.dlink, '_blank'); });
+                            }
+                                })
+                                .catch(error => console.error('Error loading the post content:', error));
+                            } });
+
 
                     document.getElementById('developer').textContent = post.dev;
                     document.getElementById('date').textContent = post.date;
