@@ -40,9 +40,14 @@
 }
 
 .post-labels {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 10px;
+    	display: inline-block;
+        background-color: #007BFF; /* Default background color */
+        color: #FFF;
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-size: 0.9em;
 }
 
 .post-label {
