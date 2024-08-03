@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <h2>${post.title}</h2>
                     ${postImage}
                     <div>${post.content.slice(0, 200)}...</div>
-                    <a href="post.html?postId=${post.id}">Read More</a>
+                    <a href="../blogger/post.html?postId=${post.id}">Read More</a>
                 `;
                 blogPostsContainer.appendChild(postElement);
             });
