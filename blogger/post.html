@@ -66,8 +66,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
 
-    if (!postId) {
-        window.location.href = 'index.html'; // Redirect to homepage if no postId parameter is provided
+    // Redirect to homepage if no post parameter is provided
+    if (!postURL) {
+        window.location.href = '../index.html';
         return;
     }
 
