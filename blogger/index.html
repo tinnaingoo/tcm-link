@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p class="post-meta">${new Date(post.published).toLocaleDateString()}</p>
                     ${postImage}
                     <div>${post.content.substring(0, 200)}...</div>
+                    ${labels}
                     <a href="../blogger/post.html?post=${post.id}"><button>Read More</button></a>
                 `;
                 blogPostsContainer.appendChild(postElement);
