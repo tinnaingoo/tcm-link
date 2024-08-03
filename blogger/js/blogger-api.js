@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = 'AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w';
     const blogId = 'YOUR_BLOG_ID';
     const maxPosts = 10; // Number of posts to fetch
 
