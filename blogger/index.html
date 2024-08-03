@@ -79,14 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
                 }
                 postElement.innerHTML = `
-                    <div class="image-container">
-                    <img src="${postImage}" alt="Sample Image">
-                </div>
-                <div class="post-content">
-                    <div class="p-title"><a>${post.title}</a></div>
-                    <div class="p-description"><a>${post.content}</a></div>
-                    <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
-                </div>
+                     <div class="image-container">
+                     <h2>${post.title}</h2>
+                    ${postImage}
+                    <div>${post.content}</div>
+                    </div>
                 `;
                 blogPostsContainer.appendChild(postElement);
             });
