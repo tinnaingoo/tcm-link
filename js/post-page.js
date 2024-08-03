@@ -43,14 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         osElement.textContent = post.os; // Fallback to plain text if OS is unknown
                     }
 
-                    document.getElementById('download-btn').addEventListener('click', function() {
-                                window.open(post.dlink, '_blank'); });
-                            }
-                                })
-                                .catch(error => console.error('Error loading the post content:', error));
-                            } });
-
-
                     document.getElementById('developer').textContent = post.dev;
                     document.getElementById('date').textContent = post.date;
                     document.getElementById('fsize').textContent = post.fsize;
