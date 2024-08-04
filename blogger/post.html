@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const postContentContainer = document.getElementById('post-content');
                 postContentContainer.innerHTML = `
                     <h1>${post.title}</h1>
+                    <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} </div>
                     <p>${post.content}</p>
                 `;
             })
