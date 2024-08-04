@@ -10,7 +10,7 @@
 <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
 <title id="page-title">Blogger Posts</title>
 <style>
-    
+
 </style>
 </head>
 <body>
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             posts.forEach((post, index) => {
                 const postElement = document.createElement('div');
-                postElement.classList.add('post');
+                postElement.classList.add('post_box');
                 let postImage = '';
                 if (post.images && post.images.length > 0) {
                     postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
@@ -92,11 +92,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 postElement.innerHTML = `
                     <h2><a href="../blogger/post.html?post=${post.id}">${post.title}</a></h2>
-                    <p class="post-meta">${new Date(post.published).toLocaleDateString()}</p>
-                    ${postImage}
-                    <div>${post.content.substring(0, 200)}...</div>
-                    <div>${labels}</div>
-                    <a href="../blogger/post.html?post=${post.id}"><button>Read More</button></a>
+                    <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} | Tags: ${labels}</div>
+                    <div class="image_wrapper">${postImage}</div>
+                    <p align="justify">${post.content.substring(0, 200)}...<a href="../blogger/post.html?post=${post.id}" class="continue">Continue ...</a></p>
+                    <div class="cleaner"></div>
                 `;
                 blogPostsContainer.appendChild(postElement);
             });
