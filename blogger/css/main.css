@@ -2,55 +2,37 @@
 @import url(//fonts.googleapis.com/earlyaccess/khyay.css); /*font-family: 'Khyay', sans-serif;*/
 @import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu"); /*font-family: "Pyidaungsu";*/
 
-.post {
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.post h2 {
-    margin-top: 0;
-}
-
-.post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px 0;
-}
-
-.post button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.post button:hover {
-    background-color: #0056b3;
-}
-
-.post-labels {
-    	display: inline-block;
-        background-color: #007BFF; /* Default background color */
-        color: #FFF;
-        padding: 5px 10px;
-        border-radius: 3px;
-        margin-right: 5px;
-        margin-bottom: 5px;
+    .post_box {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .post_box h2 {
+        margin: 0 0 10px;
+    }
+    .news_meta {
         font-size: 0.9em;
-}
-
-.post-label {
+        color: #777;
+        margin-bottom: 10px;
+    }
+    .news_meta a {
+        color: #337ab7;
+    }
+    .image_wrapper {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .image_wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+    .continue {
+        color: #337ab7;
+        text-decoration: none;
+    }
+    .post-label {
         display: inline-block;
         background-color: #007BFF; /* Default background color */
         color: #FFF;
@@ -62,15 +44,9 @@
     }
     .label-color-0 { background-color: #007BFF; } /* Blue */
     .label-color-1 { background-color: #28A745; } /* Green */
-    .label-color-2 { background-color: #FFC107; } /* Yellow */
+    .label-color-2 { background-color: #FFC107; } /* Yellow }
     .label-color-3 { background-color: #DC3545; } /* Red */
     .label-color-4 { background-color: #17A2B8; } /* Teal */
-
-.post-meta {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
 
 body {
   background-color: #333;
