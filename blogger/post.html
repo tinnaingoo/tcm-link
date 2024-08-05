@@ -99,8 +99,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('post');
-    const apiKey = 'YOUR_API_KEY';
-    const blogId = 'YOUR_BLOG_ID';
+    const apiKey = 'AIzaSyBIC4d0hxgkz0D2czjoBwEnq2vvKoRg35Q';
+    const blogId = '8069277289488798331';
 
     if (postId) {
         fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts/${postId}?key=${apiKey}`)
@@ -144,11 +144,11 @@ function postComment() {
     const content = document.getElementById('comment-content').value;
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('post');
-    const apiKey = 'YOUR_API_KEY';
-    const blogId = 'YOUR_BLOG_ID';
+    const apiKey = 'AIzaSyBIC4d0hxgkz0D2czjoBwEnq2vvKoRg35Q';
+    const blogId = '8069277289488798331';
 
     gapi.load('client:auth2', function() {
-        gapi.auth2.init({ client_id: 'YOUR_CLIENT_ID' }).then(() => {
+        gapi.auth2.init({ client_id: '758794962809-b180fp84efb3qedhvgfe67nas112g6su.apps.googleusercontent.com' }).then(() => {
             gapi.auth2.getAuthInstance().signIn().then(() => {
                 gapi.client.setApiKey(apiKey);
                 gapi.client.load('https://content.googleapis.com/discovery/v1/apis/blogger/v3/rest').then(() => {
