@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../blogger/css/main.css">
+<link rel="stylesheet" href="../blogger/css/menu.css">
+<link rel="stylesheet" href="../blogger/css/responsive-layout.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
+<title id="page-title">Blogger Posts</title>
+<style>
+    .loader {
+        display: none;
+        margin: 50px auto;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .loader-text {
+        display: none;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    .loader-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+<nav class="menu">
+    <div class="toggle-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="menu-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">My Work</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Get in Touch</a></li>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="search-container">
+        <a id="title">TC-Myaing</a>
+    </div>
+</nav>
+
+<div class="container-main">
+    <div class="row">
+        <div class="col-12 col-s-12 col-m-9 col-l-9 col-xl-9">
+            <div class="container-box" id="blog-posts">
+                <div class="loader-wrapper">
+                    <div class="loader" id="loader"></div>
+                    <div class="loader-text" id="loader-text">Loading...</div>
+                </div>
+                <!-- Blog posts will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="col-12 col-s-12 col-m-3 col-l-3 col-xl-3">
+            <div class="aside">
+                <div class="slide-box">
+                    <h2 class="title">Additional information</h2>
+                    <div class="info-grid" id="post-info">
+                        <!-- Post information will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="subscribe-section">
+                    <p class="s-title">Subscribe to Our YouTube Channel</p>
+                    <div class="container">
+                        <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn">Subscribe</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 TC-Myaing</p>
+</div>
+
+</body>
+</html>
