@@ -24,6 +24,33 @@
     .container-box p {
         line-height: 1.6;
     }
+    .comment-box {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .comment-form {
+        margin-top: 20px;
+    }
+    .comment-form input, .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .comment-form button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .comment-form button:hover {
+        background-color: #2980b9;
+    }
 </style>
 </head>
 <body>
@@ -51,6 +78,15 @@
             <div class="container-box" id="post-content">
                 <!-- Post content will be dynamically inserted here -->
             </div>
+            <div class="container-box" id="comments-container">
+                <!-- Comments will be dynamically inserted here -->
+            </div>
+            <div class="container-box comment-form">
+                <h2>Leave a Comment</h2>
+                <input type="text" id="comment-author" placeholder="Your name">
+                <textarea id="comment-content" placeholder="Your comment"></textarea>
+                <button onclick="postComment()">Submit Comment</button>
+            </div>
         </div>
     </div>
 </div>
@@ -58,6 +94,7 @@
 <div class="footer">
     <p>Copyright © 2024 TC-Myaing</p>
 </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -75,12 +112,66 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} </div>
                     <p>${post.content}</p>
                 `;
+                fetchComments(postId);
             })
             .catch(error => console.error('Error fetching the post:', error));
     } else {
         document.getElementById('post-content').innerHTML = '<p>No post ID provided.</p>';
     }
+
+    function fetchComments(postId) {
+        fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts/${postId}/comments?key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const commentsContainer = document.getElementById('comments-container');
+                commentsContainer.innerHTML = '<h2>Comments</h2>';
+                data.items.forEach(comment => {
+                    const commentElement = document.createElement('div');
+                    commentElement.classList.add('comment-box');
+                    commentElement.innerHTML = `
+                        <p><strong>${comment.author.displayName}:</strong> ${comment.content}</p>
+                        <p><small>Posted on ${new Date(comment.published).toLocaleDateString()}</small></p>
+                    `;
+                    commentsContainer.appendChild(commentElement);
+                });
+            })
+            .catch(error => console.error('Error fetching comments:', error));
+    }
 });
+
+function postComment() {
+    const author = document.getElementById('comment-author').value;
+    const content = document.getElementById('comment-content').value;
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('post');
+    const apiKey = 'AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w';
+    const blogId = '8069277289488798331';
+
+    gapi.load('client:auth2', function() {
+        gapi.auth2.init({ client_id: 'YOUR_CLIENT_ID' }).then(() => {
+            gapi.auth2.getAuthInstance().signIn().then(() => {
+                gapi.client.setApiKey(apiKey);
+                gapi.client.load('https://content.googleapis.com/discovery/v1/apis/blogger/v3/rest').then(() => {
+                    return gapi.client.blogger.comments.insert({
+                        blogId: blogId,
+                        postId: postId,
+                        resource: {
+                            content: content,
+                            author: {
+                                displayName: author
+                            }
+                        }
+                    }).then(response => {
+                        console.log('Comment posted:', response);
+                        fetchComments(postId);
+                    }, error => {
+                        console.error('Error posting comment:', error);
+                    });
+                });
+            });
+        });
+    });
+}
 </script>
 </body>
 </html>
