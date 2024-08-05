@@ -98,6 +98,9 @@
 
 <script src="https://apis.google.com/js/api.js"></script>
 <script>
+  const SCOPES = 'https://www.googleapis.com/auth/blogger';
+</script>    
+<script>
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('post');
@@ -152,16 +155,6 @@ function postComment() {
     const postId = urlParams.get('post');
     const apiKey = 'AIzaSyBIC4d0hxgkz0D2czjoBwEnq2vvKoRg35Q';
     const blogId = '8069277289488798331';
-    const statusElement = document.getElementById('comment-status');
-
-    if (author === "" || content === "") {
-        statusElement.textContent = "Please fill in both fields.";
-        statusElement.style.color = "red";
-        return;
-    }
-
-    statusElement.textContent = "Submitting your comment...";
-    statusElement.style.color = "black";
 
     gapi.load('client:auth2', function() {
         gapi.auth2.init({ client_id: '758794962809-b180fp84efb3qedhvgfe67nas112g6su.apps.googleusercontent.com' }).then(() => {
@@ -180,26 +173,22 @@ function postComment() {
                     }).then(response => {
                         console.log('Comment posted:', response);
                         fetchComments(postId);
-                        statusElement.textContent = "Comment submitted successfully.";
-                        statusElement.style.color = "green";
                     }, error => {
                         console.error('Error posting comment:', error);
-                        statusElement.textContent = "Error submitting comment.";
-                        statusElement.style.color = "red";
+                        document.getElementById('post-content').innerHTML = `<p>Error posting comment: ${error.result.error.message}</p>`;
                     });
                 });
             }).catch(error => {
                 console.error('Error signing in:', error);
-                statusElement.textContent = "Error signing in.";
-                statusElement.style.color = "red";
+                document.getElementById('post-content').innerHTML = `<p>Error signing in: ${error.error}</p>`;
             });
         }).catch(error => {
             console.error('Error initializing auth:', error);
-            statusElement.textContent = "Error initializing auth.";
-            statusElement.style.color = "red";
+            document.getElementById('post-content').innerHTML = `<p>Error initializing auth: ${error.error}</p>`;
         });
     });
 }
+
 </script>
 </body>
 </html>
