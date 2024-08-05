@@ -86,6 +86,7 @@
                 <input type="text" id="comment-author" placeholder="Your name">
                 <textarea id="comment-content" placeholder="Your comment"></textarea>
                 <button onclick="postComment()">Submit Comment</button>
+                <p id="comment-status"></p>
             </div>
         </div>
     </div>
@@ -146,6 +147,16 @@ function postComment() {
     const postId = urlParams.get('post');
     const apiKey = 'AIzaSyBIC4d0hxgkz0D2czjoBwEnq2vvKoRg35Q';
     const blogId = '8069277289488798331';
+    const statusElement = document.getElementById('comment-status');
+
+    if (author === "" || content === "") {
+        statusElement.textContent = "Please fill in both fields.";
+        statusElement.style.color = "red";
+        return;
+    }
+
+    statusElement.textContent = "Submitting your comment...";
+    statusElement.style.color = "black";
 
     gapi.load('client:auth2', function() {
         gapi.auth2.init({ client_id: '758794962809-b180fp84efb3qedhvgfe67nas112g6su.apps.googleusercontent.com' }).then(() => {
@@ -164,8 +175,12 @@ function postComment() {
                     }).then(response => {
                         console.log('Comment posted:', response);
                         fetchComments(postId);
+                        statusElement.textContent = "Comment submitted successfully.";
+                        statusElement.style.color = "green";
                     }, error => {
                         console.error('Error posting comment:', error);
+                        statusElement.textContent = "Error submitting comment.";
+                        statusElement.style.color = "red";
                     });
                 });
             });
