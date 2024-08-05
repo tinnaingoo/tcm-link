@@ -72,12 +72,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const fetchedPostIds = new Set();
 
     const loader = document.getElementById('loader');
-    const loaderText = document.getElementById('loader-text');
     const blogPostsContainer = document.getElementById('blog-posts');
 
     function fetchPosts() {
         loader.style.display = 'block';
-        loaderText.style.display = 'block';
         let url = `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&maxResults=10`;
         if (nextPageToken) {
             url += `&pageToken=${nextPageToken}`;
