@@ -14,8 +14,8 @@
         border: 16px solid #f3f3f3; /* Light grey */
         border-top: 16px solid #3498db; /* Blue */
         border-radius: 50%;
-        width: 120px;
-        height: 120px;
+        width: 60px;
+        height: 60px;
         animation: spin 2s linear infinite;
         margin: auto;
         display: none;
@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const apiKey = 'AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w';
     const blogId = '8069277289488798331';
     let nextPageToken = null;
+    const fetchedPostIds = new Set();
 
     const loader = document.getElementById('loader');
     const blogPostsContainer = document.getElementById('blog-posts');
@@ -97,31 +98,35 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
                 const posts = data.items;
                 nextPageToken = data.nextPageToken;
-                
+
                 posts.forEach((post, index) => {
-                    const postElement = document.createElement('div');
-                    postElement.classList.add('post_box');
-                    let postImage = '';
-                    if (post.images && post.images.length > 0) {
-                        postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
-                    }
+                    if (!fetchedPostIds.has(post.id)) {
+                        fetchedPostIds.add(post.id);
 
-                    let labels = '';
-                    if (post.labels && post.labels.length > 0) {
-                        labels = post.labels.map((label, idx) => {
-                            const colorClass = `label-color-${idx % 5}`;
-                            return `<span class="post-label ${colorClass}">${label}</span>`;
-                        }).join(' ');
-                    }
+                        const postElement = document.createElement('div');
+                        postElement.classList.add('post_box');
+                        let postImage = '';
+                        if (post.images && post.images.length > 0) {
+                            postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
+                        }
 
-                    postElement.innerHTML = `
-                        <h2><a href="../blogger/post.html?post=${post.id}">${post.title}</a></h2>
-                        <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} | Tags: ${labels}</div>
-                        <div class="image_wrapper">${postImage}</div>
-                        <p align="justify">${post.content.substring(0, 200)}...<a href="#" class="continue" data-post-id="${post.id}">Continue ...</a></p>
-                        <div class="cleaner"></div>
-                    `;
-                    blogPostsContainer.insertBefore(postElement, loader);
+                        let labels = '';
+                        if (post.labels && post.labels.length > 0) {
+                            labels = post.labels.map((label, idx) => {
+                                const colorClass = `label-color-${idx % 5}`;
+                                return `<span class="post-label ${colorClass}">${label}</span>`;
+                            }).join(' ');
+                        }
+
+                        postElement.innerHTML = `
+                            <h2><a href="../blogger/post.html?post=${post.id}">${post.title}</a></h2>
+                            <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} | Tags: ${labels}</div>
+                            <div class="image_wrapper">${postImage}</div>
+                            <p align="justify">${post.content.substring(0, 200)}...<a href="#" class="continue" data-post-id="${post.id}">Continue ...</a></p>
+                            <div class="cleaner"></div>
+                        `;
+                        blogPostsContainer.insertBefore(postElement, loader);
+                    }
                 });
 
                 document.querySelectorAll('.continue').forEach(element => {
