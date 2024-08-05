@@ -158,10 +158,10 @@ if (post.labels && post.labels.length > 0) {
 
 
                         postElement.innerHTML = `
-                            <h2><a href="../blogger/post.html?post=${post.id}">${post.title}</a></h2>
+                            <h2><a>${post.title}</a></h2>
                             <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} | Tags: ${labels}</div>
                             <div class="image_wrapper">${postImage}</div>
-                            <p align="justify">${post.content.substring(0, 200)}...<a href="#" class="continue" data-post-id="${post.id}">Continue ...</a></p>
+                            <p align="justify">${post.content.substring(0, 200)}...<a href="#" class="continue" data-post-id="${post.id}">Readmore ...</a></p>
                             <div class="cleaner"></div>
                         `;
                         blogPostsContainer.insertBefore(postElement, loader);
