@@ -11,7 +11,7 @@
 <title id="page-title">Blogger Post</title>
 
 <style>
-     .container-box {
+    .container-box {
         background-color: #fff;
         padding: 20px;
         border-radius: 0px;
@@ -96,6 +96,7 @@
     <p>Copyright © 2024 TC-Myaing</p>
 </div>
 
+<script src="https://apis.google.com/js/api.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -187,7 +188,15 @@ function postComment() {
                         statusElement.style.color = "red";
                     });
                 });
+            }).catch(error => {
+                console.error('Error signing in:', error);
+                statusElement.textContent = "Error signing in.";
+                statusElement.style.color = "red";
             });
+        }).catch(error => {
+            console.error('Error initializing auth:', error);
+            statusElement.textContent = "Error initializing auth.";
+            statusElement.style.color = "red";
         });
     });
 }
