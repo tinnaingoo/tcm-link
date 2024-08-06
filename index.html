@@ -59,7 +59,6 @@
 .label-color-3 { background-color: #f39c12; }
 .label-color-4 { background-color: #9b59b6; }
 
-    
 </style>
 </head>
 <body>
@@ -78,7 +77,7 @@
     </ul>
     <div class="search-container">
         <input type="text" id="searchBar" placeholder="Search...">
-        <a id="title" >TC-Myaing</a>
+        <a id="title">TC-Myaing</a>
         <div class="switch"><img class="search-icon" src="img/search-white.png"></div>
     </div>
 </nav>
@@ -125,12 +124,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const loader = document.getElementById('loader');
     const blogPostsContainer = document.getElementById('blog-posts');
+    const searchBar = document.getElementById('searchBar');
 
-    function fetchPosts() {
+    function fetchPosts(query = '') {
         loader.style.display = 'block';
         let url = `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&maxResults=10`;
         if (nextPageToken) {
             url += `&pageToken=${nextPageToken}`;
+        }
+        if (query) {
+            url += `&q=${query}`;
         }
 
         fetch(url)
@@ -151,13 +154,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
 
                         let labels = '';
-if (post.labels && post.labels.length > 0) {
-    labels = post.labels.map((label, idx) => {
-        const colorClass = `label-color-${idx % 5}`;
-        return `<span class="post-label ${colorClass}">${label}</span>`;
-    }).join(' ');
-}
-
+                        if (post.labels && post.labels.length > 0) {
+                            labels = post.labels.map((label, idx) => {
+                                const colorClass = `label-color-${idx % 5}`;
+                                return `<span class="post-label ${colorClass}">${label}</span>`;
+                            }).join(' ');
+                        }
 
                         postElement.innerHTML = `
                             <h2><a>${post.title}</a></h2>
@@ -192,14 +194,21 @@ if (post.labels && post.labels.length > 0) {
 
     function handleScroll() {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            fetchPosts();
+            fetchPosts(searchBar.value);
         }
     }
+
+    searchBar.addEventListener('input', function() {
+        blogPostsContainer.innerHTML = '';
+        fetchedPostIds.clear();
+        nextPageToken = null;
+        fetchPosts(this.value);
+    });
 
     window.addEventListener('scroll', handleScroll);
     fetchPosts();
 });
 </script>
-<script src="js/menu.js"></script>   
+<script src="js/menu.js"></script>
 </body>
 </html>
