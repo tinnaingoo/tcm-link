@@ -210,12 +210,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    searchBar.addEventListener('input', function() {
-        blogPostsContainer.innerHTML = '';
-        fetchedPostIds.clear();
-        nextPageToken = null;
-        fetchPosts(this.value);
-    });
+    
 
     window.addEventListener('scroll', handleScroll);
     fetchPosts();
