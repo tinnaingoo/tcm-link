@@ -142,43 +142,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 const posts = data.items;
                 nextPageToken = data.nextPageToken;
 
-                posts.forEach((post, index) => {
-                    if (!fetchedPostIds.has(post.id)) {
-                        fetchedPostIds.add(post.id);
-
-                        const postElement = document.createElement('div');
-                        postElement.classList.add('post_box');
-                        let postImage = '';
-                        if (post.images && post.images.length > 0) {
-                            postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
-                        }
-
-                        let labels = '';
-                        if (post.labels && post.labels.length > 0) {
-                            labels = post.labels.map((label, idx) => {
-                                const colorClass = `label-color-${idx % 5}`;
-                                return `<span class="post-label ${colorClass}">${label}</span>`;
-                            }).join(' ');
-                        }
-
-                        postElement.innerHTML = `
-                            <h2><a>${post.title}</a></h2>
-                            <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} | Tags: ${labels}</div>
-                            <div class="image_wrapper">${postImage}</div>
-                            <p align="justify">${post.content.substring(0, 200)}...<a href="#" class="continue" data-post-id="${post.id}">readmore ...</a></p>
-                            <div class="cleaner"></div>
-                        `;
-                        blogPostsContainer.insertBefore(postElement, loader);
-                    }
-                });
-
-                document.querySelectorAll('.continue').forEach(element => {
-                    element.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        const postId = this.getAttribute('data-post-id');
-                        window.location.href = `../post.html?post=${postId}`;
-                    });
-                });
+                if (query) {
+                    // Filter posts based on the query
+                    const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(query.toLowerCase()));
+                    displayPosts(filteredPosts);
+                } else {
+                    displayPosts(posts);
+                }
 
                 loader.style.display = 'none';
 
@@ -190,6 +160,46 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.error('Error fetching Blogger posts:', error);
                 loader.style.display = 'none';
             });
+    }
+
+    function displayPosts(posts) {
+        posts.forEach((post, index) => {
+            if (!fetchedPostIds.has(post.id)) {
+                fetchedPostIds.add(post.id);
+
+                const postElement = document.createElement('div');
+                postElement.classList.add('post_box');
+                let postImage = '';
+                if (post.images && post.images.length > 0) {
+                    postImage = `<img src="${post.images[0].url}" alt="Post Image">`;
+                }
+
+                let labels = '';
+                if (post.labels && post.labels.length > 0) {
+                    labels = post.labels.map((label, idx) => {
+                        const colorClass = `label-color-${idx % 5}`;
+                        return `<span class="post-label ${colorClass}">${label}</span>`;
+                    }).join(' ');
+                }
+
+                postElement.innerHTML = `
+                    <h2><a href="#">${post.title}</a></h2>
+                    <div class="news_meta">Posted on ${new Date(post.published).toLocaleDateString()} | Tags: ${labels}</div>
+                    <div class="image_wrapper">${postImage}</div>
+                    <p align="justify">${post.content.substring(0, 200)}...<a href="#" class="continue" data-post-id="${post.id}">read more ...</a></p>
+                    <div class="cleaner"></div>
+                `;
+                blogPostsContainer.insertBefore(postElement, loader);
+            }
+        });
+
+        document.querySelectorAll('.continue').forEach(element => {
+            element.addEventListener('click', function(event) {
+                event.preventDefault();
+                const postId = this.getAttribute('data-post-id');
+                window.location.href = `../post.html?post=${postId}`;
+            });
+        });
     }
 
     function handleScroll() {
@@ -208,6 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', handleScroll);
     fetchPosts();
 });
+
 </script>
 <script src="js/menu.js"></script>
 </body>
