@@ -132,9 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nextPageToken) {
             url += `&pageToken=${nextPageToken}`;
         }
-        if (query) {
-            url += `&q=${query}`;
-        }
 
         fetch(url)
             .then(response => response.json())
@@ -163,6 +160,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function displayPosts(posts) {
+        if (!posts || posts.length === 0) {
+            blogPostsContainer.innerHTML = '<p>No posts found.</p>';
+            return;
+        }
+
         posts.forEach((post, index) => {
             if (!fetchedPostIds.has(post.id)) {
                 fetchedPostIds.add(post.id);
@@ -210,12 +212,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    
+    searchBar.addEventListener('input', function() {
+        // Clear existing posts
+        blogPostsContainer.innerHTML = '';
+        fetchedPostIds.clear();
+        nextPageToken = null;
+        // Fetch posts with the query
+        fetchPosts(searchBar.value);
+    });
+
     window.addEventListener('scroll', handleScroll);
     fetchPosts();
-
-    
 });
+
 
 </script>
 <script src="js/menu.js"></script>
