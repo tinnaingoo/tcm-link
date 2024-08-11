@@ -132,6 +132,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nextPageToken) {
             url += `&pageToken=${nextPageToken}`;
         }
+        if (query) {
+            url += `&q=${query}`;
+        }
 
         fetch(url)
             .then(response => response.json())
@@ -141,8 +144,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if (query) {
                     // Filter posts based on the query
-                    const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(query.toLowerCase()));
-                    displayPosts(filteredPosts);
+                    blogPostsContainer.innerHTML = ''; // Clear existing posts
+                    displayPosts(posts.filter(post => post.title.toLowerCase().includes(query.toLowerCase())));
                 } else {
                     displayPosts(posts);
                 }
@@ -213,19 +216,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     searchBar.addEventListener('input', function() {
-        // Clear existing posts
+        // Clear existing posts and fetch posts with the query
         blogPostsContainer.innerHTML = '';
         fetchedPostIds.clear();
         nextPageToken = null;
-        // Fetch posts with the query
         fetchPosts(searchBar.value);
     });
 
     window.addEventListener('scroll', handleScroll);
     fetchPosts();
 });
-
-
 </script>
 <script src="js/menu.js"></script>
 </body>
