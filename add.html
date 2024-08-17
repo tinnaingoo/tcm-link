@@ -32,18 +32,6 @@
           <input type="text" id="purl"><br>
           <label>Content:</label>
           <textarea id="content"></textarea><br>
-          <label>Image URL:</label>
-          <input type="text" id="imgurl"><br>
-          <label>Download Link:</label>
-          <input type="text" id="dlink"><br>
-          <label>License:</label>
-          <input type="text" id="license"><br>
-          <label>Operating System:</label><br>
-          <select id="os">
-            <option value="">Select Operating System</option>
-            <option value="windows">Windows</option>
-            <option value="android">Android</option>
-          </select><br>
           <label>Category:</label>
           <select id="category">
             <option value="">Select Category</option>
@@ -53,6 +41,10 @@
             <option value="Fonts">Fonts</option>
             <option value="Driver">Driver</option>
           </select><br>
+          <label>Download Link:</label>
+          <input type="text" id="dlink"><br>
+          <label>License:</label>
+          <input type="text" id="license"><br>
           <label>File Size:</label>
           <input type="text" id="fsize"><br>
           <button type="submit">Export Key Code</button>
@@ -67,6 +59,10 @@
     const postForm = document.getElementById('post-form');
     const editSelectContainer = document.getElementById('edit-select-container');
     const editSelect = document.getElementById('edit-select');
+    const category = document.getElementById('category');
+    const downloadLink = document.getElementById('dlink');
+    const license = document.getElementById('license');
+    const fileSize = document.getElementById('fsize');
 
     newAddBtn.addEventListener('click', () => {
       postForm.style.display = 'block';
@@ -115,6 +111,21 @@
             document.getElementById('fsize').value = selectedPost.fsize;
           })
           .catch(error => console.error('Error loading post:', error));
+      }
+    });
+
+    category.addEventListener('change', function() {
+      if (category.value === 'Technology') {
+        downloadLink.value = '-';
+        license.value = '-';
+        fileSize.value = '-';
+        downloadLink.disabled = true;
+        license.disabled = true;
+        fileSize.disabled = true;
+      } else {
+        downloadLink.disabled = false;
+        license.disabled = false;
+        fileSize.disabled = false;
       }
     });
 
