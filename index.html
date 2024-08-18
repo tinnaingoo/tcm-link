@@ -5,18 +5,12 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/menu.css">
 <link rel="stylesheet" href="css/responsive-layout.css">
-<link real="stylesheet" href="fonts/myanmar-font-family.css">
+<link rel="stylesheet" href="fonts/myanmar-font-family.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
-    
 </head>
 <body>
-
-<!---<div class="header">
-  <div class="web-title">TC-Myaing</div>
-  <div class="web-description">Download Link များစုစည်းမှု</div>
-</div> --->
 
 <nav class="menu">
     <div class="toggle-nav">
@@ -38,39 +32,34 @@
         <a id="title" >TC-Myaing</a>
         <div class="switch"><img class="search-icon" src="img/search-white.png"></div>
     </div>
-
 </nav>
 
 <div class="container-main">
         <div class="row">
-            <!-- Main Column -->
             <div class="col-12 col-s-12 col-m-9 col-l-9 col-xl-9">
                 <div class="container-box" id="content">
-                            <!-- Post containers will be inserted here dynamically -->
+                    <!-- Loading Spinner -->
+                    <div id="loading" class="loading-spinner" style="display: none;">
+                        <img src="img/loading-spinner.gif" alt="Loading...">
+                    </div>
                 </div>
                 <div id="noResults" class="no-results" style="display: none;">No results found.</div>
             </div>
     
-    
-    <!-- Slide -->
-    <div class="col-12 col-s-12 col-m-3 col-l-3 col-xl-3">
-        <div class="aside">
-            <div class="slide-box">
-                <div id="category"></div>
+            <div class="col-12 col-s-12 col-m-3 col-l-3 col-xl-3">
+                <div class="aside">
+                    <div class="slide-box">
+                        <div id="category"></div>
+                    </div>
+                    <div class="subscribe-section">
+                        <p class="s-title">Subscribe to Our YouTube Channel</p>
+                        <div class="container">
+                            <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn"> Subscribe </button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <div class="subscribe-section">
-           <p class="s-title">Subscribe to Our YouTube Channel</p>
-           <div class="container">
-             <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn"> Subscribe </button></a>
-           </div>
-       </div>
-
-     
-       
-       </div>
-     </div>
-     
-</div><!---Row End--->
+        </div>
 </div>
 
 <div class="footer">
@@ -78,8 +67,5 @@
 </div>
 <script src="js/menu.js"></script>   
 <script src="js/myscripts.js"></script>
-
-
-  
 </body>
 </html>
