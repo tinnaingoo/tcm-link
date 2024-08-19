@@ -7,7 +7,7 @@ body {
   font-family:'Pyidaungsu', sans-serif;
         }
 
-/* Simple Language Switcher */
+/* Simple Language Switcher with Vertical Text */
 .simple-lang-switcher {
     position: fixed;
     left: 0;
@@ -15,8 +15,8 @@ body {
     transform: translateY(-50%);
     background-color: #333;
     border-radius: 0 5px 5px 0;
-    padding: 5px 0;
     z-index: 1000;
+    overflow: hidden;
 }
 
 .simple-lang-switcher .lang-btn {
@@ -28,7 +28,9 @@ body {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    text-align: left;
+    text-align: center;
+    writing-mode: vertical-rl; /* Vertical text */
+    transform: rotate(180deg); /* Rotate text to read top to bottom */
     transition: background-color 0.3s ease;
 }
 
@@ -39,6 +41,7 @@ body {
 .simple-lang-switcher .lang-btn.active {
     background-color: #555;
 }
+
 
 
 
