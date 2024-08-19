@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <img src="${post.imgurl}" alt="Sample Image">
                 </div>
                 <div class="post-content">
-                    <div class="p-title"><a>${post.ptitle}</a></div>
+                    <div class="p-title"><a>${post.ptitle[lang]}</a></div>
                     <div class="p-description"><a>${post.prescription}</a></div>
                     <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
                 </div>
