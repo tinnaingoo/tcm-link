@@ -7,6 +7,71 @@ body {
   font-family:'Pyidaungsu', sans-serif;
         }
 
+/* Language Toggle Button */
+.lang-toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.lang-toggle-btn:hover {
+    background-color: #555;
+}
+
+/* Language Switcher Panel */
+.language-panel {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 999;
+    padding: 20px;
+}
+
+.language-panel .lang-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.language-panel .lang-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.language-panel .lang-btn:hover {
+    background-color: #555;
+}
+
+.language-panel .close-btn {
+    cursor: pointer;
+}
+
+.language-panel.active {
+    left: 0;
+}
+
+
+
 .loading-spinner {
     display: flex;
     justify-content: center;
