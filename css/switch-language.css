@@ -18,11 +18,13 @@
     background-color: #333;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
-    writing-mode: vertical-rl; /* Vertical text */
-    transform: rotate(180deg); /* Rotate text to read top to bottom */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
     transition: background-color 0.3s ease;
+    padding-left: 2px;
+    padding-right: 3px;
 }
 
 .simple-lang-switcher .lang-btn:hover {
