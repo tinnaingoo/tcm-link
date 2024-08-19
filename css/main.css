@@ -7,40 +7,6 @@ body {
   font-family:'Pyidaungsu', sans-serif;
         }
 
-/* Simple Language Switcher with Vertical Text */
-.simple-lang-switcher {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    border-radius: 0 5px 5px 0;
-    z-index: 1000;
-    overflow: hidden;
-}
-
-.simple-lang-switcher .lang-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    background-color: #333;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    writing-mode: vertical-rl; /* Vertical text */
-    transform: rotate(180deg); /* Rotate text to read top to bottom */
-    transition: background-color 0.3s ease;
-}
-
-.simple-lang-switcher .lang-btn:hover {
-    background-color: #555;
-}
-
-.simple-lang-switcher .lang-btn.active {
-    background-color: #555;
-}
 
 
 
