@@ -1,15 +1,27 @@
 [
     {
-        "ptitle": "Adobe Photoshop CS3",
+        "ptitle": {
+            "en": "Adobe Photoshop CS3",
+            "my": "Adobe Photoshop CS3 (မြန်မာ)"
+        },
         "date": "2024-07-26",
         "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
-        "prescription": "Adobe Photoshop CS3 Download: The Ultimate Tool for Designers and Photographers!",
+        "prescription": {
+            "en": "Adobe Photoshop CS3 Download: The Ultimate Tool for Designers and Photographers!",
+            "my": "Adobe Photoshop CS3 ဒေါင်းလုပ်: ဒီဇိုင်နာများနှင့်ဓာတ်ပုံဆရာများအတွက်အကောင်းဆုံးကိရိယာ!"
+        },
         "purl": "adobe-photoshop-cs3.html",
-        "content": "\n            <p>Welcome to our download page for Adobe Photoshop CS3, the industry-standard software for graphic designers, photographers, and creative professionals. Whether you're looking to edit photos, create stunning graphics, or design professional-grade artwork, Photoshop CS3 offers powerful tools and features to bring your vision to life.</p><p><br></p><p><b><u>Features of Adobe Photoshop CS3:</u></b></p><p><b>Advanced Editing Tools</b>: Utilize a wide range of editing tools to enhance, retouch, and manipulate images with precision.</p><p><b>Layer Management</b>: Work with multiple layers to create complex designs and effects.</p><p><b>Filters and Effects</b>: Apply a variety of filters and effects to achieve professional-quality results.</p><p><b>Integration with Adobe Suite</b>: Seamlessly integrate with other Adobe software for a streamlined workflow.</p><p><b>Improved Performance</b>: Enjoy faster performance and enhanced productivity with optimized tools and features.</p><p><b><u>System Requirements:</u></b></p><p><b>Operating System</b>: Windows XP/Vista/7 or Mac OS X 10.4.8 or higher</p><p><b>Processor</b>: Intel Pentium 4 or AMD Athlon 64 processor</p><p><b>RAM</b>: 512 MB or more</p><p><b>Hard Disk Space</b>: 1 GB of available hard-disk space</p>",
+        "content": {
+            "en": "<p>Welcome to our download page for Adobe Photoshop CS3, the industry-standard software for graphic designers, photographers, and creative professionals. Whether you're looking to edit photos, create stunning graphics, or design professional-grade artwork, Photoshop CS3 offers powerful tools and features to bring your vision to life.</p>",
+            "my": "<p>Adobe Photoshop CS3 ဒေါင်းလုပ်စာမျက်နှာမှ ကြိုဆိုပါတယ်။ ဒီဇိုင်နာများ၊ဓာတ်ပုံဆရာများနှင့် ဖန်တီးသူပရော်ဖက်ရှင်နယ်များအတွက် စံချိန်ရိယာပေါင်းများစွာဖြင့် ဖန်တီးထားသော ဝန်ဆောင်မှုများပေးစွမ်းနိုင်မည့် အင်ဒတ်စတရီစံချိန်အနေဖြင့် အသုံးပြုမည့် ကွန်ပျူတာဆော့ဖ်ဝဲဖြစ်ပါသည်။ သင့်ရဲ့စိတ်ကူးအခြေခံပြီး အမှန်တရားရဲ့ပုံစံကို ဖန်တီးနိုင်ဖို့တွင် ကူညီပေးပါသည်။</p>"
+        },
         "dlink": "https://www.mediafire.com/file/gzfmm5gscit1bee/Adobe_Photoshop_CS3.rar/file",
         "license": "Serial Key",
         "os": "windows",
-        "category": "Windows Software",
+        "category": {
+            "en": "Windows Software",
+            "my": "ဝင်းဒိုးဆော့ဖ်ဝဲ"
+        },
         "fsize": "666 MB"
     },
     {
