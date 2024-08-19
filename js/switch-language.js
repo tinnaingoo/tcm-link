@@ -1,20 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const langPanel = document.getElementById('languagePanel');
-    const langToggleBtn = document.querySelector('.lang-toggle-btn');
-    const closeBtn = document.querySelector('.close-btn');
     const langButtons = document.querySelectorAll('.lang-btn');
 
-    // Open the language panel
-    langToggleBtn.addEventListener('click', function() {
-        langPanel.classList.add('active');
-    });
-
-    // Close the language panel
-    closeBtn.addEventListener('click', function() {
-        langPanel.classList.remove('active');
-    });
-
-    // Language switcher functionality
+    // Language content dictionary
     const langContent = {
         en: {
             home: 'Home',
@@ -40,14 +27,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
+    // Add event listeners to buttons
     langButtons.forEach(button => {
         button.addEventListener('click', function() {
             const lang = this.id.split('-')[1];
             switchLanguage(lang);
 
+            // Toggle active state
             langButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            langPanel.classList.remove('active');
         });
     });
 
@@ -63,6 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.footer p').textContent = langContent[lang].copyright;
     }
 
-    // Default language on page load
+    // Set default language
     switchLanguage('en');
 });
