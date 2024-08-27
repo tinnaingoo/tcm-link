@@ -162,7 +162,7 @@ function postComment() {
 
     gapi.load('client:auth2', function () {
         console.log('Google API client and auth2 loaded');
-        gapi.auth2.init({ client_id: '758794962809-b180fp84efb3qedhvgfe67nas112g6su.apps.googleusercontent.com' }).then(() => {
+        gapi.auth2.init({ client_id: '758794962809-nt3vakb8gf5dvqvm29f1umvi7empfk3r.apps.googleusercontent.com' }).then(() => {
             console.log('Google Auth initialized');
             gapi.auth2.getAuthInstance().signIn().then(() => {
                 console.log('User signed in');
