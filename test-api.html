@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger Post with Comments</title>
+</head>
+<body>
+    <div id="post-content"></div>
+    <h2>Leave a Comment</h2>
+    <form id="comment-form">
+        <input type="text" id="author" placeholder="Your Name" required>
+        <textarea id="content" placeholder="Your Comment" required></textarea>
+        <button type="submit">Submit Comment</button>
+    </form>
+    <div id="comments"></div>
+
+    <script>
+        const apiKey = 'AIzaSyBIC4d0hxgkz0D2czjoBwEnq2vvKoRg35Q';
+        const blogId = '8069277289488798331';
+        const postId = '8979334037792522669';
+
+        // Fetch post content
+        fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts/${postId}?key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('post-content').innerHTML = `<h1>${data.title}</h1>${data.content}`;
+            });
+
+        // Fetch comments
+        fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts/${postId}/comments?key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const commentsDiv = document.getElementById('comments');
+                data.items.forEach(comment => {
+                    commentsDiv.innerHTML += `<p><strong>${comment.author.displayName}:</strong> ${comment.content}</p>`;
+                });
+            });
+
+        // Submit comment
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const author = document.getElementById('author').value;
+            const content = document.getElementById('content').value;
+
+            fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts/${postId}/comments?key=${apiKey}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    author: { displayName: author },
+                    content: content
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('comments').innerHTML += `<p><strong>${data.author.displayName}:</strong> ${data.content}</p>`;
+                document.getElementById('comment-form').reset();
+            });
+        });
+    </script>
+</body>
+</html>
