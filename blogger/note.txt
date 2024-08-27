@@ -1,0 +1,15 @@
+Blogger API
+https://www.googleapis.com/blogger/v3/blogs/8069277289488798331?key=AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w
+
+blog posts list
+https://www.googleapis.com/blogger/v3/blogs/8069277289488798331/posts?key=AIzaSyAJj6cUNnF3KFspd69h2hLa-P0YAnbmE2w&maxResults=100
+
+
+API Key
+AIzaSyBIC4d0hxgkz0D2czjoBwEnq2vvKoRg35Q
+
+Client ID
+758794962809-b180fp84efb3qedhvgfe67nas112g6su.apps.googleusercontent.com
+
+Blogger ID
+8069277289488798331
