@@ -217,4 +217,13 @@ Popular Code Wedgit
 </b:includable>
         </b:widget>
 
+
+<b:widget id="header" type='HeaderView' locked="yes"/>
+
+<b:widget id="myList" type='ListView' locked="no" title="My Favorite Things"/>
+
+<b:widget id=”BlogArchive1” locked=”false” mobile=”yes” title=”Blog Archive” type=”BlogArchive”/>
+
+
+
         
