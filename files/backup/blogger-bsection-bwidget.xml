@@ -1,0 +1,36 @@
+<b:section id='search_top' name='Search (Top)' showaddelement='false'>
+    
+<b:widget id='BlogSearch1' locked='true' title='Search This Blog' type='BlogSearch' visible='false'>
+
+<b:section class='container' id='header' name='Header' showaddelement='false'>
+    
+<b:widget id='Header1' locked='true' title='TC-Myaing (Header)' type='Header' visible='true'>
+                   
+                   
+<b:section class='clearboth' id='page_list_top' name='Page List (Top)' showaddelement='false'>
+    
+<b:widget cond='!data:view.isPost' id='PageList1' locked='true' title='' type='PageList' visible='false'>
+                     
+                     
+<b:section ads='true' class='vertical-ad-container' id='ads' name='Ads' showaddelement='false'>
+    
+<b:widget id='AdSense1' locked='true' title='' type='AdSense' visible='false'>
+                       
+<b:section class='main' id='page_body' name='Page Body' showaddelement='false'>
+
+<b:widget cond='data:view.isHomepage' id='FeaturedPost1' locked='true' title='' type='FeaturedPost' visible='true'>
+           
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'>
+                    
+                    
+<b:section class='footer' id='footer' name='Footer' showaddelement='false' tag='footer'>
+
+<b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
+    
+<b:section class='sidebar_bottom' id='sidebar_bottom' name='Sidebar (Bottom)' preferred='yes'>
+          
+<b:widget id='BlogArchive1' locked='false' title='' type='BlogArchive' visible='false'>
+  
+  
+  
+                                               
