@@ -3545,12 +3545,20 @@ li.list-items:hover {
 document.addEventListener("DOMContentLoaded", function() {
     var menu = document.querySelector(".menu-list");
     var links = menu.getElementsByTagName("a");
-    var currentUrl = window.location.href;
+    var currentURL = window.location.href;
 
     for (var i = 0; i < links.length; i++) {
-        if (links[i].href === currentUrl) {
-            links[i].classList.add("active");
+        if (links[i].href === currentURL) {
+            links[i].className += " active";
         }
+
+        links[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
+            }
+            this.className += " active";
+        });
     }
 });
 // ]]>
@@ -4785,7 +4793,6 @@ function topFunction() {
                 <i aria-hidden='true' class='fa fa-close' id='TW_Close_Button' title='close'/>
             </span>
             <div class='popup-content'>
-                <h3>Poem of the Day</h3>
                 <p id='poem-content'/>
             </div>
             
@@ -4800,7 +4807,8 @@ function topFunction() {
             &quot;&#8220;The stars above, a cosmic sea,<br/> Guiding us through eternity,<br/> Each twinkle tells a tale of old,<br/> In every sparkle, dreams unfold.&#8221;&quot;,
             &quot;&#8220;Through the trees, the wind does sigh,<br/> A lullaby as night draws nigh,<br/> The moon reflects its silver beams,<br/> Lighting up our midnight dreams.&#8221;&quot;,
             &quot;&#8220;In the quiet of the morn,<br/> New day, new hopes are born,<br/> With each sunrise, a chance to start,<br/> Fresh with joy within the heart.&#8221;&quot;,
-            &quot;&#8220;Across the fields of endless green,<br/> Dancing in the light serene,<br/> Nature sings its sweet refrain,<br/> A melody to ease all pain.&#8221;&quot;
+            &quot;&#8220;Across the fields of endless green,<br/> Dancing in the light serene,<br/> Nature sings its sweet refrain,<br/> A melody to ease all pain.&#8221;&quot;,
+      		&quot;&#8220; Love You &#8221;&quot;
         ];
 
         // Function to select a random poem
