@@ -201,7 +201,7 @@ If you found the code above and it is highlighted in black/gray color, then you 
 
 Popular Code Wedgit
 =======================
-
+```
 <b:widget id='PopularPosts1' locked='false' title='' type='PopularPosts' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
@@ -217,6 +217,7 @@ Popular Code Wedgit
 </b:includable>
         </b:widget>
 
+```
 
 <b:widget id="header" type='HeaderView' locked="yes"/>
 
@@ -225,6 +226,8 @@ Popular Code Wedgit
 <b:widget id=”BlogArchive1” locked=”false” mobile=”yes” title=”Blog Archive” type=”BlogArchive”/>
 
 ###Blogger infinite scroll by auto load post
+```
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
 <script type='text/javascript' src='//m-misc.appspot.com/js/blogger-infinite-scrolling.js'></script>
+```
         
