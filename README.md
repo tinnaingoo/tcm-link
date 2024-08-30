@@ -1,4 +1,4 @@
-####There are certain criteria for making a template for Blogger Blog :
+**There are certain criteria for making a template for Blogger Blog :**
 
 1. There must be skin (```<b:skin></b:skin>```) in the template
 2. A template must have at least one b:section tag
