@@ -199,8 +199,7 @@ Search for the following code :
 If you found the code above and it is highlighted in black/gray color, then you have successfully disabled the Blogger CSS loading.
 
 
-Popular Code Wedgit
-=======================
+**Popular Code Wedgit**
 ```
 <b:widget id='PopularPosts1' locked='false' title='' type='PopularPosts' visible='true'>
           <b:widget-settings>
@@ -225,7 +224,7 @@ Popular Code Wedgit
 
 <b:widget id=”BlogArchive1” locked=”false” mobile=”yes” title=”Blog Archive” type=”BlogArchive”/>
 
-###Blogger infinite scroll by auto load post
+**Blogger infinite scroll by auto load post**
 ```
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
 <script type='text/javascript' src='//m-misc.appspot.com/js/blogger-infinite-scrolling.js'></script>
