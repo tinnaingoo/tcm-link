@@ -239,7 +239,7 @@ If you found the code above and it is highlighted in black/gray color, then you 
 <details class='collapsible extendable'>
   <b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
 ```
-6. Remove highlighted yellow.
+6. Remove **cond='data:view.isLabelSearch'**.
 7. click Save Theme
 
 **Add a Page Scroll Progress Bar at the Top of Your Startup Webpage**
