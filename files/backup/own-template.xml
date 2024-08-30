@@ -3294,6 +3294,12 @@ button[type=&#39;submit&#39;]:hover {
 }
 
 <!--Label List-->
+      
+div#Label3 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+      
 .byline.post-labels a, .Label li, .Label span.label-size {
     border: solid;
     border-width: 1px;
@@ -3508,12 +3514,14 @@ li.list-items:hover {
     </div>
     
     <ul class='menu-list'>
-        <li><a class='active' href='https://tcmyg.blogspot.com/'>Home</a></li>
-        <li><a href='https://tcmyg.blogspot.com/search/label/Computer%20Software'>Computer Software</a></li>
-        <li><a href='https://tcmyg.blogspot.com/search/label/Mobile%20Application'>Mobile Application</a></li>
-        <li><a href='https://tcmyg.blogspot.com/search/label/E-Book'>E-Book</a></li>
-        <li><a href='#'>Technology</a></li>
-    </ul>
+    <li><a href='https://tcmyg.blogspot.com/'>Home</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/Computer%20Software'>Computer Software</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/Mobile%20Application'>Mobile Application</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/E-Book'>E-Book</a></li>
+    <li><a href='#'>Technology</a></li>
+</ul>
+
+    
 
     <div class='search-container'>
       	
@@ -3531,7 +3539,23 @@ li.list-items:hover {
 </nav>
   
     </div>
+    
+<script type='text/javascript'>
+// <![CDATA[
+document.addEventListener("DOMContentLoaded", function() {
+    var menu = document.querySelector(".menu-list");
+    var links = menu.getElementsByTagName("a");
+    var currentUrl = window.location.href;
 
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].href === currentUrl) {
+            links[i].classList.add("active");
+        }
+    }
+});
+// ]]>
+</script>
+      
 <!--Back to Top Button-->
 <style>body {  font-family: Arial, Helvetica, sans-serif;  font-size: 20px;}
 
@@ -4633,7 +4657,7 @@ function topFunction() {
         
     
         <!-- Copyright Section -->
-        <div class='copyright' style='width: 100%;'>
+        <div class='copyright' style='width: 100%; padding:15px;'>
             <p>&#169; Develop by Tin Naing Oo</p>
         </div>
     
@@ -4745,6 +4769,12 @@ function topFunction() {
         .popup-content button:hover {
             background-color: #0056b3;
         }
+ 
+  
+  		i#TW_Close_Button {
+    		font-size: 15px;
+    		color: gray;
+		}
 
     </style>
     
@@ -4752,7 +4782,7 @@ function topFunction() {
     <div class='tw_float_ads_main_Wrap' id='tw_float_ads_main_Wrap'>
         <div class='tw_float_ads_close'>
             <span id='tw_close_button'>
-                <i aria-hidden='true' class='fa fa-window-close-o' id='TW_Close_Button' title='close'/>
+                <i aria-hidden='true' class='fa fa-close' id='TW_Close_Button' title='close'/>
             </span>
             <div class='popup-content'>
                 <h3>Poem of the Day</h3>
