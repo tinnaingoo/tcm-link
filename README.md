@@ -307,3 +307,29 @@ $(document).ready(function () {
     </script>
 
 ```
+**Menu Active & Deactive by URL**
+```
+<ul class='menu-list'>
+    <li><a href='https://tcmyg.blogspot.com/'>Home</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/Computer%20Software'>Computer Software</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/Mobile%20Application'>Mobile Application</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/E-Book'>E-Book</a></li>
+    <li><a href='#'>Technology</a></li>
+</ul>
+
+<script type="text/javascript">
+// <![CDATA[
+document.addEventListener("DOMContentLoaded", function() {
+    var menu = document.querySelector(".menu-list");
+    var links = menu.getElementsByTagName("a");
+    var currentUrl = window.location.href;
+
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].href === currentUrl) {
+            links[i].classList.add("active");
+        }
+    }
+});
+// ]]>
+</script>
+```
