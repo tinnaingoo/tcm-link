@@ -229,4 +229,15 @@ If you found the code above and it is highlighted in black/gray color, then you 
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
 <script type='text/javascript' src='//m-misc.appspot.com/js/blogger-infinite-scrolling.js'></script>
 ```
-        
+**Always Show Labels Widget Expend**
+1. Go to Theme
+2. Edit HTML
+3. click Jump to Widget
+4. select your Label widget
+5. At widget codes expand the widget codes & find below...
+```
+<details class='collapsible extendable'>
+  <b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
+```
+6. Remove highlighted yellow.
+7. click Save Theme        
