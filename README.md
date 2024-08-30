@@ -240,4 +240,77 @@ If you found the code above and it is highlighted in black/gray color, then you 
   <b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
 ```
 6. Remove highlighted yellow.
-7. click Save Theme        
+7. click Save Theme
+
+**Add a Page Scroll Progress Bar at the Top of Your Startup Webpage**
+```
+  <div class='progress-container fixed-top'>
+  <span class='progress-bar'/>
+</div>
+    <style>
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+      
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  height: 5px;
+  display: block;
+}
+.progress-bar {
+  background-color: red;
+  width: 0%;
+  display: block;
+  height: inherit;
+}
+      
+    </style>
+    
+    <script>
+      function scrollProgressBar() {
+  var getMax = function () {
+    return $(document).height() - $(window).height();
+  };
+
+  var getValue = function () {
+    return $(window).scrollTop();
+  };
+
+  var progressBar = $(&quot;.progress-bar&quot;),
+    max = getMax(),
+    value,
+    width;
+
+  var getWidth = function () {
+    // Calculate width in percentage
+    value = getValue();
+    width = (value / max) * 100;
+    width = width + &quot;%&quot;;
+    return width;
+  };
+
+  var setWidth = function () {
+    progressBar.css({ width: getWidth() });
+  };
+
+  $(document).on(&quot;scroll&quot;, setWidth);
+  $(window).on(&quot;resize&quot;, function () {
+    // Need to reset max
+    max = getMax();
+    setWidth();
+  });
+}
+      
+$(document).ready(function () {
+  SF_scripts();
+
+  scrollProgressBar();
+});      
+    </script>
+
+```
