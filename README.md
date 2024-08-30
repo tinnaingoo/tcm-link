@@ -201,21 +201,14 @@ If you found the code above and it is highlighted in black/gray color, then you 
 
 **Popular Code Wedgit**
 ```
-<b:widget id='PopularPosts1' locked='false' title='' type='PopularPosts' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
-            <b:widget-setting name='showThumbnails'>true</b:widget-setting>
-            <b:widget-setting name='showSnippets'>true</b:widget-setting>
-            <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main' var='this'>
-  <b:include name='widget-title'/>
-  <div class='widget-content'>
-    <b:include name='snippetedPosts'/>
-  </div>
+<b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts'>
+<b:includable id='main'>
+<b:loop values='data:posts' var='post'>
+    <a expr:href='data:post.url'><li><data:post.title/></li></a>
+</b:loop>
 </b:includable>
-        </b:widget>
-
+</b:widget>
+</b:section>
 ```
 
 <b:widget id="header" type='HeaderView' locked="yes"/>
