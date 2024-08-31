@@ -3,32 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Sticky Navbar</title>
+    <title>Responsive Navbar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* General Styles */
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: #f4f4f4;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* Navbar Styles */
-        nav.menu {
+        /* Main Navbar Styles */
+        .navbar {
             background-color: #333;
-            color: white;
+            overflow: hidden;
             position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
@@ -36,181 +25,183 @@
             padding: 10px 20px;
         }
 
-        nav.menu ul {
+        /* Navbar Menu */
+        .navbar ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
-            flex-wrap: wrap;
         }
 
-        nav.menu ul li {
+        .navbar ul li {
             position: relative;
-            margin: 5px;
         }
 
-        nav.menu ul li a {
+        .navbar ul li a {
             color: white;
+            padding: 14px 20px;
             text-decoration: none;
-            padding: 10px 20px;
             display: block;
         }
 
-        nav.menu ul li a:hover,
-        nav.menu ul li a.active {
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
             background-color: #555;
         }
 
-        /* Submenu Styles */
-        .submenu-content {
+        /* Submenu */
+        .navbar ul li .submenu {
             display: none;
             position: absolute;
             left: 0;
-            background-color: #333;
-            min-width: 200px;
-            z-index: 1001;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1000;
         }
 
-        .submenu-content li {
-            margin: 0;
-        }
-
-        .submenu-content a {
+        .navbar ul li .submenu a {
             padding: 10px 20px;
-            text-decoration: none;
-            color: white;
-            display: block;
         }
 
-        .submenu-content a:hover {
+        .navbar ul li .submenu a:hover {
             background-color: #555;
-        }
-
-        nav.menu ul li:hover .submenu-content {
-            display: block;
         }
 
         /* Search Box */
-        .search-container {
+        .search-box {
             display: flex;
             align-items: center;
-            width: 40%;
-            justify-content: center;
-        }
-
-        .search-container input[type="text"] {
+            background-color: #444;
             padding: 5px;
-            border: none;
-            border-radius: 4px;
-            width: 100%;
+            border-radius: 5px;
         }
 
-        .search-container button {
-            padding: 6px 12px;
+        .search-box input[type="text"] {
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 7px;
+            margin-right: 5px;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .search-box button {
+            border: none;
+            padding: 7px 10px;
             background-color: #555;
             color: white;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
-        .search-container button:hover {
-            background-color: #777;
+        .search-box button:hover {
+            background-color: #666;
         }
 
-        /* Toggle Button for Mobile */
+        /* Mobile Menu Toggle */
         .toggle-nav {
             display: none;
-            font-size: 24px;
             cursor: pointer;
-            text-align: center;
-            color: white;
         }
 
-        @media (max-width: 768px) {
-            .toggle-nav {
-                display: block;
-            }
+        .toggle-nav span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
 
-            nav.menu ul {
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar ul {
                 display: none;
                 flex-direction: column;
                 width: 100%;
                 text-align: center;
             }
 
-            nav.menu ul.active {
+            .navbar ul.active {
                 display: flex;
             }
 
-            .search-container {
-                width: 90%;
-                order: -1; /* Ensures search box stays at the top */
+            .navbar ul li .submenu {
+                position: relative;
+                min-width: 100%;
+            }
+
+            .toggle-nav {
+                display: block;
+            }
+
+            .search-box {
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
-
-        /* Content */
-        .content {
-            padding: 20px;
-        }
-
     </style>
 </head>
 <body>
 
-<header>
-    Responsive Sticky Navbar with Search and Submenus
-</header>
-
-<nav class="menu">
-    <div class="toggle-nav">&#9776;</div>
-    <ul class="menu-list">
-        <li><a href="https://tcm-link.vercel.app/test.html" class="home">Home</a></li>
-        <li><a href="https://www.website.com/software" class="software">Software</a></li>
-        <li class="submenu">
-            <a href="#" class="submenubtn">Technology <i class="fa fa-caret-down"></i></a>
-            <ul class="submenu-content">
-                <li><a href="#">Tech News</a></li>
-                <li><a href="https://www.website.com/gadgets">Gadgets</a></li>
-                <li><a href="https://www.website.com/reviews">Reviews</a></li>
-            </ul>
-        </li>
-        <li><a href="https://www.website.com/contact" class="contact">Contact</a></li>
-    </ul>
-    <div class="search-container">
-        <form action="/search" method="get">
-            <input type="text" name="q" placeholder="Search...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="toggle-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu-list">
+            <li><a href="https://tcmyg.blogspot.com/">Home</a></li>
+            <li><a href="https://tcmyg.blogspot.com/search/label/Computer%20Software">Computer Software</a>
+                <ul class="submenu">
+                    <li><a href="#">Sub Item 1</a></li>
+                    <li><a href="#">Sub Item 2</a></li>
+                    <li><a href="#">Sub Item 3</a></li>
+                </ul>
+            </li>
+            <li><a href="https://tcmyg.blogspot.com/search/label/Mobile%20Application">Mobile Application</a></li>
+            <li><a href="https://tcmyg.blogspot.com/search/label/E-Book">E-Book</a></li>
+            <li><a href="#">Technology</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button><i class="fa fa-search"></i></button>
+        </div>
     </div>
-</nav>
 
-<div class="content">
-    <h1>Welcome to the Website</h1>
-    <p>This is your main content area. The navbar above will remain sticky as you scroll.</p>
-</div>
+    <!-- Content Below Navbar -->
+    <div style="padding:20px;">
+        <h1>Welcome to the Site</h1>
+        <p>This is the content below the navbar.</p>
+    </div>
 
-<script>
-    // JavaScript to toggle mobile menu
-    document.addEventListener("DOMContentLoaded", function() {
-        var menuToggle = document.querySelector(".toggle-nav");
-        var menu = document.querySelector(".menu ul");
-
-        menuToggle.addEventListener("click", function() {
-            menu.classList.toggle("active");
+    <script>
+        // Toggle menu on mobile
+        document.querySelector('.toggle-nav').addEventListener('click', function() {
+            document.querySelector('.menu-list').classList.toggle('active');
         });
 
-        // JavaScript to highlight active menu based on URL
-        var currentURL = window.location.href;
-        var links = document.querySelectorAll(".menu-list a");
-
-        links.forEach(function(link) {
-            if (link.href === currentURL) {
-                link.classList.add("active");
-            }
+        // Handle submenu toggling
+        document.querySelectorAll('.menu-list li a').forEach(item => {
+            item.addEventListener('click', function(e) {
+                let submenu = this.nextElementSibling;
+                if (submenu && submenu.classList.contains('submenu')) {
+                    e.preventDefault();
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
         });
-    });
-</script>
+
+        // Add active class to the current link based on URL
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentURL = window.location.href;
+            document.querySelectorAll('.menu-list a').forEach(link => {
+                if (link.href === currentURL) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
