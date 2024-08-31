@@ -3372,6 +3372,8 @@ li.list-items:hover {
 </style>
     
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <script crossorigin='anonymous' src='https://kit.fontawesome.com/a076d05399.js'/>
     
       
   </head>
@@ -4344,6 +4346,203 @@ function topFunction() {
   
 <div class='col-3 right mobile'>          
 	<b:section class='aside' id='slide' name='Slide' showaddelement='true'>
+<b:widget id='HTML1' locked='false' title='' type='HTML' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'><![CDATA[<div class="subscribe-box">
+   <div class="channel-info">
+        <img src="https://yt3.googleusercontent.com/sPVzOrh9NQ967SBc1h0SBTrzUKmyNy6GvNE5dOc103evxab5ajBGNsgFJRdmZrijE_1O1FZ2qg=s160-c-k-c0x00ffffff-no-rj" alt="Channel Logo" class="channel-logo" />
+        <div class="channel-details">
+            <p>TC-Myaing</p>
+            <a class="yt-sub-btn" href="https://www.youtube.com/@tcmyaing?sub_confirmation=1" target="_blank"> 
+                <i class="fa fa-youtube-play"></i>
+                Subscribe
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="like-follow-box">
+   <div class="page-info">
+        <img src="https://yt3.googleusercontent.com/sPVzOrh9NQ967SBc1h0SBTrzUKmyNy6GvNE5dOc103evxab5ajBGNsgFJRdmZrijE_1O1FZ2qg=s160-c-k-c0x00ffffff-no-rj" alt="Channel Logo" class="page-logo" />
+        <div class="page-details">
+            <p>TC-Myaing</p>
+            <a class="fb-like-follow-btn" href="https://www.facebook.com/tc.myaing" target="_blank"> 
+                <div class="fb-fa-icon"><i class="fa fa-facebook"></i></div>
+                Like & Follow
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+.channel-details p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px;
+    padding-left: 0px;
+}
+.subscribe-box {
+    max-width: 350px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+   margin-bottom: 5px;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.channel-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid;
+    border-width: thin;
+    border-color: red;
+}
+
+.channel-details {
+    margin-left: 15px;
+    text-align: left;
+}
+
+.channel-details p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.subscribe-button {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.yt-sub-btn{
+     color: red;
+}
+
+.yt-sub-btn:hover{
+     color: blue;
+}
+
+.youtube-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+<!--Facebook -->
+.page-details p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px;
+    padding-left: 0px;
+}
+.like-follow-box {
+    max-width: 350px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+.page-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.page-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid;
+    border-width: thin;
+    border-color: #2196f3;
+}
+
+.page-details {
+    margin-left: 15px;
+    text-align: left;
+}
+
+.page-details p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.like-follow-button {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+a.fb-like-follow-btn {
+    color: #2196f3;
+    display: flex;
+    flex-direction: row;
+}
+a.fb-like-follow-btn:hover{
+     color: blue;
+}
+
+.fb-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.fb-fa-icon {
+    background: #2196f3;
+    width: 20px;
+    height: 20px;
+    color: white;
+    text-align: center;
+    padding: 3px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.fb-fa-icon:hover {
+   background: blue;
+}
+</style>]]></b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+</b:widget>
 <b:widget id='Label3' locked='true' title='' type='Label' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
