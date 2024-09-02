@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='strm.xml' b:templateVersion='1.0.1' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
-    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <meta charset='UTF-8' content='width=device-width, initial-scale=1.0' name='viewport'/>
     <title><data:view.title.escaped/></title>
     <b:include data='blog' name='all-head-content'/>
 
@@ -3043,7 +3043,10 @@ input#searchBar {
     margin: 5px;
     color: #000;
 }
-      
+
+.search-btn:hover{
+      background: red;
+      }      
 
 img.search-icon {
     width: 30px;
@@ -3083,7 +3086,28 @@ img.search-icon {
     text-align: center;
     color: white;
 }
-
+@media (max-width: 1024px) {
+    .toggle-nav {
+        display: block;
+        width: 10%;
+    }
+    
+    nav.menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav.menu ul.active {
+        display: flex;
+    }
+    
+    .search-container {
+        width: 90%;
+        order: -1; /* Ensure search box stays at the top */
+    }
+}
 @media (max-width: 768px) {
     .toggle-nav {
         display: block;
@@ -3106,6 +3130,104 @@ img.search-icon {
         order: -1; /* Ensure search box stays at the top */
     }
 }
+      
+      
+<!--For Footer-->
+      footer{
+    background-color: #111;
+}
+.footerContainer {
+    width: 100%;
+    padding: 20px 30px 20px;
+   
+}
+      
+h2.social-media-title {
+    width: 100%;
+    color: black;
+ 
+    text-align: center;
+}
+      
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    transition: transform .2s;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+
+}
+.socialIcons a:hover i{
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:black;
+    margin: 20px;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
+     p.copyright-p {
+    font-size: 20px;
+    color: white;
+    
+}
+      <!--Footer End-->
       
 .aside {
   	background: #ffffff;
@@ -3372,6 +3494,7 @@ li.list-items:hover {
 </style>
     
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' referrerpolicy='no-referrer' rel='stylesheet'/>
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'/>
     <script crossorigin='anonymous' src='https://kit.fontawesome.com/a076d05399.js'/>
     
@@ -3379,6 +3502,21 @@ li.list-items:hover {
   </head>
 
   <body>
+    
+    <!--Start of Tawk.to Script
+<script type='text/javascript'>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(&quot;script&quot;),s0=document.getElementsByTagName(&quot;script&quot;)[0];
+s1.async=true;
+s1.src=&#39;https://embed.tawk.to/66d5b4ce50c10f7a00a30ee5/1i6pckich&#39;;
+s1.charset=&#39;UTF-8&#39;;
+s1.setAttribute(&#39;crossorigin&#39;,&#39;*&#39;);
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+End of Tawk.to Script-->
+    
     
     <div class='header' style='width: 100%;'>
         <h2>TC-Myaing</h2>
@@ -3531,7 +3669,7 @@ li.list-items:hover {
           <!--Search Box-->
           <form action='/search' method='get'>
     			<input name='q' placeholder='Search this blog...' type='text'/>
-    			<button type='submit'><i class='fa fa-search'/></button>
+    			<button class='search-btn' type='submit'><i class='fa fa-search'/></button>
 			</form>
             
             <!--Search Box End-->
@@ -4354,7 +4492,7 @@ function topFunction() {
         <div class="channel-details">
             <p>TC-Myaing</p>
             <a class="yt-sub-btn" href="https://www.youtube.com/@tcmyaing?sub_confirmation=1" target="_blank"> 
-                <i class="fa fa-youtube-play"></i>
+                <i class="fa-brands fa-youtube"></i>
                 Subscribe
             </a>
         </div>
@@ -4367,7 +4505,7 @@ function topFunction() {
         <div class="page-details">
             <p>TC-Myaing</p>
             <a class="fb-like-follow-btn" href="https://www.facebook.com/tc.myaing" target="_blank"> 
-                <div class="fb-fa-icon"><i class="fa fa-facebook"></i></div>
+                <i class="fa-brands fa-facebook"></i>
                 Like & Follow
             </a>
         </div>
@@ -4506,10 +4644,19 @@ function topFunction() {
     font-size: 14px;
 }
 
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
 a.fb-like-follow-btn {
     color: #2196f3;
-    display: flex;
-    flex-direction: row;
+    
 }
 a.fb-like-follow-btn:hover{
      color: blue;
@@ -4861,12 +5008,68 @@ a.fb-like-follow-btn:hover{
  
 </div><!--Row1 End-->
     </div>
-        
+    <style>
+      div#Layout1 {
+    padding: 20px;
     
-        <!-- Copyright Section -->
-        <div class='copyright' style='width: 100%; padding:15px;'>
-            <p>&#169; Develop by Tin Naing Oo</p>
+}
+    </style>
+<div class='content'> 
+  <div class='row' style='width:100%'>
+    <div class='col-12'>
+  <b:section id='Layout1' showaddelement='yes'>
+    <b:widget id='Stats1' locked='false' title='Total Pageviews' type='Stats' visible='true'>
+      <b:widget-settings>
+        <b:widget-setting name='showGraphicalCounter'>true</b:widget-setting>
+        <b:widget-setting name='showAnimatedCounter'>false</b:widget-setting>
+        <b:widget-setting name='showSparkline'>true</b:widget-setting>
+        <b:widget-setting name='sparklineStyle'>BLACK_TRANSPARENT</b:widget-setting>
+        <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+      <b:includable id='content'>
+  <div class='widget-content'>
+    <!-- Content is going to be visible when data will be fetched from server. -->
+    <div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'>
+      <!-- Counter and image will be injected later via AJAX call. -->
+      <b:if cond='data:showSparkline'>
+        <script src='https://www.gstatic.com/charts/loader.js' type='text/javascript'/>
+        <span expr:id='data:widget.instanceId + &quot;_sparklinespan&quot;' style='display:inline-block; width:75px; height:30px'/>
+      </b:if>
+      <span expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)' expr:id='data:widget.instanceId + &quot;_totalCount&quot;'>
+      </span>
+    </div>
+  </div>
+</b:includable>
+    </b:widget>
+  </b:section>
+    </div>
+    
+   
+       
+  </div>
+  </div>
+    <hr/>
+    <footer>
+    <div class='footerContainer'>
+      	<h2 class='social-media-title'>Social Media</h2>
+        <div class='socialIcons'>
+          	<a href='https://www.youtube.com/@tcmyaing'><i class='fa-brands fa-youtube' style='color:#FF0000'/></a>
+            <a href='https://www.facebook.com/tc.myaing'><i class='fa-brands fa-facebook' style='color:#4267B2'/></a>
+            <a href='https://t.me/tcmyaing'><i class='fa-brands fa-telegram' style='color:#24A1DE'/></a>
         </div>
+        
+        
+    </div>
+     <!-- Copyright Section -->
+        <div class='copyright' style='width: 100%; padding:15px;'>
+            <p class='copyright-p'>Developed by Tin Naing Oo</p>
+        </div>
+</footer>
+       
     
 
     <!--Auto Load Post-->
@@ -4893,7 +5096,7 @@ a.fb-like-follow-btn:hover{
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            background-color: #fff;
+            background-color: black;
             padding: 10px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
             border-radius: 0px;
@@ -4909,7 +5112,7 @@ a.fb-like-follow-btn:hover{
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            background-color: #fff;
+            background-color: black;
             padding: 20px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
             border-radius: 0px;
@@ -4957,7 +5160,7 @@ a.fb-like-follow-btn:hover{
 
         .popup-content p {
             font-size: 16px;
-            color: #333;
+            color: #fff;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -5007,7 +5210,8 @@ a.fb-like-follow-btn:hover{
             &quot;&#8220;Through the trees, the wind does sigh,<br/> A lullaby as night draws nigh,<br/> The moon reflects its silver beams,<br/> Lighting up our midnight dreams.&#8221;&quot;,
             &quot;&#8220;In the quiet of the morn,<br/> New day, new hopes are born,<br/> With each sunrise, a chance to start,<br/> Fresh with joy within the heart.&#8221;&quot;,
             &quot;&#8220;Across the fields of endless green,<br/> Dancing in the light serene,<br/> Nature sings its sweet refrain,<br/> A melody to ease all pain.&#8221;&quot;,
-      		&quot;&#8220; Love You &#8221;&quot;
+      		&quot;&#8220; Love You &#8221;&quot;,
+      		&quot;&#8220; အခ&#4155;&#4141;န&#4154;န&#4158;င&#4151;&#4154;ဒ&#4142;ရ&#4145;သည&#4154; လ&#4144;က&#4141;&#4143;မစ&#4145;&#4140;င&#4151;&#4154; &#8221;&quot;
         ];
 
         // Function to select a random poem
