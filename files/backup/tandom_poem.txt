@@ -1,0 +1,164 @@
+<!--For Randon Poem-->
+    
+<style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+  		@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  			.tw_float_ads_main_Wrap {
+  			
+  			display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            padding: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 0px;
+            z-index: 1000;
+            width: 700px;
+        }
+  
+  }
+  
+  		.tw_float_ads_main_Wrap { 
+  			display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            padding: 20px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 0px;
+            z-index: 1000;
+            width: 300px;
+        }
+        
+
+        .tw_float_ads_close {
+            position: relative;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .tw_float_ads_close #tw_close_button {
+            font-size: 25px;
+            color: #00aecd;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+        }
+
+        #TW_credits {
+            font-size: 12px;
+            color: #000;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+            text-decoration: none !important;
+        }
+
+        #TW_credits a {
+            text-decoration: none !important;
+            color: #000;
+        }
+
+        .popup-content h3 {
+            margin-top: 0;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .popup-content p {
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .popup-content button:hover {
+            background-color: #0056b3;
+        }
+ 
+  
+  		i#TW_Close_Button {
+    		font-size: 15px;
+    		color: gray;
+		}
+
+    </style>
+    
+    <!-- Popup Box -->
+    <div class='tw_float_ads_main_Wrap' id='tw_float_ads_main_Wrap'>
+        <div class='tw_float_ads_close'>
+            <span id='tw_close_button'>
+                <i aria-hidden='true' class='fa fa-close' id='TW_Close_Button' title='close'/>
+            </span>
+            <div class='popup-content'>
+                <p id='poem-content'/>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script type='text/javascript'>
+        // Array of Poems
+        const poems = [
+            &quot;&#8220;A single flower blooms, the world rejoices,<br/> In its petals, a thousand voices,<br/> Soft whispers of the dawn&#39;s first light,<br/> A promise of new hopes in sight.&#8221;&quot;,
+            &quot;&#8220;The stars above, a cosmic sea,<br/> Guiding us through eternity,<br/> Each twinkle tells a tale of old,<br/> In every sparkle, dreams unfold.&#8221;&quot;,
+            &quot;&#8220;Through the trees, the wind does sigh,<br/> A lullaby as night draws nigh,<br/> The moon reflects its silver beams,<br/> Lighting up our midnight dreams.&#8221;&quot;,
+            &quot;&#8220;In the quiet of the morn,<br/> New day, new hopes are born,<br/> With each sunrise, a chance to start,<br/> Fresh with joy within the heart.&#8221;&quot;,
+            &quot;&#8220;Across the fields of endless green,<br/> Dancing in the light serene,<br/> Nature sings its sweet refrain,<br/> A melody to ease all pain.&#8221;&quot;,
+      		&quot;&#8220; Love You &#8221;&quot;,
+      		&quot;&#8220; အခ&#4155;&#4141;န&#4154;န&#4158;င&#4151;&#4154;ဒ&#4142;ရ&#4145;သည&#4154; လ&#4144;က&#4141;&#4143;မစ&#4145;&#4140;င&#4151;&#4154; &#8221;&quot;
+        ];
+
+        // Function to select a random poem
+        function getRandomPoem() {
+            const randomIndex = Math.floor(Math.random() * poems.length);
+            return poems[randomIndex];
+        }
+
+        // Function to open the popup
+        function openPopup() {
+            document.getElementById(&#39;poem-content&#39;).innerHTML = getRandomPoem();
+            document.getElementById(&#39;tw_float_ads_main_Wrap&#39;).style.display = &#39;block&#39;;
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById(&#39;tw_float_ads_main_Wrap&#39;).style.display = &#39;none&#39;;
+        }
+
+        // Auto Open Popup After Page Load or Refresh
+        window.onload = function() {
+            setTimeout(openPopup, 1000); // Adjust the time as needed
+        };
+
+        // Close Button Click Event
+        var tw_closeButton = document.getElementById(&#39;tw_close_button&#39;);
+        tw_closeButton.onclick = function () {
+            closePopup();
+        }
+    </script>--->
