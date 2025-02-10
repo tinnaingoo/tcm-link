@@ -17,7 +17,7 @@ body {
 }
 
 .main {
-	  max-width: 1200px;
+	/*max-width: 1200px;*/
   	margin: 0 auto;
   	/* container ကို အပြည့်အဝအသုံးပြုရန် width ကို 100% သတ်မှတ်ထားသည် */
   	width: 100%;
