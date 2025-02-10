@@ -1,15 +1,9 @@
 [
     {
-        "ptitle": {
-            "en": "Adobe Photoshop CS3",
-            "my": "Adobe Photoshop CS3 (မြန်မာ)"
-        },
+        "ptitle": "Adobe Photoshop CS3",
         "date": "2024-07-26",
         "imgurl": "img/Adobe_Photoshop_CS3_icon.png",
-        "prescription": {
-            "en": "Adobe Photoshop CS3 Download: The Ultimate Tool for Designers and Photographers!",
-            "my": "Adobe Photoshop CS3 ဒေါင်းလုပ်: ဒီဇိုင်နာများနှင့်ဓာတ်ပုံဆရာများအတွက်အကောင်းဆုံးကိရိယာ!"
-        },
+        "prescription": "Adobe Photoshop CS3 Download: The Ultimate Tool for Designers and Photographers!",
         "purl": "adobe-photoshop-cs3.html",
         "content": {
             "en": "<p>Welcome to our download page for Adobe Photoshop CS3, the industry-standard software for graphic designers, photographers, and creative professionals. Whether you're looking to edit photos, create stunning graphics, or design professional-grade artwork, Photoshop CS3 offers powerful tools and features to bring your vision to life.</p>",
