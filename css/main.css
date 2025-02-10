@@ -2,6 +2,12 @@
 @import url(//fonts.googleapis.com/earlyaccess/khyay.css); /*font-family: 'Khyay', sans-serif;*/
 @import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu"); /*font-family: "Pyidaungsu";*/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #333;
   font-family:'Pyidaungsu', sans-serif;
