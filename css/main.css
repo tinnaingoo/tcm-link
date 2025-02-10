@@ -16,7 +16,17 @@ body {
   	min-height: 100%;	
 }
 
-
+.main {
+	  max-width: 1200px;
+  	margin: 0 auto;
+  	/* container ကို အပြည့်အဝအသုံးပြုရန် width ကို 100% သတ်မှတ်ထားသည် */
+  	width: 100%;
+  	/* Flexbox သုံးပြီး container ထဲမှာ အမျိုးမျိုး component များကို စီရန် */
+  	display: flex;
+  	flex-direction: column;
+  	/* container အတွင်း main အစိတ်အပိုင်း (content) ကို expand လုပ်ရန် */
+  	flex: 1;
+}
 
 
 
