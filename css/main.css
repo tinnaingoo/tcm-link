@@ -383,44 +383,6 @@ h1#post-title {
   bottom: 0;
 }
 
-/*For Social Media Icon*/
-.footerContainer {
-    width: 100%;
-    padding: 20px 30px 20px;
-}
-
-h2.social-media-title {
-    width: 100%;
-    color: black;
- 
-    text-align: center;
-}
-      
-.socialIcons{
-    display: flex;
-    justify-content: center;
-}
-.socialIcons a{
-    text-decoration: none;
-    transition: transform .2s;
-    margin: 10px;
-    border-radius: 50%;
-}
-.socialIcons a i{
-    font-size: 2em;
-    color: black;
-    opacity: 0,9;
-}
-/* Hover affect on social media icon */
-.socialIcons a:hover{
-    -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5); 
-
-}
-.socialIcons a:hover i{
-    transition: 0.5s;
-}
 
 /*Post Page*/
 img#post-image {
