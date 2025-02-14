@@ -1,3 +1,40 @@
+// Attach event listeners to menu items
+      document.getElementById('menu-all').addEventListener('click', function() {
+        filterPosts('all');
+        setActiveMenu('menu-all');
+      });
+      document.getElementById('menu-computer').addEventListener('click', function() {
+        filterPosts('Computer');
+        setActiveMenu('menu-computer');
+      });
+      document.getElementById('menu-android').addEventListener('click', function() {
+        filterPosts('Android');
+        setActiveMenu('menu-android');
+      });
+      document.getElementById('menu-ebook').addEventListener('click', function() {
+        filterPosts('Ebook');
+        setActiveMenu('menu-ebook');
+      });
+      document.getElementById('menu-technology').addEventListener('click', function() {
+        filterPosts('Technology');
+        setActiveMenu('menu-technology');
+      });
+
+    })
+    .catch(error => console.error('Error loading the posts:', error));
+
+         // Function to update active class on menu items
+      function setActiveMenu(activeId) {
+        var menuItems = document.querySelectorAll('.menu-list li');
+        menuItems.forEach(function(item) {
+          if (item.id === activeId) {
+            item.querySelector('a').classList.add('active');
+          } else {
+            item.querySelector('a').classList.remove('active');
+          }
+        });
+      }
+    
 document.addEventListener("DOMContentLoaded", function() {
     var toggleNav = document.querySelector('.toggle-nav');
     var menuList = document.querySelector('.menu-list');
@@ -38,44 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
- // Function to update active class on menu items
-      function setActiveMenu(activeId) {
-        var menuItems = document.querySelectorAll('.menu-list li');
-        menuItems.forEach(function(item) {
-          if (item.id === activeId) {
-            item.querySelector('a').classList.add('active');
-          } else {
-            item.querySelector('a').classList.remove('active');
-          }
-        });
-      }
-
-      // Attach event listeners to menu items
-      document.getElementById('menu-all').addEventListener('click', function() {
-        filterPosts('all');
-        setActiveMenu('menu-all');
-      });
-      document.getElementById('menu-computer').addEventListener('click', function() {
-        filterPosts('Computer');
-        setActiveMenu('menu-computer');
-      });
-      document.getElementById('menu-android').addEventListener('click', function() {
-        filterPosts('Android');
-        setActiveMenu('menu-android');
-      });
-      document.getElementById('menu-ebook').addEventListener('click', function() {
-        filterPosts('Ebook');
-        setActiveMenu('menu-ebook');
-      });
-      document.getElementById('menu-technology').addEventListener('click', function() {
-        filterPosts('Technology');
-        setActiveMenu('menu-technology');
-      });
-
-    })
-    .catch(error => console.error('Error loading the posts:', error));
-
-  // Existing search functionality: filter by post title
+// Existing search functionality: filter by post title
   document.getElementById('searchBar').addEventListener('input', function() {
     var filter = this.value.toLowerCase();
     var postContainers = document.querySelectorAll('.post-container');
@@ -98,4 +98,4 @@ document.addEventListener("DOMContentLoaded", function() {
       noResults.style.display = 'none';
     }
   });
-});
+});    
