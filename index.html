@@ -108,6 +108,18 @@
 
     })
     .catch(error => console.error('Error loading the posts:', error));
+
+         // Function to update active class on menu items
+      function setActiveMenu(activeId) {
+        var menuItems = document.querySelectorAll('.menu-list li');
+        menuItems.forEach(function(item) {
+          if (item.id === activeId) {
+            item.querySelector('a').classList.add('active');
+          } else {
+            item.querySelector('a').classList.remove('active');
+          }
+        });
+      }
     
 document.addEventListener("DOMContentLoaded", function() {
     var toggleNav = document.querySelector('.toggle-nav');
@@ -148,7 +160,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-   
+
+// Existing search functionality: filter by post title
+  document.getElementById('searchBar').addEventListener('input', function() {
+    var filter = this.value.toLowerCase();
+    var postContainers = document.querySelectorAll('.post-container');
+    var noResults = document.getElementById('noResults');
+    var hasResults = false;
+    
+    postContainers.forEach(function(container) {
+      var title = container.querySelector('.p-title a').textContent.toLowerCase();
+      if (title.includes(filter)) {
+        container.style.display = '';
+        hasResults = true;
+      } else {
+        container.style.display = 'none';
+      }
+    });
+
+    if (!hasResults) {
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  });
+});    
 
 document.addEventListener("DOMContentLoaded", function() {
   fetch('posts.json')
@@ -209,44 +245,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
 
-      // Function to update active class on menu items
-      function setActiveMenu(activeId) {
-        var menuItems = document.querySelectorAll('.menu-list li');
-        menuItems.forEach(function(item) {
-          if (item.id === activeId) {
-            item.querySelector('a').classList.add('active');
-          } else {
-            item.querySelector('a').classList.remove('active');
-          }
-        });
-      }
+ 
 
       
 
-  // Existing search functionality: filter by post title
-  document.getElementById('searchBar').addEventListener('input', function() {
-    var filter = this.value.toLowerCase();
-    var postContainers = document.querySelectorAll('.post-container');
-    var noResults = document.getElementById('noResults');
-    var hasResults = false;
-    
-    postContainers.forEach(function(container) {
-      var title = container.querySelector('.p-title a').textContent.toLowerCase();
-      if (title.includes(filter)) {
-        container.style.display = '';
-        hasResults = true;
-      } else {
-        container.style.display = 'none';
-      }
-    });
-
-    if (!hasResults) {
-      noResults.style.display = 'block';
-    } else {
-      noResults.style.display = 'none';
-    }
-  });
-});
+  
 </script>
     
 
