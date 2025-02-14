@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/switch-language.css">    
+<link rel="stylesheet" href="css/responsive-layout.css">
+<link rel="stylesheet" href="fonts/myanmar-font-family.css">
+
+
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'/>
+<link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' referrerpolicy='no-referrer' rel='stylesheet'/>
+<link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
+</head>
+<body>
+
+
+        
+<div class="main">
+<nav class="menu">
+    <div class="toggle-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Menu List with IDs -->
+    <ul class="menu-list">
+      <li id="menu-all" ><a class="active" href="#">Home</a></li>
+      <li id="menu-computer"><a href="#">Computer</a></li>
+      <li id="menu-android"><a href="#">Android</a></li>
+      <li id="menu-ebook"><a href="#">Ebook</a></li>
+      <li id="menu-technology"><a href="#">Technology</a></li>
+    </ul>
+
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <a id="title" >TC-Myaing</a>
+        <div class="switch"><img class="search-icon" src="img/search-white.png"></div>
+    </div>
+</nav>
+
+    
+<!-- Simple Language Switcher
+<div class="simple-lang-switcher">
+    <button id="lang-en" class="lang-btn active">English</button>
+    <button id="lang-mm" class="lang-btn">မြန်မာ</button>
+</div> -->
+
+
+    
+<div class="container-main">
+        <div class="row">
+            <div class="col-12 col-s-12 col-m-9 col-l-9 col-xl-9">
+                <div class="container-box" id="content">
+                    <!-- Loading Spinner -->
+                    <div id="loading" class="loading-spinner" style="display: none;">
+                        <img src="img/loading-spinner.gif" alt="Loading...">
+                    </div>
+                </div>
+                <div id="noResults" class="no-results" style="display: none;">No results found.</div>
+            </div>
+    
+            <div class="col-12 col-s-12 col-m-3 col-l-3 col-xl-3">
+                <div class="aside">
+                    <div class="slide-box">
+                        <div id="category"></div>
+                    </div>
+                    <div class="subscribe-section">
+                        <p class="s-title">Subscribe to Our YouTube Channel</p>
+                        <div class="container">
+                            <a href="https://www.youtube.com/@tcmyaing"><button class="subscribe-btn"> Subscribe </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 TC-Myaing</p>
+</div>
+    
+<script >
+document.addEventListener("DOMContentLoaded", function() {
+    var toggleNav = document.querySelector('.toggle-nav');
+    var menuList = document.querySelector('.menu-list');
+    var switchElement = document.querySelector('.switch');
+    var searchBar = document.getElementById('searchBar');
+    var title = document.getElementById('title');
+    var searchIcon = document.querySelector('.search-icon');
+
+    if (toggleNav) {
+        toggleNav.addEventListener('click', function() {
+            menuList.classList.toggle('active');
+            toggleNav.classList.toggle('active');
+        });
+    }
+
+    if (switchElement) {
+        switchElement.addEventListener('click', function() {
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'block';
+                title.style.display = 'none';
+                searchIcon.src = 'img/close-white.png';
+            } else {
+                searchBar.style.display = 'none';
+                title.style.display = 'block';
+                searchIcon.src = 'img/search-white.png';
+                searchBar.value = '';
+                // Reset the filter
+                var postContainers = document.querySelectorAll('.post-container');
+                var noResults = document.getElementById('noResults');
+                postContainers.forEach(function(container) {
+                    container.style.display = '';
+                });
+                if (noResults) {
+                    noResults.style.display = 'none';
+                }
+            }
+        });
+    }
+});
+    
+</script>
+    
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch('posts.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        var containerBox = document.getElementById('content');
+        
+        data.forEach(post => {
+            var postContainer = document.createElement('div');
+            postContainer.className = 'post-container';
+            
+            postContainer.innerHTML = `
+                <div class="image-container">
+                    <img src="${post.imgurl}" alt="Sample Image">
+                </div>
+                <div class="post-content">
+                    <div class="p-title"><a>${post.ptitle}</a></div>
+                    <div class="p-description"><a>${post.prescription}</a></div>
+                    <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
+                </div>
+            `;
+            
+            containerBox.appendChild(postContainer);
+        });
+
+        // Count posts by category
+        const categoryCounts = data.reduce((acc, curr) => {
+            acc[curr.category] = (acc[curr.category] || 0) + 1;
+            return acc;
+        }, {});
+
+        // Generate HTML for categories
+        const categoryDiv = document.getElementById('category');
+        let categoryHTML = '<h2>Categories</h2><ul class="category-box">';
+
+        for (const [category, count] of Object.entries(categoryCounts)) {
+            categoryHTML += `<li class="category-tag">${category} (${count})</li>`;
+        }
+        
+        categoryHTML += '</ul>';
+        categoryDiv.innerHTML = categoryHTML;
+    })
+    .catch(error => console.error('Error loading the posts:', error));
+
+    document.getElementById('searchBar').addEventListener('input', function() {
+        var filter = this.value.toLowerCase();
+        var postContainers = document.querySelectorAll('.post-container');
+        var noResults = document.getElementById('noResults');
+        var hasResults = false;
+        
+        postContainers.forEach(function(container) {
+            var title = container.querySelector('.p-title a').textContent.toLowerCase();
+            if (title.includes(filter)) {
+                container.style.display = '';
+                hasResults = true;
+            } else {
+                container.style.display = 'none';
+            }
+        });
+
+        if (!hasResults) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+    });
+});
+    
+</script>   
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('posts.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      var containerBox = document.getElementById('content');
+      
+      // Create post containers with a data attribute for category
+      data.forEach(post => {
+        var postContainer = document.createElement('div');
+        postContainer.className = 'post-container';
+        postContainer.setAttribute('data-category', post.category);
+        
+        postContainer.innerHTML = `
+          <div class="image-container">
+              <img src="${post.imgurl}" alt="Sample Image">
+          </div>
+          <div class="post-content">
+              <div class="p-title"><a>${post.ptitle}</a></div>
+              <div class="p-description"><a>${post.prescription}</a></div>
+              <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
+          </div>
+        `;
+        
+        containerBox.appendChild(postContainer);
+      });
+
+      // Count posts by category (for sidebar display)
+      const categoryCounts = data.reduce((acc, curr) => {
+        acc[curr.category] = (acc[curr.category] || 0) + 1;
+        return acc;
+      }, {});
+
+      // Generate HTML for categories in sidebar
+      const categoryDiv = document.getElementById('category');
+      let categoryHTML = '<h2>Categories</h2><ul class="category-box">';
+      for (const [cat, count] of Object.entries(categoryCounts)) {
+        categoryHTML += `<li class="category-tag">${cat} (${count})</li>`;
+      }
+      categoryHTML += '</ul>';
+      categoryDiv.innerHTML = categoryHTML;
+
+      // Function to filter posts based on category
+      function filterPosts(category) {
+        var postContainers = document.querySelectorAll('.post-container');
+        postContainers.forEach(function(container) {
+          // "all" ဆိုရင်အားလုံး ပြရန်
+          if (category === 'all' || container.getAttribute('data-category') === category) {
+            container.style.display = '';
+          } else {
+            container.style.display = 'none';
+          }
+        });
+      }
+
+      // Function to update active class on menu items
+      function setActiveMenu(activeId) {
+        var menuItems = document.querySelectorAll('.menu-list li');
+        menuItems.forEach(function(item) {
+          if (item.id === activeId) {
+            item.querySelector('a').classList.add('active');
+          } else {
+            item.querySelector('a').classList.remove('active');
+          }
+        });
+      }
+
+      // Attach event listeners to menu items
+      document.getElementById('menu-all').addEventListener('click', function() {
+        filterPosts('all');
+        setActiveMenu('menu-all');
+      });
+      document.getElementById('menu-computer').addEventListener('click', function() {
+        filterPosts('Computer');
+        setActiveMenu('menu-computer');
+      });
+      document.getElementById('menu-android').addEventListener('click', function() {
+        filterPosts('Android');
+        setActiveMenu('menu-android');
+      });
+      document.getElementById('menu-ebook').addEventListener('click', function() {
+        filterPosts('Ebook');
+        setActiveMenu('menu-ebook');
+      });
+      document.getElementById('menu-technology').addEventListener('click', function() {
+        filterPosts('Technology');
+        setActiveMenu('menu-technology');
+      });
+
+    })
+    .catch(error => console.error('Error loading the posts:', error));
+
+  // Existing search functionality: filter by post title
+  document.getElementById('searchBar').addEventListener('input', function() {
+    var filter = this.value.toLowerCase();
+    var postContainers = document.querySelectorAll('.post-container');
+    var noResults = document.getElementById('noResults');
+    var hasResults = false;
+    
+    postContainers.forEach(function(container) {
+      var title = container.querySelector('.p-title a').textContent.toLowerCase();
+      if (title.includes(filter)) {
+        container.style.display = '';
+        hasResults = true;
+      } else {
+        container.style.display = 'none';
+      }
+    });
+
+    if (!hasResults) {
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  });
+});
+</script>
+    
+
+</div>
+</body>
+</html>
