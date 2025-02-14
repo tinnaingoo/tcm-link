@@ -94,6 +94,7 @@
     const editSelect = document.getElementById('edit-select');
     const category = document.getElementById('category');
     const downloadLink = document.getElementById('dlink');
+    const license = document.getElementById('os');
     const license = document.getElementById('license');
     const fileSize = document.getElementById('fsize');
 
@@ -142,6 +143,7 @@
             document.getElementById('content').value = selectedPost.content;
             document.getElementById('dlink').value = selectedPost.dlink;
             document.getElementById('license').value = selectedPost.license;
+            document.getElementById('os').value = selectedPost.os;
             document.getElementById('category').value = selectedPost.category;
             document.getElementById('fsize').value = selectedPost.fsize;
           })
@@ -191,6 +193,7 @@
         { id: 'imgurl', name: 'Image URL' },
         { id: 'purl', name: 'Post URL' },
         { id: 'os', name: 'OS Version' },
+        { id: 'category', name: 'Category' },
         { id: 'content', name: 'Content' }
       ];
 
