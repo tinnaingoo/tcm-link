@@ -14,6 +14,138 @@
 <link rel="icon" type="img/fav.jpg" href="img/fav.jpg"/>
 </head>
 <body>
+
+ <!-- Date & Time -->
+<div class='clock-container'>
+    <div class='clock' id='clock'>
+        <div id='time'/>
+        <div id='date'/>
+    </div>
+    <div class='toggle-btn' id='toggle-btn' onclick='toggleClock()'>
+        <i class='fas fa-angle-right' id='toggle-btn-icon'/>
+    </div>
+</div>
+
+<script>
+  
+  
+    function toggleClock() {
+        const clock = document.getElementById(&#39;clock&#39;);
+        const toggleBtnIcon = document.getElementById(&#39;toggle-btn-icon&#39;); // Get the icon element
+  		const toggleBtn = document.getElementById(&#39;toggle-btn&#39;); // Get the Toggle Btn element
+
+        clock.classList.toggle(&#39;active&#39;);
+
+        // Update toggle button icon based on the clock&#39;s state
+        if (clock.classList.contains(&#39;active&#39;)) {
+            toggleBtnIcon.classList.remove(&#39;fa-angle-right&#39;);
+            toggleBtnIcon.classList.add(&#39;fa-angle-left&#39;);
+  			toggleBtn.style.opacity = &quot;100%&quot;;
+        } else {
+            toggleBtnIcon.classList.remove(&#39;fa-angle-left&#39;);
+            toggleBtnIcon.classList.add(&#39;fa-angle-right&#39;);
+  			toggleBtn.style.opacity = &quot;40%&quot;;
+        }
+    }
+
+    function updateTime() {
+        const timeElement = document.getElementById(&quot;time&quot;);
+        const dateElement = document.getElementById(&quot;date&quot;);
+
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, &quot;0&quot;);
+        const minutes = now.getMinutes().toString().padStart(2, &quot;0&quot;);
+        const seconds = now.getSeconds().toString().padStart(2, &quot;0&quot;);
+        const ampm = hours &gt;= 12 ? &quot;PM&quot; : &quot;AM&quot;;
+
+        const days = [&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;];
+        const months = [
+            &quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;,
+            &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;
+        ];
+
+        const dayName = days[now.getDay()];
+        const dayNum = now.getDate().toString().padStart(2, &quot;0&quot;);
+        const month = months[now.getMonth()];
+        const year = now.getFullYear();
+
+        timeElement.innerHTML = `${hours}:${minutes}:${seconds} <span>${ampm}</span>`;
+        dateElement.innerHTML = `${dayName}, ${dayNum} ${month} ${year}`;
+
+        setTimeout(updateTime, 1000);
+    }
+
+    updateTime();
+</script>
+
+<style>
+  @font-face {
+    font-family: &#39;Digital-7&#39;;
+    src: url(&#39;https://example.com/fonts/digital-7.ttf&#39;) format(&#39;truetype&#39;);
+}
+  
+.toggle-btn {
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 3px;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 130px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.clock {
+    background-color: #333;
+    padding: 20px 30px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    display: none;
+    height: 130px;
+    transition: transform 0.3s ease;
+}
+
+.clock.active {
+    transform: translateX(0);
+    display: block;
+}
+
+#time {
+  	font-family: &#39;Digital-7&#39;, sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#time span {
+    font-size: 0.5em;
+    vertical-align: super;
+    margin-left: 5px;
+}
+
+#date {
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+</style>
+        
 <div class="main">
 <nav class="menu">
     <div class="toggle-nav">
@@ -89,6 +221,7 @@
 <script src="js/menu.js"></script>   
 <script src="js/myscripts.js"></script>
 <script src="js/switch-language.js"></script>
+
 </div>
 </body>
 </html>
