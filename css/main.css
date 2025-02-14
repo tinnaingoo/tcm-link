@@ -384,7 +384,11 @@ h1#post-title {
 }
 
 /*For Social Media Icon*/
-      
+.footerContainer {
+    width: 100%;
+    padding: 20px 30px 20px;
+}
+
 h2.social-media-title {
     width: 100%;
     color: black;
