@@ -94,3 +94,28 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .catch(error => console.error('Error loading the posts:', error));
 
+  // Existing search functionality: filter by post title
+  document.getElementById('searchBar').addEventListener('input', function() {
+    var filter = this.value.toLowerCase();
+    var postContainers = document.querySelectorAll('.post-container');
+    var noResults = document.getElementById('noResults');
+    var hasResults = false;
+    
+    postContainers.forEach(function(container) {
+      var title = container.querySelector('.p-title a').textContent.toLowerCase();
+      if (title.includes(filter)) {
+        container.style.display = '';
+        hasResults = true;
+      } else {
+        container.style.display = 'none';
+      }
+    });
+
+    if (!hasResults) {
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  });
+});
+
