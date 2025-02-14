@@ -53,8 +53,8 @@
           <input type="date" id="date" name="date"><br>
           <label>Prescription:</label>
           <input type="text" id="prescription" name="prescription"><br>
-          <label>Post Image URL:</label>
-          <input type="text" id="purl" name="purl"><br>
+          <label>Image URL:</label>
+          <input type="text" id="imgurl" name="imgurl"><br>
           <label>Post URL:</label>
           <input type="text" id="purl" name="purl"><br>
           <label>Content:</label>
@@ -70,6 +70,8 @@
           </select><br>
           <label>Download Link:</label>
           <input type="text" id="dlink" name="dlink"><br>
+          <label>OS Version:</label>
+          <input type="text" id="os" name="os"><br>
           <label>License:</label>
           <input type="text" id="license" name="license"><br>
           <label>File Size:</label>
@@ -135,6 +137,7 @@
             document.getElementById('ptitle').value = selectedPost.ptitle;
             document.getElementById('date').value = selectedPost.date;
             document.getElementById('prescription').value = selectedPost.prescription;
+            document.getElementById('imgurl').value = selectedPost.imgurl;
             document.getElementById('purl').value = selectedPost.purl;
             document.getElementById('content').value = selectedPost.content;
             document.getElementById('dlink').value = selectedPost.dlink;
@@ -185,7 +188,9 @@
         { id: 'ptitle', name: 'Title' },
         { id: 'date', name: 'Date' },
         { id: 'prescription', name: 'Prescription' },
+        { id: 'imgurl', name: 'Image URL' },
         { id: 'purl', name: 'Post URL' },
+        { id: 'os', name: 'OS Version' },
         { id: 'content', name: 'Content' }
       ];
 
@@ -209,6 +214,7 @@
         ptitle: document.getElementById('ptitle').value,
         date: document.getElementById('date').value,
         prescription: document.getElementById('prescription').value,
+        purl: document.getElementById('imgurl').value,
         purl: document.getElementById('purl').value,
         content: document.getElementById('content').value,
         category: document.getElementById('category').value,
