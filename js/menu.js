@@ -1,28 +1,3 @@
-document.getElementById('searchBar').addEventListener('input', function() {
-        var filter = this.value.toLowerCase();
-        var postContainers = document.querySelectorAll('.post-container');
-        var noResults = document.getElementById('noResults');
-        var hasResults = false;
-        
-        postContainers.forEach(function(container) {
-            var title = container.querySelector('.p-title a').textContent.toLowerCase();
-            if (title.includes(filter)) {
-                container.style.display = '';
-                hasResults = true;
-            } else {
-                container.style.display = 'none';
-            }
-        });
-
-        if (!hasResults) {
-            noResults.style.display = 'block';
-        } else {
-            noResults.style.display = 'none';
-        }
-    });
-});
-
-    
 document.addEventListener("DOMContentLoaded", function() {
     var toggleNav = document.querySelector('.toggle-nav');
     var menuList = document.querySelector('.menu-list');
@@ -62,4 +37,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
