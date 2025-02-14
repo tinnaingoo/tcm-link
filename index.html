@@ -19,6 +19,169 @@
 
         
 <div class="main">
+
+<div class='header' style='width: 100%;'>
+        <h2>TC-Myaing</h2>
+        <p>Technical knowledge</p>
+        <div class='background-elements'>
+            
+            <div class='circle small-circle'/>
+            <div class='circle medium-circle'/>
+            <div class='circle large-circle'/>
+            <div class='star'/>
+            <div class='star star2'/>
+            <div class='star star3'/>
+          	<div id='particles-js'/> <!-- Particles system -->
+        </div>
+    </div>
+    
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'/>
+    <script src='particles-config.js'/>
+    <script>
+      particlesJS(&#39;particles-js&#39;, {
+    &quot;particles&quot;: {
+        &quot;number&quot;: {
+            &quot;value&quot;: 80,
+            &quot;density&quot;: {
+                &quot;enable&quot;: true,
+                &quot;value_area&quot;: 800
+            }
+        },
+        &quot;color&quot;: {
+            &quot;value&quot;: &quot;#ffffff&quot;
+        },
+        &quot;shape&quot;: {
+            &quot;type&quot;: &quot;circle&quot;,
+            &quot;stroke&quot;: {
+                &quot;width&quot;: 0,
+                &quot;color&quot;: &quot;#000000&quot;
+            },
+            &quot;polygon&quot;: {
+                &quot;nb_sides&quot;: 5
+            },
+        },
+        &quot;opacity&quot;: {
+            &quot;value&quot;: 0.5,
+            &quot;random&quot;: true,
+            &quot;anim&quot;: {
+                &quot;enable&quot;: false,
+                &quot;speed&quot;: 1,
+                &quot;opacity_min&quot;: 0.1,
+                &quot;sync&quot;: false
+            }
+        },
+        &quot;size&quot;: {
+            &quot;value&quot;: 3,
+            &quot;random&quot;: true,
+            &quot;anim&quot;: {
+                &quot;enable&quot;: false,
+                &quot;speed&quot;: 40,
+                &quot;size_min&quot;: 0.1,
+                &quot;sync&quot;: false
+            }
+        },
+        &quot;line_linked&quot;: {
+            &quot;enable&quot;: true,
+            &quot;distance&quot;: 150,
+            &quot;color&quot;: &quot;#ffffff&quot;,
+            &quot;opacity&quot;: 0.4,
+            &quot;width&quot;: 1
+        },
+        &quot;move&quot;: {
+            &quot;enable&quot;: true,
+            &quot;speed&quot;: 2,
+            &quot;direction&quot;: &quot;none&quot;,
+            &quot;random&quot;: false,
+            &quot;straight&quot;: false,
+            &quot;out_mode&quot;: &quot;out&quot;,
+            &quot;bounce&quot;: false,
+            &quot;attract&quot;: {
+                &quot;enable&quot;: false,
+                &quot;rotateX&quot;: 600,
+                &quot;rotateY&quot;: 1200
+            }
+        }
+    },
+    &quot;interactivity&quot;: {
+        &quot;detect_on&quot;: &quot;canvas&quot;,
+        &quot;events&quot;: {
+            &quot;onhover&quot;: {
+                &quot;enable&quot;: true,
+                &quot;mode&quot;: &quot;grab&quot;
+            },
+            &quot;onclick&quot;: {
+                &quot;enable&quot;: true,
+                &quot;mode&quot;: &quot;push&quot;
+            },
+            &quot;resize&quot;: true
+        },
+        &quot;modes&quot;: {
+            &quot;grab&quot;: {
+                &quot;distance&quot;: 140,
+                &quot;line_linked&quot;: {
+                    &quot;opacity&quot;: 1
+                }
+            },
+            &quot;bubble&quot;: {
+                &quot;distance&quot;: 400,
+                &quot;size&quot;: 40,
+                &quot;duration&quot;: 2,
+                &quot;opacity&quot;: 8,
+                &quot;speed&quot;: 3
+            },
+            &quot;repulse&quot;: {
+                &quot;distance&quot;: 200,
+                &quot;duration&quot;: 0.4
+            },
+            &quot;push&quot;: {
+                &quot;particles_nb&quot;: 4
+            },
+            &quot;remove&quot;: {
+                &quot;particles_nb&quot;: 2
+            }
+        }
+    },
+    &quot;retina_detect&quot;: true
+});
+
+    </script>
+
+    
+<div id='navbar'>
+<nav class='menu'>
+    <div class='toggle-nav'>
+        <span/>
+        <span/>
+        <span/>
+    </div>
+    
+    <ul class='menu-list'>
+    <li><a href='https://tcmyg.blogspot.com/'>Home</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/Computer%20Software'>Computer Software</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/Mobile%20Application'>Mobile Application</a></li>
+    <li><a href='https://tcmyg.blogspot.com/search/label/E-Book'>E-Book</a></li>
+    <li><a href='#'>Technology</a></li>
+</ul>
+
+    
+
+    <div class='search-container'>
+      	
+        <div class='search-box' id='s'>
+          <!--Search Box-->
+          <form action='/search' method='get'>
+    			<input name='q' placeholder='Search this blog...' type='text'/>
+    			<button class='search-btn' type='submit'><i class='fa fa-search'/></button>
+			</form>
+            
+            <!--Search Box End-->
+      </div>
+     </div>
+  
+</nav>
+  
+    </div>
+            
 <nav class="menu">
     <div class="toggle-nav">
         <span></span>
