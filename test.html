@@ -27,11 +27,11 @@
     </div>
     
     <ul class="menu-list">
-      <li id="menu-all">All</li>
-      <li id="menu-computer">Computer</li>
-      <li id="menu-android">Android</li>
-      <li id="menu-ebook">Ebook</li>
-      <li id="menu-technology">Technology</li>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">My Work</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Get in Touch</a></li>
+        <li><a href="#">Blog</a></li>
     </ul>
 
     <div class="search-container">
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var postContainer = document.createElement('div');
             postContainer.className = 'post-container';
             
-            postContainer.innerHTML = 
+            postContainer.innerHTML = `
                 <div class="image-container">
                     <img src="${post.imgurl}" alt="Sample Image">
                 </div>
@@ -151,10 +151,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="p-description"><a>${post.prescription}</a></div>
                     <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
                 </div>
-            ;
+            `;
             
             containerBox.appendChild(postContainer);
         });
+
         // Count posts by category
         const categoryCounts = data.reduce((acc, curr) => {
             acc[curr.category] = (acc[curr.category] || 0) + 1;
