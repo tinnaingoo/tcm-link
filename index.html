@@ -84,6 +84,31 @@
 </div>
     
 <script >
+// Attach event listeners to menu items
+      document.getElementById('menu-all').addEventListener('click', function() {
+        filterPosts('all');
+        setActiveMenu('menu-all');
+      });
+      document.getElementById('menu-computer').addEventListener('click', function() {
+        filterPosts('Computer');
+        setActiveMenu('menu-computer');
+      });
+      document.getElementById('menu-android').addEventListener('click', function() {
+        filterPosts('Android');
+        setActiveMenu('menu-android');
+      });
+      document.getElementById('menu-ebook').addEventListener('click', function() {
+        filterPosts('Ebook');
+        setActiveMenu('menu-ebook');
+      });
+      document.getElementById('menu-technology').addEventListener('click', function() {
+        filterPosts('Technology');
+        setActiveMenu('menu-technology');
+      });
+
+    })
+    .catch(error => console.error('Error loading the posts:', error));
+    
 document.addEventListener("DOMContentLoaded", function() {
     var toggleNav = document.querySelector('.toggle-nav');
     var menuList = document.querySelector('.menu-list');
@@ -123,12 +148,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-    
-</script>
-    
+   
 
-
-<script>
 document.addEventListener("DOMContentLoaded", function() {
   fetch('posts.json')
     .then(response => {
@@ -200,30 +221,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
 
-      // Attach event listeners to menu items
-      document.getElementById('menu-all').addEventListener('click', function() {
-        filterPosts('all');
-        setActiveMenu('menu-all');
-      });
-      document.getElementById('menu-computer').addEventListener('click', function() {
-        filterPosts('Computer');
-        setActiveMenu('menu-computer');
-      });
-      document.getElementById('menu-android').addEventListener('click', function() {
-        filterPosts('Android');
-        setActiveMenu('menu-android');
-      });
-      document.getElementById('menu-ebook').addEventListener('click', function() {
-        filterPosts('Ebook');
-        setActiveMenu('menu-ebook');
-      });
-      document.getElementById('menu-technology').addEventListener('click', function() {
-        filterPosts('Technology');
-        setActiveMenu('menu-technology');
-      });
-
-    })
-    .catch(error => console.error('Error loading the posts:', error));
+      
 
   // Existing search functionality: filter by post title
   document.getElementById('searchBar').addEventListener('input', function() {
