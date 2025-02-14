@@ -128,73 +128,33 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 
     document.addEventListener("DOMContentLoaded", function() {
-      // Load posts from posts.json
-      fetch('posts.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok: ' + response.statusText);
-          }
-          return response.json();
-        })
-        .then(data => {
-          var containerBox = document.getElementById('content');
-          containerBox.innerHTML = ""; // Clear existing content if any
-
-          data.forEach(post => {
+    fetch('posts.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        var containerBox = document.getElementById('content');
+        
+        data.forEach(post => {
             var postContainer = document.createElement('div');
             postContainer.className = 'post-container';
-            // Set data-category attribute for filtering
-            postContainer.setAttribute('data-category', post.category);
-
-            postContainer.innerHTML = `
-              <div class="image-container">
-                <img src="${post.imgurl}" alt="Post Image">
-              </div>
-              <div class="post-content">
-                <h2 class="p-title">${post.ptitle}</h2>
-                <p class="p-description">${post.prescription}</p>
-                <a class="p-next" href="post.html?post=${post.purl}">Read More &#8811;</a>
-              </div>
-            `;
+            
+            postContainer.innerHTML = 
+                <div class="image-container">
+                    <img src="${post.imgurl}" alt="Sample Image">
+                </div>
+                <div class="post-content">
+                    <div class="p-title"><a>${post.ptitle}</a></div>
+                    <div class="p-description"><a>${post.prescription}</a></div>
+                    <div class="p-next"><a href="post.html?post=${post.purl}">Read More &#8811;</a></div>
+                </div>
+            ;
+            
             containerBox.appendChild(postContainer);
-          });
-        })
-        .catch(error => console.error('Error loading posts:', error));
-
-      // Function to filter posts by category
-      function filterPostsByCategory(categoryName) {
-        const postContainers = document.querySelectorAll('.post-container');
-        let found = false;
-        postContainers.forEach(container => {
-          const postCategory = container.getAttribute('data-category');
-          // "all" ရွေးလျှင် အားလုံးပြပါ၊ မဟုတ်ရင် category နဲ့ကိုက်ညီမှသာ ပြပါ
-          if (categoryName === 'all' || postCategory === categoryName) {
-            container.style.display = '';
-            found = true;
-          } else {
-            container.style.display = 'none';
-          }
         });
-
-
-      // Add click event listeners to menu items
-      document.getElementById('menu-all').addEventListener('click', () => {
-        filterPostsByCategory('all');
-      });
-      document.getElementById('menu-computer').addEventListener('click', () => {
-        filterPostsByCategory('Computer');
-      });
-      document.getElementById('menu-android').addEventListener('click', () => {
-        filterPostsByCategory('Android');
-      });
-      document.getElementById('menu-ebook').addEventListener('click', () => {
-        filterPostsByCategory('Ebook');
-      });
-      document.getElementById('menu-technology').addEventListener('click', () => {
-        filterPostsByCategory('Technology');
-      });
-    });
-
         // Count posts by category
         const categoryCounts = data.reduce((acc, curr) => {
             acc[curr.category] = (acc[curr.category] || 0) + 1;
