@@ -6,13 +6,37 @@
   <title>Add Data</title>
   <link rel="stylesheet" href="css/add-styles.css">
   <link rel="stylesheet" href="css/responsive-layout.css">
+  <style>
+    /* Toast notification styles */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .toast.show {
+      opacity: 1;
+    }
+    .toast.success {
+      background-color: #4CAF50;
+    }
+    .toast.error {
+      background-color: #f44336;
+    }
+  </style>
 </head>
 <body>
   <h1 class="header">Add Data</h1>
   <div class="container-main">
     <div class="row">
       <div class="col-12">
-        <!-- New Add & Edit Buttons -->
         <button id="new-add-btn">New Add</button>
         <br>
         <button id="edit-btn">Edit</button>
@@ -22,7 +46,6 @@
             <!-- Options will be populated dynamically -->
           </select>
         </div>
-        <!-- Form -->
         <form id="post-form" class="post-Form" style="display: none;">
           <label>Title:</label>
           <input type="text" id="ptitle" name="ptitle"><br>
@@ -49,13 +72,15 @@
           <input type="text" id="license" name="license"><br>
           <label>File Size:</label>
           <input type="text" id="fsize" name="fsize"><br>
-          <!-- Submit Button: When clicked, it will copy the form data to clipboard -->
           <button type="submit">Submit &amp; Copy</button>
         </form>
       </div>
     </div>
   </div>
   
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
   <script>
     // Element references
     const newAddBtn = document.getElementById('new-add-btn');
@@ -68,20 +93,20 @@
     const license = document.getElementById('license');
     const fileSize = document.getElementById('fsize');
 
-    // Show form for new add
+    // Show form for New Add
     newAddBtn.addEventListener('click', () => {
       postForm.style.display = 'block';
       editSelectContainer.style.display = 'none';
     });
 
-    // Show form for edit and load existing posts
+    // Show form for Edit and load posts
     editBtn.addEventListener('click', () => {
       postForm.style.display = 'block';
       editSelectContainer.style.display = 'block';
       loadPosts();
     });
 
-    // Function to load posts from posts.json (assuming it exists)
+    // Load posts from posts.json
     function loadPosts() {
       fetch('posts.json')
         .then(response => response.json())
@@ -97,7 +122,7 @@
         .catch(error => console.error('Error loading posts:', error));
     }
 
-    // When a post is selected for editing, populate form fields
+    // Populate form fields when a post is selected
     editSelect.addEventListener('change', () => {
       const selectedIndex = editSelect.value;
       if (selectedIndex !== '') {
@@ -119,7 +144,7 @@
       }
     });
 
-    // Disable download link, license, and file size if category is Technology
+    // Disable download link, license, and file size for Technology category
     category.addEventListener('change', function() {
       if (category.value === 'Technology') {
         downloadLink.value = '-';
@@ -135,11 +160,25 @@
       }
     });
 
-    // Form submit handler: validate and then copy data to clipboard
+    // Function to show toast notifications
+    function showToast(message, isSuccess = true) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast', isSuccess ? 'success' : 'error');
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      // Trigger CSS transition
+      setTimeout(() => toast.classList.add('show'), 10);
+      // Remove toast after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 500);
+      }, 3000);
+    }
+
+    // Form submit handler: Validate and copy data to clipboard with toast feedback
     document.getElementById('post-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Validate required fields
       const fields = [
         { id: 'ptitle', name: 'Title' },
         { id: 'date', name: 'Date' },
@@ -154,17 +193,16 @@
         if (!input.value.trim()) {
           isValid = false;
           input.style.border = '2px solid red';
-          // Optionally, insert error message here
         } else {
           input.style.border = '';
         }
       });
 
       if (!isValid) {
-        return; // မပြည့်စုံလျှင် copy မလုပ်ပါ
+        showToast('Please fill in all required fields.', false);
+        return;
       }
 
-      // Build post object
       const post = {
         ptitle: document.getElementById('ptitle').value,
         date: document.getElementById('date').value,
@@ -177,16 +215,15 @@
         fsize: document.getElementById('fsize').value
       };
 
-      // Convert to formatted JSON string (indentation 4 spaces)
       const postString = JSON.stringify(post, null, 4);
 
-      // Copy JSON string to clipboard
       navigator.clipboard.writeText(postString)
         .then(() => {
-          alert('Post data copied to clipboard!');
+          showToast('Post data copied to clipboard!');
         })
         .catch(err => {
           console.error('Error copying text: ', err);
+          showToast('Error copying data!', false);
         });
     });
   </script>
