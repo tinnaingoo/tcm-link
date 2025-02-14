@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="my">
 <head>
-  <title>Add Data</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Data</title>
   <link rel="stylesheet" href="css/add-styles.css">
   <link rel="stylesheet" href="css/responsive-layout.css">
-  
 </head>
 <body>
   <h1 class="header">Add Data</h1>
   <div class="container-main">
     <div class="row">
-      <div class="col-12 col-s-12 col-m-12 col-l-12 col-xl-12">
+      <div class="col-12">
+        <!-- New Add & Edit Buttons -->
         <button id="new-add-btn">New Add</button>
         <br>
         <button id="edit-btn">Edit</button>
@@ -21,19 +22,20 @@
             <!-- Options will be populated dynamically -->
           </select>
         </div>
+        <!-- Form -->
         <form id="post-form" class="post-Form" style="display: none;">
           <label>Title:</label>
-          <input type="text" id="ptitle"><br>
+          <input type="text" id="ptitle" name="ptitle"><br>
           <label>Date:</label>
-          <input type="date" id="date"><br>
+          <input type="date" id="date" name="date"><br>
           <label>Prescription:</label>
-          <input type="text" id="prescription"><br>
+          <input type="text" id="prescription" name="prescription"><br>
           <label>Post URL:</label>
-          <input type="text" id="purl"><br>
+          <input type="text" id="purl" name="purl"><br>
           <label>Content:</label>
-          <textarea id="content"></textarea><br>
+          <textarea id="content" name="content"></textarea><br>
           <label>Category:</label>
-          <select id="category">
+          <select id="category" name="category">
             <option value="">Select Category</option>
             <option value="Windows Software">Windows Software</option>
             <option value="Android Application">Android Application</option>
@@ -42,18 +44,20 @@
             <option value="Driver">Driver</option>
           </select><br>
           <label>Download Link:</label>
-          <input type="text" id="dlink"><br>
+          <input type="text" id="dlink" name="dlink"><br>
           <label>License:</label>
-          <input type="text" id="license"><br>
+          <input type="text" id="license" name="license"><br>
           <label>File Size:</label>
-          <input type="text" id="fsize"><br>
-          <button type="submit">Export Key Code</button>
+          <input type="text" id="fsize" name="fsize"><br>
+          <!-- Submit Button: When clicked, it will copy the form data to clipboard -->
+          <button type="submit">Submit &amp; Copy</button>
         </form>
       </div>
     </div>
   </div>
   
   <script>
+    // Element references
     const newAddBtn = document.getElementById('new-add-btn');
     const editBtn = document.getElementById('edit-btn');
     const postForm = document.getElementById('post-form');
@@ -64,18 +68,20 @@
     const license = document.getElementById('license');
     const fileSize = document.getElementById('fsize');
 
+    // Show form for new add
     newAddBtn.addEventListener('click', () => {
       postForm.style.display = 'block';
       editSelectContainer.style.display = 'none';
     });
 
+    // Show form for edit and load existing posts
     editBtn.addEventListener('click', () => {
       postForm.style.display = 'block';
       editSelectContainer.style.display = 'block';
       loadPosts();
     });
 
-    // Load posts from post.json
+    // Function to load posts from posts.json (assuming it exists)
     function loadPosts() {
       fetch('posts.json')
         .then(response => response.json())
@@ -91,6 +97,7 @@
         .catch(error => console.error('Error loading posts:', error));
     }
 
+    // When a post is selected for editing, populate form fields
     editSelect.addEventListener('change', () => {
       const selectedIndex = editSelect.value;
       if (selectedIndex !== '') {
@@ -103,10 +110,8 @@
             document.getElementById('prescription').value = selectedPost.prescription;
             document.getElementById('purl').value = selectedPost.purl;
             document.getElementById('content').value = selectedPost.content;
-            document.getElementById('imgurl').value = selectedPost.imgurl;
             document.getElementById('dlink').value = selectedPost.dlink;
             document.getElementById('license').value = selectedPost.license;
-            document.getElementById('os').value = selectedPost.os;
             document.getElementById('category').value = selectedPost.category;
             document.getElementById('fsize').value = selectedPost.fsize;
           })
@@ -114,6 +119,7 @@
       }
     });
 
+    // Disable download link, license, and file size if category is Technology
     category.addEventListener('change', function() {
       if (category.value === 'Technology') {
         downloadLink.value = '-';
@@ -129,21 +135,17 @@
       }
     });
 
+    // Form submit handler: validate and then copy data to clipboard
     document.getElementById('post-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
+      // Validate required fields
       const fields = [
         { id: 'ptitle', name: 'Title' },
         { id: 'date', name: 'Date' },
-        { id: 'imgurl', name: 'Image URL' },
         { id: 'prescription', name: 'Prescription' },
         { id: 'purl', name: 'Post URL' },
-        { id: 'content', name: 'Content' },
-        { id: 'dlink', name: 'Download Link' },
-        { id: 'license', name: 'License' },
-        { id: 'os', name: 'Operating System' },
-        { id: 'category', name: 'Category' },
-        { id: 'fsize', name: 'File Size' }
+        { id: 'content', name: 'Content' }
       ];
 
       let isValid = true;
@@ -151,50 +153,41 @@
         const input = document.getElementById(field.id);
         if (!input.value.trim()) {
           isValid = false;
-          input.style.border = '2px solid red'; // Highlight the field with red border
-          if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error')) {
-            const errorMessage = document.createElement('span');
-            errorMessage.classList.add('error');
-            errorMessage.style.color = 'red';
-            errorMessage.textContent = `${field.name} is required`;
-            input.parentNode.insertBefore(errorMessage, input.nextSibling);
-          }
+          input.style.border = '2px solid red';
+          // Optionally, insert error message here
         } else {
-          input.style.border = ''; // Remove the red border if input is valid
-          if (input.nextElementSibling && input.nextElementSibling.classList.contains('error')) {
-            input.nextElementSibling.remove(); // Remove the error message if input is valid
-          }
+          input.style.border = '';
         }
       });
 
       if (!isValid) {
-        return;
+        return; // မပြည့်စုံလျှင် copy မလုပ်ပါ
       }
 
+      // Build post object
       const post = {
         ptitle: document.getElementById('ptitle').value,
         date: document.getElementById('date').value,
-        imgurl: document.getElementById('imgurl').value,
         prescription: document.getElementById('prescription').value,
         purl: document.getElementById('purl').value,
         content: document.getElementById('content').value,
+        category: document.getElementById('category').value,
         dlink: document.getElementById('dlink').value,
         license: document.getElementById('license').value,
-        os: document.getElementById('os').value,
-        category: document.getElementById('category').value,
         fsize: document.getElementById('fsize').value
       };
 
-      // Export Key Code with special characters escaped
+      // Convert to formatted JSON string (indentation 4 spaces)
       const postString = JSON.stringify(post, null, 4);
-      console.log(postString);
 
-      // Copy to clipboard
-      navigator.clipboard.writeText(postString).then(function() {
-        alert('Post data copied to clipboard!');
-      }, function(err) {
-        console.error('Could not copy text: ', err);
-      });
+      // Copy JSON string to clipboard
+      navigator.clipboard.writeText(postString)
+        .then(() => {
+          alert('Post data copied to clipboard!');
+        })
+        .catch(err => {
+          console.error('Error copying text: ', err);
+        });
     });
   </script>
 </body>
