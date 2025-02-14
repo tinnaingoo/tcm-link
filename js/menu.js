@@ -37,26 +37,65 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-document.getElementById('searchBar').addEventListener('input', function() {
-        var filter = this.value.toLowerCase();
-        var postContainers = document.querySelectorAll('.post-container');
-        var noResults = document.getElementById('noResults');
-        var hasResults = false;
-        
-        postContainers.forEach(function(container) {
-            var title = container.querySelector('.p-title a').textContent.toLowerCase();
-            if (title.includes(filter)) {
-                container.style.display = '';
-                hasResults = true;
-            } else {
-                container.style.display = 'none';
-            }
-        });
 
-        if (!hasResults) {
-            noResults.style.display = 'block';
-        } else {
-            noResults.style.display = 'none';
-        }
+ // Function to update active class on menu items
+      function setActiveMenu(activeId) {
+        var menuItems = document.querySelectorAll('.menu-list li');
+        menuItems.forEach(function(item) {
+          if (item.id === activeId) {
+            item.querySelector('a').classList.add('active');
+          } else {
+            item.querySelector('a').classList.remove('active');
+          }
+        });
+      }
+
+      // Attach event listeners to menu items
+      document.getElementById('menu-all').addEventListener('click', function() {
+        filterPosts('all');
+        setActiveMenu('menu-all');
+      });
+      document.getElementById('menu-computer').addEventListener('click', function() {
+        filterPosts('Computer');
+        setActiveMenu('menu-computer');
+      });
+      document.getElementById('menu-android').addEventListener('click', function() {
+        filterPosts('Android');
+        setActiveMenu('menu-android');
+      });
+      document.getElementById('menu-ebook').addEventListener('click', function() {
+        filterPosts('Ebook');
+        setActiveMenu('menu-ebook');
+      });
+      document.getElementById('menu-technology').addEventListener('click', function() {
+        filterPosts('Technology');
+        setActiveMenu('menu-technology');
+      });
+
+    })
+    .catch(error => console.error('Error loading the posts:', error));
+
+  // Existing search functionality: filter by post title
+  document.getElementById('searchBar').addEventListener('input', function() {
+    var filter = this.value.toLowerCase();
+    var postContainers = document.querySelectorAll('.post-container');
+    var noResults = document.getElementById('noResults');
+    var hasResults = false;
+    
+    postContainers.forEach(function(container) {
+      var title = container.querySelector('.p-title a').textContent.toLowerCase();
+      if (title.includes(filter)) {
+        container.style.display = '';
+        hasResults = true;
+      } else {
+        container.style.display = 'none';
+      }
     });
+
+    if (!hasResults) {
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  });
 });
