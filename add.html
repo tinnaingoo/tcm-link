@@ -150,6 +150,22 @@
       }
     });
 
+    // Disable download link, license, and file size for Ebook category
+    category.addEventListener('change', function() {
+      if (category.value === 'Ebook') {
+        downloadLink.value = '-';
+        license.value = '-';
+        fileSize.value = '-';
+        downloadLink.disabled = true;
+        license.disabled = true;
+        fileSize.disabled = true;
+      } else {
+        downloadLink.disabled = false;
+        license.disabled = false;
+        fileSize.disabled = false;
+      }
+    });
+
     // Disable download link, license, and file size for Technology category
     category.addEventListener('change', function() {
       if (category.value === 'Technology') {
@@ -165,7 +181,7 @@
         fileSize.disabled = false;
       }
     });
-
+    
     // Function to show toast notifications
     function showToast(message, isSuccess = true) {
       const toast = document.createElement('div');
