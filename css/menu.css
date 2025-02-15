@@ -14,7 +14,7 @@ nav.menu {
     align-items: center;
     flex-wrap: wrap;
     position: fixed; 
-    width: 100%;
+    /*width: 100%;
     top: 0; /* Align to top */
     left: 0;
     right: 0;
