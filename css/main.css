@@ -2,7 +2,7 @@
 @import url(//fonts.googleapis.com/earlyaccess/khyay.css); /*font-family: 'Khyay', sans-serif;*/
 @import url("//mmwebfonts.comquas.com/fonts/?font=pyidaungsu"); /*font-family: "Pyidaungsu";*/
 
-* {
+/* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,6 +14,7 @@ html {
 body {
   min-height: 100%;
 }
+*/
 
 body {
   	background-color: #333;
