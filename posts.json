@@ -37,5 +37,18 @@
     "os": "Windows",
     "license": "",
     "fsize": "1 Kb"
-}
+},
+{
+    "ptitle": "Adobe InDesign CS6 Useing Guide Ebook",
+    "date": "2025-02-15",
+    "prescription": "Adobe Indesign CS6 အသုံးပြုနည်းလမ်းညွှန် Ebook လေးပါ။",
+    "imgurl": "img/Adobe InDesign CS6 Useing Guide.png",
+    "purl": "Adobe-InDesign-CS6-Useing-Guide.html",
+    "content": "<p><strong>Adobe InDesign ကိုဘယ်သူတွေစိတ်ဝင် စားလဲ</strong></p>\n<p>စိတ်ဝင်စားတဲ့သူတွေအတွက် Adobe InDesign CS6 လေးကို တင်ပေးလိုက်ပါတယ်။</p>\n<p>ဒီကောင်လေးရဲ့အသုံးဝင် ပုံလေးကိုတော့ ဘော်ဘော်တွေ သိပြီးဖြစ်ပါလိမ်မယ်။</p>\n<p>လိုချင်တယ် ကြိုကတ်တယ်ဆိုရင်တော့ အောက်မှာဒေါင်းသွားဗျာ အားလုံးပဲအင်ပြေကြပါစေဗျာ ...........</p>",
+    "category": "Ebook",
+    "dlink": "https://github.com/tinnaingoo/tcm-link/raw/refs/heads/Page/files/Adobe%20InDesign%20CS6%20Useing%20Guide.pdf",
+    "os": "Windows",
+    "license": "",
+    "fsize": ""
+}    
 ]
