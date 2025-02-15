@@ -26,16 +26,16 @@
     "fsize": "2.08 MB"
 },
 {
-    "ptitle": "Microsoft Genuine Advantage Diagnostic tool | MGAD Tool",
+    "ptitle": "Disables F1 key - Help and Support - in Windows 10",
     "date": "2025-02-14",
-    "prescription": "Windows 7 မှာ This computer is not running genuine Windows  ဆိုပြီး Error ကြုံရသူများအနေနဲ့ အခု File လေးကို Dowload ဆွဲပြီး Run ကြည့်ပါ။",
-    "imgurl": "img/Genuine.PNG",
+    "prescription": "Windows ကွန်ပျူတာတွေမှာ F1 Key (Help and Support) Box အမြဲပြနေသူများအတွက်ပါ။",
+    "imgurl": "img/windows-help-and-support.png",
     "purl": "mgadtool.html",
-    "content": "<div style=\"padding-bottom: 20px; padding-top: 20px;\">Turbo VPN setup file for Windows</div><div style=\"padding-bottom: 20px; padding-top: 20px;\">လိုအပ်သူများ Download ယူနိုင်ပါတယ်။ <br /></div>\n\n\n<div style=\"padding-bottom: 20px; padding-top: 20px;\"><a class=\"btn\" target=\"_blank\" href=\"https://www.mediafire.com/file/6y4amfhzauxqc19/TurboVPN_setup.exe/file\"><button class=\"btn-txt\"> Download \n  </button>\n</a></div><div style=\"padding-bottom: 20px; padding-top: 20px;\"></div><div style=\"padding-bottom: 20px; padding-top: 20px;\">\n</div>\n\n<img src=\"https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/81/da/5a/81da5aa7-ee65-801a-9c31-d8048dcac162/9fcaff77-b963-4a4f-9ce6-3f587522da3c_EN_U82f1_U8bed01.png/643x0w.jpg\"/>\n\n<style>\n  \n.img-post {\n    border-radius: 30px;\n}\n  \n.yt-video{\n  margin-top: 20px;\n  }\n.btn {\n  background-color: DodgerBlue;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  cursor: pointer;\n  font-size: 20px;\n  text-decoration: none;\n  margin-top:2px;\n  margin-bottom: 2px;\n}\n.btn-txt{\n  color: white;\n  background: transparent;\n  border: none;\n  }\n\n/* Darker background on mouse-over */\n.btn:hover {\n  background-color: RoyalBlue;\n}\n</style>",
-    "category": "Technology",
-    "dlink": "-",
+    "content": "<p><strong>Windows Registry Editor Version 5.00</strong></p>\n<p>Disables F1 key - Help and Support - in Windows 10</p>\n<p>Windows ကွန်ပျူတာတွေမှာ <strong>F1 Key (Help and Support) Box</strong> အမြဲပြနေတဲ့အခါ အခု File လေးကို Download ဆွဲပြီး Run လိုက်ရင်အဆင်ပြေပါတယ်။</p>",
+    "category": "Windows Software",
+    "dlink": "https://github.com/tinnaingoo/tcm-link/raw/refs/heads/Page/files/f1_key_disable_help.reg",
     "os": "Windows",
-    "license": "-",
-    "fsize": "-"
-}    
+    "license": "",
+    "fsize": "1 Kb"
+}   
 ]
