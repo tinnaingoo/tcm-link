@@ -30,12 +30,12 @@
     "date": "2025-02-14",
     "prescription": "Windows ကွန်ပျူတာတွေမှာ F1 Key (Help and Support) Box အမြဲပြနေသူများအတွက်ပါ။",
     "imgurl": "img/windows-help-and-support.png",
-    "purl": "mgadtool.html",
+    "purl": "f1_key_disable_help.html",
     "content": "<p><strong>Windows Registry Editor Version 5.00</strong></p>\n<p>Disables F1 key - Help and Support - in Windows 10</p>\n<p>Windows ကွန်ပျူတာတွေမှာ <strong>F1 Key (Help and Support) Box</strong> အမြဲပြနေတဲ့အခါ အခု File လေးကို Download ဆွဲပြီး Run လိုက်ရင်အဆင်ပြေပါတယ်။</p>",
     "category": "Windows Software",
     "dlink": "https://github.com/tinnaingoo/tcm-link/raw/refs/heads/Page/files/f1_key_disable_help.reg",
     "os": "Windows",
     "license": "",
     "fsize": "1 Kb"
-}   
+}
 ]
