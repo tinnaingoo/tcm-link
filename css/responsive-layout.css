@@ -1,7 +1,7 @@
 /* Default Styles */
-* {
+/* {
   box-sizing: border-box;
-}
+}*/
 
 .row::after {
   content: "";
